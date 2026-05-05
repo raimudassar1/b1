@@ -1,0 +1,32 @@
+{
+  "lessons": [
+    { "id": 1, "title": "Welcome to Taiwan", "tracks": 10 },
+    { "id": 2, "title": "My Family", "tracks": 9 },
+    { "id": 3, "title": "What Are You Doing Over the Weekend?", "tracks": 9 },
+    { "id": 4, "title": "How Much Does That Cost?", "tracks": 10 },
+    { "id": 5, "title": "Beef Noodles Are Really Delicious", "tracks": 8 },
+    { "id": 6, "title": "Their School Is Up in the Mountains", "tracks": 9 },
+    { "id": 7, "title": "Going to KTV at 9 O'Clock in the Morning", "tracks": 9 },
+    { "id": 8, "title": "Taking the Train to Tainan", "tracks": 9 },
+    { "id": 9, "title": "Where Will You Go for the Holidays?", "tracks": 9 },
+    { "id": 10, "title": "The Fruit in Taiwan Tastes Really Good", "tracks": 9 },
+    { "id": 11, "title": "I Would Like to Rent a Place", "tracks": 9 },
+    { "id": 12, "title": "How Long Will You Be Studying Chinese?", "tracks": 8 },
+    { "id": 13, "title": "Happy Birthday", "tracks": 12 },
+    { "id": 14, "title": "It's So Cold!", "tracks": 9 },
+    { "id": 15, "title": "I Don't Feel Well", "tracks": 11 }
+  ],
+  "workbookTracks": {
+    "1": 5, "2": 5, "3": 5, "4": 5, "5": 5,
+    "6": 6, "7": 6, "8": 6, "9": 6, "10": 6,
+    "11": 5, "12": 5, "13": 5, "14": 5, "15": 5
+  },
+  "tests": [
+    { "id": "L4_5",   "label": "Lessons 4–5" },
+    { "id": "L6_7",   "label": "Lessons 6–7" },
+    { "id": "L8_9",   "label": "Lessons 8–9" },
+    { "id": "L10_11", "label": "Lessons 10–11" },
+    { "id": "L12_13", "label": "Lessons 12–13" },
+    { "id": "L14_15", "label": "Lessons 14–15" }
+  ]
+}

@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<title>當代中文課程 · A Course in Contemporary Chinese</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+<style>
+/* ─── RESET & ROOT ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --red:    #C0392B;
+  --red-lt: #FDECEA;
+  --ink:    #1a1a1a;
+  --ink2:   #444;
+  --ink3:   #888;
+  --bg:     #FAF8F5;
+  --bg2:    #F2EFE9;
+  --bg3:    #E8E4DC;
+  --white:  #FFFFFF;
+  --border: rgba(0,0,0,0.10);
+  --border2:rgba(0,0,0,0.18);
+  --nav-h:  60px;
+  --tab-h:  48px;
+  --sans:   'DM Sans', system-ui, sans-serif;
+  --serif:  'Noto Serif TC', serif;
+  --radius: 12px;
+  --shadow: 0 2px 16px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 32px rgba(0,0,0,0.14);
+}
+html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--ink); font-family: var(--sans); }
+
+/* ─── LAYOUT ────────────────────────────────────────────────── */
+#app { display: flex; flex-direction: column; height: 100%; }
+
+/* ─── TOP NAV ───────────────────────────────────────────────── */
+#top-nav {
+  height: var(--nav-h);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center;
+  padding: 0 20px; gap: 12px;
+  position: relative; z-index: 100;
+  flex-shrink: 0;
+}
+#top-nav .logo {
+  font-family: var(--serif);
+  font-size: 18px; font-weight: 600;
+  color: var(--red); letter-spacing: -0.3px;
+  flex-shrink: 0;
+}
+#top-nav .logo span { font-size: 12px; color: var(--ink3); font-family: var(--sans); font-weight: 400; display: block; line-height: 1; margin-top: 1px; }
+.nav-spacer { flex: 1; }
+#lesson-select {
+  font-family: var(--sans); font-size: 14px;
+  border: 1px solid var(--border2); border-radius: 8px;
+  padding: 6px 10px; background: var(--bg2);
+  color: var(--ink); cursor: pointer;
+  min-width: 160px;
+}
+
+/* ─── TAB BAR ───────────────────────────────────────────────── */
+#tab-bar {
+  height: var(--tab-h);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: stretch;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; flex-shrink: 0;
+}
+#tab-bar::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex-shrink: 0;
+  padding: 0 20px;
+  font-family: var(--sans); font-size: 14px; font-weight: 500;
+  color: var(--ink3); background: none; border: none;
+  border-bottom: 2.5px solid transparent;
+  cursor: pointer; transition: all 0.18s;
+  display: flex; align-items: center; gap: 6px;
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--ink); background: var(--bg2); }
+.tab-btn.active { color: var(--red); border-bottom-color: var(--red); }
+.tab-btn .tab-icon { font-size: 16px; }
+
+/* ─── CONTENT AREA ──────────────────────────────────────────── */
+#content {
+  flex: 1; overflow: hidden; position: relative;
+}
+.panel {
+  position: absolute; inset: 0;
+  display: none; overflow: hidden;
+}
+.panel.active { display: flex; flex-direction: column; }
+
+/* ─── BOOKS / PDF ───────────────────────────────────────────── */
+#panel-books .book-switcher {
+  display: flex; gap: 8px; padding: 12px 16px;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.book-btn {
+  flex: 1; padding: 10px; border-radius: 8px;
+  font-family: var(--sans); font-size: 14px; font-weight: 500;
+  cursor: pointer; transition: all 0.18s;
+  border: 1.5px solid var(--border2);
+  background: var(--bg2); color: var(--ink2);
+}
+.book-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
+
+.pdf-toolbar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 16px; background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0; flex-wrap: wrap;
+}
+.pdf-toolbar button {
+  font-family: var(--sans); font-size: 13px;
+  padding: 6px 12px; border-radius: 6px;
+  border: 1px solid var(--border2); background: var(--white);
+  color: var(--ink2); cursor: pointer; transition: all 0.15s;
+}
+.pdf-toolbar button:hover { background: var(--bg3); }
+.pdf-toolbar button.active { background: var(--red); color: #fff; border-color: var(--red); }
+.pdf-toolbar .page-info { font-size: 13px; color: var(--ink3); margin: 0 4px; }
+.pdf-toolbar .spacer { flex: 1; }
+
+#pdf-frame-wrap {
+  flex: 1; overflow: hidden; position: relative;
+  background: var(--bg3);
+}
+/* Annotation canvas overlays the PDF */
+#pdf-frame-wrap iframe {
+  width: 100%; height: 100%; border: none;
+}
+#annot-canvas {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 10;
+}
+#annot-canvas.drawing { pointer-events: all; cursor: crosshair; }
+
+/* ─── AUDIO ─────────────────────────────────────────────────── */
+#panel-audio { flex-direction: row; }
+
+.audio-sidebar {
+  width: 260px; flex-shrink: 0;
+  background: var(--white); border-right: 1px solid var(--border);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+@media (max-width: 700px) {
+  #panel-audio { flex-direction: column; }
+  .audio-sidebar { width: 100%; max-height: 220px; border-right: none; border-bottom: 1px solid var(--border); }
+}
+.audio-sidebar-head {
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  display: flex; gap: 6px; flex-shrink: 0;
+}
+.audio-src-btn {
+  flex: 1; font-family: var(--sans); font-size: 13px; font-weight: 500;
+  padding: 7px 6px; border-radius: 7px;
+  border: 1.5px solid var(--border2);
+  background: var(--bg2); color: var(--ink2);
+  cursor: pointer; transition: all 0.15s;
+}
+.audio-src-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
+.audio-lesson-list { overflow-y: auto; flex: 1; -webkit-overflow-scrolling: touch; }
+.audio-lesson-group { border-bottom: 1px solid var(--border); }
+.audio-lesson-header {
+  padding: 10px 16px;
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.6px; color: var(--ink3);
+  background: var(--bg2); cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between;
+  user-select: none;
+}
+.audio-lesson-header .chevron { transition: transform 0.2s; }
+.audio-lesson-header.open .chevron { transform: rotate(90deg); }
+.audio-track-list { display: none; }
+.audio-lesson-header.open + .audio-track-list { display: block; }
+.audio-track-item {
+  padding: 9px 16px 9px 24px;
+  font-size: 13px; color: var(--ink2);
+  cursor: pointer; display: flex; align-items: center; gap: 8px;
+  transition: background 0.12s;
+}
+.audio-track-item:hover { background: var(--bg2); }
+.audio-track-item.playing { color: var(--red); font-weight: 500; background: var(--red-lt); }
+.audio-track-item .track-num {
+  font-size: 11px; color: var(--ink3); min-width: 28px;
+  font-variant-numeric: tabular-nums;
+}
+.audio-track-item.playing .track-num { color: var(--red); }
+
+.audio-main {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 32px 24px; gap: 24px;
+}
+.audio-now-playing {
+  text-align: center;
+}
+.audio-now-playing .anp-lesson { font-size: 12px; color: var(--ink3); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 6px; }
+.audio-now-playing .anp-track { font-family: var(--serif); font-size: 22px; color: var(--ink); }
+
+.audio-waveform {
+  width: 100%; max-width: 480px; height: 60px;
+  background: var(--bg2); border-radius: 10px; overflow: hidden; position: relative;
+}
+.waveform-bar-wrap { display: flex; align-items: center; height: 100%; gap: 2px; padding: 8px 12px; }
+.waveform-bar { flex: 1; border-radius: 2px; background: var(--bg3); transition: background 0.15s; }
+.waveform-bar.played { background: var(--red); }
+
+.audio-progress-wrap { width: 100%; max-width: 480px; }
+.audio-progress {
+  width: 100%; height: 4px;
+  -webkit-appearance: none; appearance: none;
+  background: var(--bg3); border-radius: 4px; cursor: pointer; outline: none;
+}
+.audio-progress::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 16px; height: 16px;
+  border-radius: 50%; background: var(--red);
+  margin-top: -6px; cursor: pointer; box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.audio-progress::-webkit-slider-runnable-track { height: 4px; border-radius: 4px; }
+.audio-time { display: flex; justify-content: space-between; font-size: 12px; color: var(--ink3); margin-top: 6px; font-variant-numeric: tabular-nums; }
+
+.audio-controls { display: flex; align-items: center; gap: 16px; }
+.audio-ctrl-btn {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1.5px solid var(--border2); background: var(--white);
+  font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s; color: var(--ink2);
+}
+.audio-ctrl-btn:hover { background: var(--bg2); border-color: var(--ink3); }
+.audio-ctrl-btn.play-btn {
+  width: 56px; height: 56px; font-size: 22px;
+  background: var(--red); color: #fff; border-color: var(--red);
+  box-shadow: 0 3px 12px rgba(192,57,43,0.3);
+}
+.audio-ctrl-btn.play-btn:hover { background: #a93226; }
+
+/* ─── VIDEOS ─────────────────────────────────────────────────── */
+#panel-videos .video-type-bar {
+  display: flex; gap: 8px; padding: 12px 16px;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.video-type-btn {
+  font-family: var(--sans); font-size: 14px; font-weight: 500;
+  padding: 8px 16px; border-radius: 8px;
+  border: 1.5px solid var(--border2); background: var(--bg2);
+  color: var(--ink2); cursor: pointer; transition: all 0.15s;
+}
+.video-type-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
+
+.video-grid-wrap { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 16px; }
+.lesson-section { margin-bottom: 28px; }
+.lesson-section-title {
+  font-family: var(--serif); font-size: 16px; font-weight: 600;
+  color: var(--ink); margin-bottom: 10px; padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.video-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.video-card {
+  background: var(--white); border-radius: var(--radius);
+  border: 1px solid var(--border); overflow: hidden;
+  cursor: pointer; transition: all 0.18s;
+}
+.video-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.video-thumb {
+  width: 100%; aspect-ratio: 16/9;
+  background: var(--bg3); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 36px; color: var(--ink3); position: relative;
+}
+.video-thumb::after {
+  content: '▶';
+  position: absolute;
+  font-size: 28px;
+  color: var(--white);
+  background: rgba(192,57,43,0.85);
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  left: 50%; top: 50%; transform: translate(-50%,-50%);
+}
+.video-card-label { padding: 10px 12px; font-size: 13px; color: var(--ink2); font-weight: 500; }
+
+/* ─── TESTS ──────────────────────────────────────────────────── */
+.tests-grid-wrap { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 20px; }
+.tests-intro { font-size: 14px; color: var(--ink3); margin-bottom: 20px; max-width: 500px; }
+.test-card {
+  background: var(--white); border-radius: var(--radius);
+  border: 1px solid var(--border); padding: 18px 20px;
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 16px;
+}
+.test-card-label { flex: 1; }
+.test-card-label .tc-title { font-family: var(--serif); font-size: 16px; color: var(--ink); font-weight: 600; margin-bottom: 4px; }
+.test-card-label .tc-sub { font-size: 13px; color: var(--ink3); }
+.test-btns { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
+.test-pdf-btn {
+  font-family: var(--sans); font-size: 13px; font-weight: 500;
+  padding: 7px 14px; border-radius: 7px;
+  border: 1.5px solid var(--border2); background: var(--bg2);
+  color: var(--ink2); cursor: pointer; transition: all 0.15s;
+  text-decoration: none; display: inline-block;
+}
+.test-pdf-btn:hover { background: var(--red); color: #fff; border-color: var(--red); }
+.test-pdf-btn.blank { }
+.test-pdf-btn.ans { background: var(--red-lt); border-color: var(--red); color: var(--red); }
+.test-pdf-btn.ans:hover { background: var(--red); color: #fff; }
+
+/* ─── WHITEBOARD ─────────────────────────────────────────────── */
+#panel-whiteboard { background: #fff; }
+.wb-toolbar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px; background: var(--white);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0; overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.wb-toolbar::-webkit-scrollbar { display: none; }
+.wb-btn {
+  font-family: var(--sans); font-size: 13px;
+  padding: 7px 12px; border-radius: 7px;
+  border: 1px solid var(--border2); background: var(--bg2);
+  color: var(--ink2); cursor: pointer; transition: all 0.15s;
+  white-space: nowrap; flex-shrink: 0;
+}
+.wb-btn:hover { background: var(--bg3); }
+.wb-btn.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.wb-btn.danger { }
+.wb-btn.danger:hover { background: var(--red); color: #fff; border-color: var(--red); }
+.wb-sep { width: 1px; height: 28px; background: var(--border2); flex-shrink: 0; margin: 0 4px; }
+.color-swatch {
+  width: 28px; height: 28px; border-radius: 50%;
+  border: 2.5px solid transparent; cursor: pointer;
+  flex-shrink: 0; transition: transform 0.12s;
+}
+.color-swatch:hover { transform: scale(1.15); }
+.color-swatch.active { border-color: var(--ink); }
+.wb-size { font-size: 12px; color: var(--ink3); }
+#wb-size-range {
+  width: 80px; height: 4px; cursor: pointer; flex-shrink: 0;
+  -webkit-appearance: none; accent-color: var(--red);
+}
+#wb-canvas-wrap { flex: 1; overflow: hidden; position: relative; touch-action: none; }
+#wb-canvas { display: block; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+
+/* ─── VIDEO MODAL ─────────────────────────────────────────────── */
+#video-modal {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.85);
+  align-items: center; justify-content: center;
+}
+#video-modal.open { display: flex; }
+#video-modal-inner {
+  background: #000; border-radius: var(--radius);
+  overflow: hidden; max-width: 92vw; max-height: 92vh;
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-md);
+}
+#video-modal-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 16px; background: rgba(255,255,255,0.08);
+}
+#video-modal-title { color: #fff; font-size: 14px; font-weight: 500; flex: 1; }
+#video-modal-close {
+  color: rgba(255,255,255,0.7); background: none; border: none;
+  font-size: 22px; cursor: pointer; padding: 2px 6px; border-radius: 4px;
+}
+#video-modal-close:hover { color: #fff; background: rgba(255,255,255,0.1); }
+#video-modal video { max-width: 80vw; max-height: 76vh; display: block; }
+
+/* ─── TOAST ──────────────────────────────────────────────────── */
+#toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(60px);
+  background: var(--ink); color: #fff;
+  padding: 10px 20px; border-radius: 20px;
+  font-size: 14px; z-index: 999;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+#toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ─── SCROLLBARS ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 3px; }
+
+/* ─── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  #top-nav .logo span { display: none; }
+  #lesson-select { min-width: 120px; font-size: 13px; }
+  .tab-btn { padding: 0 14px; font-size: 13px; }
+  .test-card { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- TOP NAV -->
+  <nav id="top-nav">
+    <div class="logo">當代中文 <span>A Course in Contemporary Chinese — Book 1</span></div>
+    <div class="nav-spacer"></div>
+    <select id="lesson-select" onchange="jumpToLesson(this.value)">
+      <option value="">— Jump to lesson —</option>
+    </select>
+  </nav>
+
+  <!-- TAB BAR -->
+  <div id="tab-bar">
+    <button class="tab-btn active" data-tab="books" onclick="switchTab('books')">
+      <span class="tab-icon">📖</span> Books
+    </button>
+    <button class="tab-btn" data-tab="audio" onclick="switchTab('audio')">
+      <span class="tab-icon">🎧</span> Audio
+    </button>
+    <button class="tab-btn" data-tab="videos" onclick="switchTab('videos')">
+      <span class="tab-icon">🎬</span> Videos
+    </button>
+    <button class="tab-btn" data-tab="tests" onclick="switchTab('tests')">
+      <span class="tab-icon">📝</span> Tests
+    </button>
+    <button class="tab-btn" data-tab="whiteboard" onclick="switchTab('whiteboard')">
+      <span class="tab-icon">✏️</span> Whiteboard
+    </button>
+  </div>
+
+  <!-- CONTENT -->
+  <div id="content">
+
+    <!-- ══ BOOKS PANEL ══ -->
+    <div id="panel-books" class="panel active">
+      <div class="book-switcher">
+        <button class="book-btn active" onclick="switchBook('textbook')">📚 Textbook</button>
+        <button class="book-btn" onclick="switchBook('workbook')">📓 Workbook</button>
+      </div>
+      <div class="pdf-toolbar">
+        <button onclick="annotToggle()" id="annot-btn">✏️ Pen</button>
+        <button onclick="setAnnotTool('eraser')" id="eraser-btn">🧽 Eraser</button>
+        <button onclick="setAnnotColor('red')" style="color:var(--red);">● Red</button>
+        <button onclick="setAnnotColor('blue')" style="color:#1a73e8;">● Blue</button>
+        <button onclick="setAnnotColor('black')" style="color:#000;">● Black</button>
+        <button onclick="clearAnnotations()" class="danger">🗑 Clear</button>
+        <div class="spacer"></div>
+        <div style="display: flex; align-items: center; gap: 4px; background: var(--bg3); padding: 2px 6px; border-radius: 8px;">
+          <button onclick="togglePdfAudio()" id="pdf-play-pause-btn" style="border:none; background:none; padding: 4px 8px;">▶</button>
+          <select id="pdf-audio-select" onchange="playAudioFromDropdown(this.value)" style="padding: 4px; border: none; background: transparent; font-family: var(--sans); font-size: 13px; max-width: 120px;">
+            <option value="">— Audio —</option>
+          </select>
+          <select id="pdf-speed-select" onchange="changePdfAudioSpeed(this.value)" style="padding: 4px; border: none; background: transparent; font-family: var(--sans); font-size: 11px;">
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="1.0" selected>1.0x</option>
+            <option value="1.25">1.25x</option>
+            <option value="1.5">1.5x</option>
+          </select>
+        </div>
+        <span class="page-info" id="pdf-page-info">Page 1 / --</span>
+        <button onclick="openFullPDF()">⤢ Full</button>
+      </div>
+      <div id="pdf-frame-wrap">
+        <div id="pdf-viewer" style="width: 100%; height: 100%; overflow: auto; background: var(--bg3); display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px 0;"></div>
+      </div>
+    </div>
+
+    <!-- ══ AUDIO PANEL ══ -->
+    <div id="panel-audio" class="panel">
+
+      <!-- Sidebar -->
+      <div class="audio-sidebar">
+        <div class="audio-sidebar-head">
+          <button class="audio-src-btn active" id="asrc-textbook" onclick="setAudioSource('textbook')">Textbook</button>
+          <button class="audio-src-btn" id="asrc-workbook" onclick="setAudioSource('workbook')">Workbook</button>
+        </div>
+        <div class="audio-lesson-list" id="audio-lesson-list"></div>
+      </div>
+
+      <!-- Player -->
+      <div class="audio-main">
+        <div class="audio-now-playing">
+          <div class="anp-lesson" id="anp-lesson">Select a track</div>
+          <div class="anp-track" id="anp-track">—</div>
+        </div>
+        <div class="audio-waveform" id="audio-waveform">
+          <div class="waveform-bar-wrap" id="waveform-bars"></div>
+        </div>
+        <div class="audio-progress-wrap">
+          <input type="range" class="audio-progress" id="audio-progress" min="0" max="100" value="0" step="0.1">
+          <div class="audio-time">
+            <span id="audio-cur">0:00</span>
+            <span id="audio-dur">0:00</span>
+          </div>
+        </div>
+        <div class="audio-controls">
+          <button class="audio-ctrl-btn" onclick="audioPrev()" title="Previous">⏮</button>
+          <button class="audio-ctrl-btn play-btn" id="play-btn" onclick="audioPlayPause()">▶</button>
+          <button class="audio-ctrl-btn" onclick="audioNext()" title="Next">⏭</button>
+        </div>
+        <audio id="audio-player" preload="none"></audio>
+      </div>
+    </div>
+
+    <!-- ══ VIDEOS PANEL ══ -->
+    <div id="panel-videos" class="panel">
+      <div class="video-type-bar">
+        <button class="video-type-btn active" onclick="setVideoType('dialogue')">💬 Dialogues</button>
+        <button class="video-type-btn" onclick="setVideoType('lesson')">🎓 Lesson Videos</button>
+      </div>
+      <div class="video-grid-wrap" id="video-grid"></div>
+    </div>
+
+    <!-- ══ TESTS PANEL ══ -->
+    <div id="panel-tests" class="panel">
+      <div class="tests-grid-wrap">
+        <p class="tests-intro">Cumulative tests covering two lessons each. Open the blank version to print or write on screen, then check with the answer key.</p>
+        <div id="tests-list"></div>
+      </div>
+    </div>
+
+    <!-- ══ WHITEBOARD PANEL ══ -->
+    <div id="panel-whiteboard" class="panel">
+      <div class="wb-toolbar">
+        <button class="wb-btn active" id="wb-pen-btn" onclick="setWbTool('pen')">🖊 Pen</button>
+        <button class="wb-btn" id="wb-hi-btn" onclick="setWbTool('highlight')">🔆 Highlight</button>
+        <button class="wb-btn" id="wb-eraser-btn" onclick="setWbTool('eraser')">⬜ Eraser</button>
+        <div class="wb-sep"></div>
+        <div class="color-swatch active" style="background:#1a1a1a;" onclick="setWbColor('#1a1a1a')" data-color="#1a1a1a"></div>
+        <div class="color-swatch" style="background:#C0392B;" onclick="setWbColor('#C0392B')" data-color="#C0392B"></div>
+        <div class="color-swatch" style="background:#1a73e8;" onclick="setWbColor('#1a73e8')" data-color="#1a73e8"></div>
+        <div class="color-swatch" style="background:#16a34a;" onclick="setWbColor('#16a34a')" data-color="#16a34a"></div>
+        <div class="color-swatch" style="background:#f59e0b;" onclick="setWbColor('#f59e0b')" data-color="#f59e0b"></div>
+        <div class="wb-sep"></div>
+        <span class="wb-size">Size</span>
+        <input type="range" id="wb-size-range" min="1" max="24" value="3" oninput="setWbSize(this.value)">
+        <div class="wb-sep"></div>
+        <button class="wb-btn" onclick="wbUndo()">↩ Undo</button>
+        <button class="wb-btn danger" onclick="wbClear()">🗑 Clear</button>
+        <button class="wb-btn" onclick="wbSave()">💾 Save PNG</button>
+      </div>
+      <div id="wb-canvas-wrap">
+        <canvas id="wb-canvas"></canvas>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /app -->
+
+<!-- VIDEO MODAL -->
+<div id="video-modal" onclick="closeVideo(event)">
+  <div id="video-modal-inner">
+    <div id="video-modal-head">
+      <span id="video-modal-title">Video</span>
+      <button id="video-modal-close" onclick="closeVideoForce()">✕</button>
+    </div>
+    <video id="video-player" controls playsinline></video>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+// ──────────────────────────────────────────────
+// MANIFEST & STATE
+// ──────────────────────────────────────────────
+let manifest = null;
+let currentBook = 'textbook';
+let audioSource = 'textbook';
+let currentTrackIndex = -1;
+let allTracks = [];
+let videoType = 'dialogue';
+let wbTool = 'pen';
+let wbColor = '#1a1a1a';
+let wbSize = 3;
+let wbStrokes = [];
+let wbCurrentStroke = null;
+let wbDrawing = false;
+let wbCtx = null;
+// PDF.js State
+let pdfDoc = null;
+let pdfScale = 1.5;
+if (window.innerWidth < 800) pdfScale = 1.2; // Tablet optimization
+let annotating = false;
+let annotTool = 'pen'; // 'pen' or 'eraser'
+let annotColor = 'red';
+let annotStrokes = {}; // Store strokes per page: { pageNumber: [strokes] }
+let annotDrawing = false;
+let annotLastX = 0, annotLastY = 0;
+let activeDrawingPage = null;
+let renderedPages = new Set();
+let pageObserver = null;
+
+const GOOGLE_DRIVE_VIDEOS = {
+  // Mapping of Lesson ID to Google Drive File ID
+  // Folder: 19ZZveum9YgJNrdFMYiZ9-yq3XBur2qFI
+  dialogues: {
+    "1.1": "1-0I0_B2-vX_vG_X-...", // Example IDs - user will need to populate or I can provide structure
+  },
+  lessons: {
+    "1": "1-..."
+  }
+};
+
+async function init() {
+  try {
+    const res = await fetch('manifest.json');
+    manifest = await res.json();
+  } catch(e) {
+    console.error("Failed to fetch manifest:", e);
+    // Fallback manifest
+    manifest = {
+      lessons: Array.from({length:15}, (_,i) => ({
+        id: i+1,
+        title: `Lesson ${i+1}`,
+        tracks: [10,9,9,10,8,9,9,9,9,9,9,8,12,9,11][i]
+      })),
+      workbookTracks: {1:5,2:5,3:5,4:5,5:5,6:6,7:6,8:6,9:6,10:6,11:5,12:5,13:5,14:5,15:5},
+      tests: [
+        {id:'L4_5',label:'Lessons 4–5'},
+        {id:'L6_7',label:'Lessons 6–7'},
+        {id:'L8_9',label:'Lessons 8–9'},
+        {id:'L10_11',label:'Lessons 10–11'},
+        {id:'L12_13',label:'Lessons 12–13'},
+        {id:'L14_15',label:'Lessons 14–15'}
+      ]
+    };
+  }
+  buildLessonSelect();
+  buildAudioList();
+  buildVideoGrid();
+  buildTestsList();
+  initWhiteboard();
+  buildWaveformBars();
+  
+  // Load initial PDF
+  loadPDF('Textbook.pdf');
+  updateAudioDropdown();
+}
+
+// ──────────────────────────────────────────────
+// BOOKS / PDF (PDF.js + Lazy Loading)
+// ──────────────────────────────────────────────
+async function loadPDF(url) {
+  const viewer = document.getElementById('pdf-viewer');
+  viewer.innerHTML = '<div style="color:var(--ink3); padding: 40px;">Loading PDF...</div>';
+  renderedPages.clear();
+  if (pageObserver) pageObserver.disconnect();
+  
+  try {
+    const loadingTask = pdfjsLib.getDocument(url);
+    pdfDoc = await loadingTask.promise;
+    document.getElementById('pdf-page-info').textContent = `1 / ${pdfDoc.numPages}`;
+    viewer.innerHTML = ''; 
+    
+    // Get first page to determine dimensions
+    const firstPage = await pdfDoc.getPage(1);
+    const viewport = firstPage.getViewport({ scale: pdfScale });
+
+    // Create placeholders for all pages
+    for (let i = 1; i <= pdfDoc.numPages; i++) {
+      const pageWrapper = document.createElement('div');
+      pageWrapper.className = 'pdf-page-wrapper';
+      pageWrapper.id = `page-wrapper-${i}`;
+      pageWrapper.dataset.pageNumber = i;
+      pageWrapper.style.width = viewport.width + 'px';
+      pageWrapper.style.height = viewport.height + 'px';
+      pageWrapper.style.position = 'relative';
+      pageWrapper.style.marginBottom = '20px';
+      pageWrapper.style.background = '#fff';
+      pageWrapper.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+      viewer.appendChild(pageWrapper);
+    }
+    
+    setupPageObserver();
+  } catch (e) {
+    console.error("Error loading PDF:", e);
+    viewer.innerHTML = '<div style="color:var(--red); padding: 40px;">Failed to load PDF. Check file path.</div>';
+  }
+}
+
+function setupPageObserver() {
+  const viewer = document.getElementById('pdf-viewer');
+  const info = document.getElementById('pdf-page-info');
+  
+  pageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const pageNum = parseInt(entry.target.dataset.pageNumber);
+      if (entry.isIntersecting) {
+        info.textContent = `Page ${pageNum} / ${pdfDoc.numPages}`;
+        if (!renderedPages.has(pageNum)) {
+          renderPage(pageNum);
+        }
+      }
+    });
+  }, {
+    root: viewer,
+    threshold: 0.1,
+    rootMargin: '500px' // Render pages 500px before they appear
+  });
+  
+  document.querySelectorAll('.pdf-page-wrapper').forEach(p => pageObserver.observe(p));
+}
+
+async function renderPage(num) {
+  if (renderedPages.has(num)) return;
+  renderedPages.add(num);
+  
+  const page = await pdfDoc.getPage(num);
+  const viewport = page.getViewport({ scale: pdfScale });
+  const pageWrapper = document.getElementById(`page-wrapper-${num}`);
+
+  const canvas = document.createElement('canvas');
+  canvas.className = 'pdf-page-canvas';
+  const ctx = canvas.getContext('2d');
+  canvas.height = viewport.height;
+  canvas.width = viewport.width;
+  canvas.style.display = 'block';
+
+  const annotCanvas = document.createElement('canvas');
+  annotCanvas.className = 'annot-canvas';
+  annotCanvas.width = viewport.width;
+  annotCanvas.height = viewport.height;
+  annotCanvas.style.position = 'absolute';
+  annotCanvas.style.top = '0';
+  annotCanvas.style.left = '0';
+  annotCanvas.style.pointerEvents = annotating ? 'all' : 'none';
+  annotCanvas.dataset.pageNumber = num;
+  annotCanvas.style.touchAction = 'none'; // Prevent scrolling while drawing
+
+  pageWrapper.appendChild(canvas);
+  pageWrapper.appendChild(annotCanvas);
+
+  const renderContext = { canvasContext: ctx, viewport: viewport };
+  await page.render(renderContext).promise;
+  
+  drawPageAnnotations(num, annotCanvas);
+
+  // Use Pointer Events for Pen support
+  annotCanvas.addEventListener('pointerdown', e => annotStart(e, num, annotCanvas));
+  annotCanvas.addEventListener('pointermove', e => annotMove(e, num, annotCanvas));
+  annotCanvas.addEventListener('pointerup', annotEnd);
+  annotCanvas.addEventListener('pointercancel', annotEnd);
+}
+
+function switchBook(book) {
+  currentBook = book;
+  document.querySelectorAll('.book-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase().includes(book)));
+  const filename = book === 'textbook' ? 'Textbook.pdf' : 'Workbook.pdf';
+  loadPDF(filename);
+  updateAudioDropdown();
+}
+
+function openFullPDF() {
+  const filename = currentBook === 'textbook' ? 'Textbook.pdf' : 'Workbook.pdf';
+  window.open(filename, '_blank');
+}
+
+// Helper for split audio folders
+function getAudioPath(book, lessonId, trackId) {
+  const folderBase = book === 'textbook' ? 'Audio Textbook' : 'Audio Workbook';
+  const folderSuffix = lessonId <= 7 ? ' 1' : ' 2';
+  return `${folderBase}${folderSuffix}/${trackId}.mp3`;
+}
+
+// ── Annotation logic ──
+function annotToggle() {
+  annotating = !annotating;
+  annotTool = 'pen';
+  updateAnnotUI();
+  const canvases = document.querySelectorAll('.annot-canvas');
+  canvases.forEach(c => c.style.pointerEvents = annotating ? 'all' : 'none');
+  document.getElementById('pdf-viewer').style.overflow = annotating ? 'hidden' : 'auto'; 
+  showToast(annotating ? 'Pen on — use your Stylus to write' : 'Drawing off');
+}
+
+function setAnnotTool(tool) {
+  annotating = true;
+  annotTool = tool;
+  updateAnnotUI();
+  const canvases = document.querySelectorAll('.annot-canvas');
+  canvases.forEach(c => c.style.pointerEvents = 'all');
+  document.getElementById('pdf-viewer').style.overflow = 'hidden';
+}
+
+function updateAnnotUI() {
+  document.getElementById('annot-btn').classList.toggle('active', annotating && annotTool === 'pen');
+  document.getElementById('eraser-btn').classList.toggle('active', annotating && annotTool === 'eraser');
+}
+
+function setAnnotColor(c) { 
+  annotating = true;
+  annotTool = 'pen';
+  annotColor = c; 
+  updateAnnotUI();
+}
+
+function annotStart(e, pageNum, canvas) {
+  // REQUIRE PEN OR MOUSE INPUT (Ignore Touch for Palm Rejection)
+  if (!annotating || (e.pointerType !== 'pen' && e.pointerType !== 'mouse')) return;
+  
+  e.preventDefault();
+  annotDrawing = true;
+  activeDrawingPage = pageNum;
+  const r = canvas.getBoundingClientRect();
+  annotLastX = (e.clientX - r.left) * (canvas.width / r.width);
+  annotLastY = (e.clientY - r.top) * (canvas.height / r.height);
+  
+  if (!annotStrokes[pageNum]) annotStrokes[pageNum] = [];
+  wbCurrentStroke = { tool: annotTool, color: annotColor, points: [{x: annotLastX, y: annotLastY}] };
+}
+
+function annotMove(e, pageNum, canvas) {
+  if (!annotating || !annotDrawing || (e.pointerType !== 'pen' && e.pointerType !== 'mouse')) return;
+  e.preventDefault();
+  const r = canvas.getBoundingClientRect();
+  const x = (e.clientX - r.left) * (canvas.width / r.width);
+  const y = (e.clientY - r.top) * (canvas.height / r.height);
+  
+  const ctx = canvas.getContext('2d');
+  ctx.beginPath();
+  
+  if (annotTool === 'eraser') {
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.lineWidth = 20;
+    ctx.strokeStyle = 'rgba(0,0,0,1)';
+  } else {
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.strokeStyle = annotColor === 'red' ? 'rgba(192,57,43,0.85)' : annotColor === 'blue' ? 'rgba(26,115,232,0.85)' : 'rgba(0,0,0,0.85)';
+    ctx.lineWidth = 2.5;
+  }
+  
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.moveTo(annotLastX, annotLastY);
+  ctx.lineTo(x, y);
+  ctx.stroke();
+  
+  annotLastX = x; annotLastY = y;
+  if (wbCurrentStroke) wbCurrentStroke.points.push({x,y});
+}
+
+function annotEnd(e) {
+  if (!annotDrawing) return;
+  annotDrawing = false;
+  if (wbCurrentStroke && activeDrawingPage !== null) {
+    annotStrokes[activeDrawingPage].push(wbCurrentStroke);
+    wbCurrentStroke = null;
+    activeDrawingPage = null;
+  }
+}
+
+function clearAnnotations() {
+  if (!confirm('Clear all annotations in this book?')) return;
+  annotStrokes = {};
+  document.querySelectorAll('.annot-canvas').forEach(canvas => {
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+  });
+}
+
+function drawPageAnnotations(pageNum, canvas) {
+  const strokes = annotStrokes[pageNum];
+  if (!strokes) return;
+  const ctx = canvas.getContext('2d');
+  strokes.forEach(s => {
+    if (s.points.length < 2) return;
+    ctx.beginPath();
+    
+    if (s.tool === 'eraser') {
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.lineWidth = 20;
+    } else {
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.strokeStyle = s.color === 'red' ? 'rgba(192,57,43,0.85)' : s.color === 'blue' ? 'rgba(26,115,232,0.85)' : 'rgba(0,0,0,0.85)';
+      ctx.lineWidth = 2.5;
+    }
+    
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    ctx.moveTo(s.points[0].x, s.points[0].y);
+    s.points.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.stroke();
+  });
+  ctx.globalCompositeOperation = 'source-over';
+}
+
+// ── PDF Audio Controls ──
+function togglePdfAudio() {
+  const ap = document.getElementById('audio-player');
+  const btn = document.getElementById('pdf-play-pause-btn');
+  if (ap.paused) {
+    ap.play();
+    btn.textContent = '⏸';
+  } else {
+    ap.pause();
+    btn.textContent = '▶';
+  }
+}
+
+function changePdfAudioSpeed(val) {
+  const ap = document.getElementById('audio-player');
+  ap.playbackRate = parseFloat(val);
+}
+
+// ──────────────────────────────────────────────
+// AUDIO
+// ──────────────────────────────────────────────
+function buildAudioList() {
+  const list = document.getElementById('audio-lesson-list');
+  list.innerHTML = '';
+  allTracks = [];
+
+  if (audioSource === 'textbook') {
+    manifest.lessons.forEach(lesson => {
+      const group = document.createElement('div');
+      group.className = 'audio-lesson-group';
+
+      const header = document.createElement('div');
+      header.className = 'audio-lesson-header';
+      header.dataset.lesson = lesson.id;
+      header.innerHTML = `<span>L${String(lesson.id).padStart(2,'0')} · ${lesson.title}</span><span class="chevron">›</span>`;
+      header.onclick = function() {
+        this.classList.toggle('open');
+      };
+
+      const trackList = document.createElement('div');
+      trackList.className = 'audio-track-list';
+
+      for (let t = 1; t <= lesson.tracks; t++) {
+        const trackId = String(lesson.id).padStart(2,'0') + '-' + String(t).padStart(2,'0');
+        const src = getAudioPath('textbook', lesson.id, trackId);
+        const idx = allTracks.length;
+        allTracks.push({ src, label: `Track ${trackId}`, lesson: lesson.id, lessonTitle: lesson.title, trackNum: t });
+
+        const item = document.createElement('div');
+        item.className = 'audio-track-item';
+        item.dataset.trackIdx = idx;
+        item.innerHTML = `<span class="track-num">${trackId}</span><span>${trackId}</span>`;
+        item.onclick = () => playTrack(idx);
+        trackList.appendChild(item);
+      }
+
+      group.appendChild(header);
+      group.appendChild(trackList);
+      list.appendChild(group);
+    });
+  } else {
+    // Workbook
+    manifest.lessons.forEach(lesson => {
+      const group = document.createElement('div');
+      group.className = 'audio-lesson-group';
+
+      const header = document.createElement('div');
+      header.className = 'audio-lesson-header';
+      header.dataset.lesson = lesson.id;
+      header.innerHTML = `<span>L${String(lesson.id).padStart(2,'0')} · ${lesson.title}</span><span class="chevron">›</span>`;
+      header.onclick = function() { this.classList.toggle('open'); };
+
+      const trackList = document.createElement('div');
+      trackList.className = 'audio-track-list';
+      const count = manifest.workbookTracks[lesson.id] || 5;
+
+      for (let t = 1; t <= count; t++) {
+        const trackId = String(lesson.id).padStart(2,'0') + '-' + t;
+        const src = getAudioPath('workbook', lesson.id, trackId);
+        const idx = allTracks.length;
+        allTracks.push({ src, label: `WB ${trackId}`, lesson: lesson.id, lessonTitle: lesson.title, trackNum: t });
+
+        const item = document.createElement('div');
+        item.className = 'audio-track-item';
+        item.dataset.trackIdx = idx;
+        item.innerHTML = `<span class="track-num">${trackId}</span><span>Workbook ${trackId}</span>`;
+        item.onclick = () => playTrack(idx);
+        trackList.appendChild(item);
+      }
+      group.appendChild(header);
+      group.appendChild(trackList);
+      list.appendChild(group);
+    });
+  }
+}
+
+// ── Audio Dropdown logic ──
+function updateAudioDropdown() {
+  const sel = document.getElementById('pdf-audio-select');
+  if (!sel) return;
+  sel.innerHTML = '<option value="">— Audio —</option>';
+  
+  const tracks = [];
+  if (currentBook === 'textbook') {
+    manifest.lessons.forEach(l => {
+      for (let t = 1; t <= l.tracks; t++) {
+        const tid = String(l.id).padStart(2,'0') + '-' + String(t).padStart(2,'0');
+        tracks.push({ id: tid, label: `L${l.id} Trk ${t}`, src: getAudioPath('textbook', l.id, tid) });
+      }
+    });
+  } else {
+    manifest.lessons.forEach(l => {
+      const count = manifest.workbookTracks[l.id] || 5;
+      for (let t = 1; t <= count; t++) {
+        const tid = String(l.id).padStart(2,'0') + '-' + t;
+        tracks.push({ id: tid, label: `L${l.id} WB ${t}`, src: getAudioPath('workbook', l.id, tid) });
+      }
+    });
+  }
+
+  tracks.forEach(t => {
+    const o = document.createElement('option');
+    o.value = t.src;
+    o.textContent = t.label;
+    sel.appendChild(o);
+  });
+}
+
+function playAudioFromDropdown(src) {
+  if (!src) return;
+  const ap = document.getElementById('audio-player');
+  ap.src = src;
+  ap.play().catch(() => showToast('Audio file not found'));
+  
+  // Find track in allTracks to update player UI
+  const idx = allTracks.findIndex(t => t.src === src);
+  if (idx !== -1) {
+    currentTrackIndex = idx;
+    const track = allTracks[idx];
+    document.getElementById('anp-lesson').textContent = `Lesson ${track.lesson} · ${track.lessonTitle}`;
+    document.getElementById('anp-track').textContent = track.label;
+  } else {
+    document.getElementById('anp-lesson').textContent = 'Playing from PDF';
+    document.getElementById('anp-track').textContent = src.split('/').pop();
+  }
+  document.getElementById('play-btn').textContent = '⏸';
+}
+
+function setAudioSource(src) {
+  audioSource = src;
+  document.getElementById('asrc-textbook').classList.toggle('active', src === 'textbook');
+  document.getElementById('asrc-workbook').classList.toggle('active', src === 'workbook');
+  const audio = document.getElementById('audio-player');
+  audio.pause();
+  document.getElementById('play-btn').textContent = '▶';
+  currentTrackIndex = -1;
+  document.getElementById('anp-lesson').textContent = 'Select a track';
+  document.getElementById('anp-track').textContent = '—';
+  buildAudioList();
+}
+
+const audioPlayer = () => document.getElementById('audio-player');
+
+function playTrack(idx) {
+  currentTrackIndex = idx;
+  const track = allTracks[idx];
+  const ap = audioPlayer();
+  ap.src = track.src;
+  ap.play().catch(() => showToast('Audio file not found — check your files folder'));
+  document.getElementById('anp-lesson').textContent = `Lesson ${track.lesson} · ${track.lessonTitle}`;
+  document.getElementById('anp-track').textContent = track.label;
+  document.getElementById('play-btn').textContent = '⏸';
+  document.querySelectorAll('.audio-track-item').forEach(el => {
+    el.classList.toggle('playing', parseInt(el.dataset.trackIdx) === idx);
+  });
+}
+function audioPlayPause() {
+  const ap = audioPlayer();
+  if (currentTrackIndex === -1 && allTracks.length > 0) { playTrack(0); return; }
+  if (ap.paused) { ap.play(); document.getElementById('play-btn').textContent = '⏸'; }
+  else { ap.pause(); document.getElementById('play-btn').textContent = '▶'; }
+}
+function audioPrev() { if (currentTrackIndex > 0) playTrack(currentTrackIndex - 1); }
+function audioNext() { if (currentTrackIndex < allTracks.length - 1) playTrack(currentTrackIndex + 1); }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const ap = document.getElementById('audio-player');
+  ap.addEventListener('timeupdate', () => {
+    if (!ap.duration) return;
+    const pct = (ap.currentTime / ap.duration) * 100;
+    document.getElementById('audio-progress').value = pct;
+    document.getElementById('audio-cur').textContent = fmtTime(ap.currentTime);
+    updateWaveform(pct);
+  });
+  ap.addEventListener('durationchange', () => {
+    document.getElementById('audio-dur').textContent = fmtTime(ap.duration);
+  });
+  ap.addEventListener('ended', () => {
+    document.getElementById('play-btn').textContent = '▶';
+    if (currentTrackIndex < allTracks.length - 1) setTimeout(() => audioNext(), 600);
+  });
+  document.getElementById('audio-progress').addEventListener('input', e => {
+    if (ap.duration) ap.currentTime = (e.target.value / 100) * ap.duration;
+  });
+});
+
+function fmtTime(s) {
+  const m = Math.floor(s / 60);
+  return `${m}:${String(Math.floor(s % 60)).padStart(2,'0')}`;
+}
+
+function buildWaveformBars() {
+  const wrap = document.getElementById('waveform-bars');
+  wrap.innerHTML = '';
+  const N = 40;
+  for (let i = 0; i < N; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'waveform-bar';
+    const h = 20 + Math.sin(i * 0.6) * 15 + Math.random() * 20;
+    bar.style.height = Math.round(h) + '%';
+    wrap.appendChild(bar);
+  }
+}
+function updateWaveform(pct) {
+  const bars = document.querySelectorAll('.waveform-bar');
+  const played = Math.round((pct / 100) * bars.length);
+  bars.forEach((b, i) => b.classList.toggle('played', i < played));
+}
+
+// ──────────────────────────────────────────────
+// VIDEOS
+// ──────────────────────────────────────────────
+function setVideoType(type) {
+  videoType = type;
+  document.querySelectorAll('.video-type-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase().includes(type.slice(0,3))));
+  buildVideoGrid();
+}
+function buildVideoGrid() {
+  const grid = document.getElementById('video-grid');
+  grid.innerHTML = '';
+  if (videoType === 'dialogue') {
+    manifest.lessons.forEach(lesson => {
+      const sec = document.createElement('div');
+      sec.className = 'lesson-section';
+      sec.dataset.vsec = lesson.id;
+      sec.innerHTML = `<div class="lesson-section-title">Lesson ${lesson.id} · ${lesson.title}</div>`;
+      const cards = document.createElement('div');
+      cards.className = 'video-cards';
+      [1, 2].forEach(n => {
+        const card = document.createElement('div');
+        card.className = 'video-card';
+        const key = `${lesson.id}.${n}`;
+        const driveId = GOOGLE_DRIVE_VIDEOS.dialogues[key];
+        card.innerHTML = `<div class="video-thumb">🎬</div><div class="video-card-label">Dialogue ${lesson.id}.${n}</div>`;
+        card.onclick = () => openVideo(driveId ? `https://drive.google.com/file/d/${driveId}/preview` : `videos/Dialogue ${lesson.id}.${n}.mp4`, `Dialogue ${lesson.id}.${n}`);
+        cards.appendChild(card);
+      });
+      sec.appendChild(cards);
+      grid.appendChild(sec);
+    });
+  } else {
+    manifest.lessons.forEach(lesson => {
+      const sec = document.createElement('div');
+      sec.className = 'lesson-section';
+      sec.dataset.vsec = lesson.id;
+      sec.innerHTML = `<div class="lesson-section-title">Lesson ${lesson.id} · ${lesson.title}</div>`;
+      const cards = document.createElement('div');
+      cards.className = 'video-cards';
+      const card = document.createElement('div');
+      card.className = 'video-card';
+      const driveId = GOOGLE_DRIVE_VIDEOS.lessons[lesson.id];
+      card.innerHTML = `<div class="video-thumb">🎓</div><div class="video-card-label">${lesson.title}</div>`;
+      card.onclick = () => openVideo(driveId ? `https://drive.google.com/file/d/${driveId}/preview` : `videos/${lesson.id}-Lesson.mp4`, `Lesson ${lesson.id}`);
+      cards.appendChild(card);
+      sec.appendChild(cards);
+      grid.appendChild(sec);
+    });
+  }
+}
+
+function openVideo(src, title) {
+  const modal = document.getElementById('video-modal');
+  const player = document.getElementById('video-player');
+  const titleEl = document.getElementById('video-modal-title');
+  const inner = document.getElementById('video-modal-inner');
+  
+  // Clear previous player/iframe
+  const oldIframe = inner.querySelector('iframe');
+  if (oldIframe) oldIframe.remove();
+  player.style.display = 'block';
+  player.pause();
+  player.src = '';
+
+  if (src.includes('drive.google.com')) {
+    player.style.display = 'none';
+    const iframe = document.createElement('iframe');
+    iframe.src = src;
+    iframe.width = "800";
+    iframe.height = "450";
+    iframe.style.border = "none";
+    iframe.style.maxWidth = "80vw";
+    iframe.style.maxHeight = "76vh";
+    inner.appendChild(iframe);
+  } else {
+    player.src = src;
+    player.play().catch(() => {});
+  }
+  
+  titleEl.textContent = title;
+  modal.classList.add('open');
+}
+function closeVideo(e) {
+  if (e.target === document.getElementById('video-modal')) closeVideoForce();
+}
+function closeVideoForce() {
+  const modal = document.getElementById('video-modal');
+  const player = document.getElementById('video-player');
+  const inner = document.getElementById('video-modal-inner');
+  const oldIframe = inner.querySelector('iframe');
+  if (oldIframe) oldIframe.remove();
+  
+  modal.classList.remove('open');
+  player.pause();
+  player.src = '';
+}
+
+// ──────────────────────────────────────────────
+// TESTS
+// ──────────────────────────────────────────────
+function buildTestsList() {
+  const list = document.getElementById('tests-list');
+  manifest.tests.forEach(test => {
+    const card = document.createElement('div');
+    card.className = 'test-card';
+    card.innerHTML = `
+      <div class="test-card-label">
+        <div class="tc-title">${test.label}</div>
+        <div class="tc-sub">Blank sheet + answer key</div>
+      </div>
+      <div class="test-btns">
+        <a class="test-pdf-btn blank" href="tests/${test.id}-blank.pdf" target="_blank">📄 Blank</a>
+        <a class="test-pdf-btn ans" href="tests/${test.id}-answers.pdf" target="_blank">✅ Answers</a>
+      </div>
+    `;
+    list.appendChild(card);
+  });
+}
+
+// ──────────────────────────────────────────────
+// WHITEBOARD
+// ──────────────────────────────────────────────
+function initWhiteboard() {
+  const canvas = document.getElementById('wb-canvas');
+  wbCtx = canvas.getContext('2d');
+  resizeWbCanvas();
+  window.addEventListener('resize', resizeWbCanvas);
+
+  // Pointer events (works for touch, mouse, Apple Pencil)
+  canvas.addEventListener('pointerdown', wbDown);
+  canvas.addEventListener('pointermove', wbMove);
+  canvas.addEventListener('pointerup', wbUp);
+  canvas.addEventListener('pointercancel', wbUp);
+  canvas.addEventListener('contextmenu', e => e.preventDefault());
+}
+
+function resizeWbCanvas() {
+  const canvas = document.getElementById('wb-canvas');
+  const wrap = document.getElementById('wb-canvas-wrap');
+  if (!wrap) return;
+  const w = wrap.offsetWidth;
+  const h = wrap.offsetHeight;
+  // Save strokes and redraw at new size
+  const old = wbStrokes.slice();
+  canvas.width = w;
+  canvas.height = h;
+  wbCtx.fillStyle = '#fff';
+  wbCtx.fillRect(0,0,w,h);
+  wbStrokes = old;
+  redrawWhiteboard();
+}
+
+function wbDown(e) {
+  e.preventDefault();
+  wbDrawing = true;
+  canvas_setStyle();
+  const pt = getWbPoint(e);
+  wbCurrentStroke = {tool: wbTool, color: wbColor, size: wbSize, points: [pt]};
+  wbCtx.beginPath();
+  wbCtx.moveTo(pt.x, pt.y);
+}
+function wbMove(e) {
+  if (!wbDrawing) return;
+  e.preventDefault();
+  const pt = getWbPoint(e);
+  if (wbCurrentStroke) wbCurrentStroke.points.push(pt);
+  canvas_setStyle();
+  wbCtx.beginPath();
+  const prev = wbCurrentStroke.points[wbCurrentStroke.points.length - 2] || pt;
+  wbCtx.moveTo(prev.x, prev.y);
+  wbCtx.lineTo(pt.x, pt.y);
+  wbCtx.stroke();
+  // Pressure simulation for Pencil
+  if (e.pressure && e.pressure !== 0.5) {
+    wbCtx.lineWidth = wbSize * (0.5 + e.pressure);
+  }
+}
+function wbUp(e) {
+  if (!wbDrawing) return;
+  wbDrawing = false;
+  if (wbCurrentStroke && wbCurrentStroke.points.length > 0) {
+    wbStrokes.push(wbCurrentStroke);
+    wbCurrentStroke = null;
+  }
+}
+function canvas_setStyle() {
+  if (wbTool === 'eraser') {
+    wbCtx.globalCompositeOperation = 'destination-out';
+    wbCtx.strokeStyle = 'rgba(0,0,0,1)';
+    wbCtx.lineWidth = wbSize * 4;
+  } else if (wbTool === 'highlight') {
+    wbCtx.globalCompositeOperation = 'source-over';
+    wbCtx.strokeStyle = wbColor + '55';
+    wbCtx.lineWidth = wbSize * 6;
+  } else {
+    wbCtx.globalCompositeOperation = 'source-over';
+    wbCtx.strokeStyle = wbColor;
+    wbCtx.lineWidth = wbSize;
+  }
+  wbCtx.lineCap = 'round';
+  wbCtx.lineJoin = 'round';
+}
+function getWbPoint(e) {
+  const canvas = document.getElementById('wb-canvas');
+  const r = canvas.getBoundingClientRect();
+  return { x: e.clientX - r.left, y: e.clientY - r.top };
+}
+function redrawWhiteboard() {
+  const canvas = document.getElementById('wb-canvas');
+  wbCtx.fillStyle = '#fff';
+  wbCtx.fillRect(0,0,canvas.width,canvas.height);
+  wbStrokes.forEach(stroke => {
+    if (stroke.points.length < 1) return;
+    if (stroke.tool === 'eraser') {
+      wbCtx.globalCompositeOperation = 'destination-out';
+      wbCtx.strokeStyle = 'rgba(0,0,0,1)';
+      wbCtx.lineWidth = stroke.size * 4;
+    } else if (stroke.tool === 'highlight') {
+      wbCtx.globalCompositeOperation = 'source-over';
+      wbCtx.strokeStyle = stroke.color + '55';
+      wbCtx.lineWidth = stroke.size * 6;
+    } else {
+      wbCtx.globalCompositeOperation = 'source-over';
+      wbCtx.strokeStyle = stroke.color;
+      wbCtx.lineWidth = stroke.size;
+    }
+    wbCtx.lineCap = 'round'; wbCtx.lineJoin = 'round';
+    wbCtx.beginPath();
+    wbCtx.moveTo(stroke.points[0].x, stroke.points[0].y);
+    stroke.points.slice(1).forEach(p => wbCtx.lineTo(p.x, p.y));
+    wbCtx.stroke();
+  });
+  wbCtx.globalCompositeOperation = 'source-over';
+}
+function setWbTool(t) {
+  wbTool = t;
+  ['pen','hi','eraser'].forEach(n => {
+    const btn = document.getElementById(`wb-${n}-btn`);
+    if (btn) btn.classList.toggle('active', (n === 'pen' && t === 'pen') || (n === 'hi' && t === 'highlight') || (n === 'eraser' && t === 'eraser'));
+  });
+}
+function setWbColor(c) {
+  wbColor = c;
+  document.querySelectorAll('.color-swatch').forEach(s => s.classList.toggle('active', s.dataset.color === c));
+  if (wbTool !== 'eraser') setWbTool('pen');
+}
+function setWbSize(v) { wbSize = parseInt(v); }
+function wbUndo() {
+  if (wbStrokes.length === 0) return;
+  wbStrokes.pop();
+  redrawWhiteboard();
+}
+function wbClear() {
+  if (!confirm('Clear the whiteboard?')) return;
+  wbStrokes = [];
+  redrawWhiteboard();
+}
+function wbSave() {
+  const canvas = document.getElementById('wb-canvas');
+  const a = document.createElement('a');
+  a.download = 'whiteboard.png';
+  a.href = canvas.toDataURL('image/png');
+  a.click();
+  showToast('Saved as whiteboard.png');
+}
+
+// ──────────────────────────────────────────────
+// UTILITY
+// ──────────────────────────────────────────────
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// Boot
+init();
+</script>
+</body>
+</html>
