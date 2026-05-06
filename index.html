@@ -378,8 +378,21 @@ async function loadPDF(url) {
       pageWrapper.innerHTML = `<span style="color:#ccc; font-size:14px; position:relative; z-index:1;">Page ${i}</span>`;
       viewer.appendChild(pageWrapper);
     }
+    
+    // Add "Next Part" button if this is Part A
+    if (currentLessonId.endsWith('-A')) {
+      const nextBtnWrap = document.createElement('div');
+      nextBtnWrap.style.padding = '40px 0 80px';
+      const nextBtn = document.createElement('button');
+      const nextId = currentLessonId.replace('-A', '-B');
+      nextBtn.textContent = `➡️ Load Part 2 (L${currentLessonId.split('-')[0]}-2)`;
+      nextBtn.style.cssText = 'background:var(--red); color:#fff; border:none; padding:12px 24px; border-radius:12px; font-weight:600; cursor:pointer; font-family:var(--sans); box-shadow:var(--shadow);';
+      nextBtn.onclick = () => loadSplitPDF(nextId);
+      nextBtnWrap.appendChild(nextBtn);
+      viewer.appendChild(nextBtnWrap);
+    }
+
     setupPageObserver();
-    // Pre-render first 4 pages
     for(let i=1; i<=Math.min(4, pdfDoc.numPages); i++) addToRenderQueue(i);
   } catch (e) { 
     console.error(e);
@@ -392,7 +405,7 @@ function setupPageObserver() {
   pageObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const num = parseInt(entry.target.dataset.pageNumber);
-      if (entry.isIntersecting) {
+      if (num && entry.isIntersecting) {
         document.getElementById('pdf-page-info').textContent = `Page ${num} / ${pdfDoc.numPages}`;
         if (pageImageCache[num]) showCachedImage(num); else addToRenderQueue(num);
       }
@@ -545,24 +558,27 @@ function togglePdfAudio() {
   if (ap.paused) { if (!ap.src) return showToast('Select track'); ap.play().then(() => btn.textContent = '⏸'); }
   else { ap.pause(); btn.textContent = '▶'; }
 }
-function playAudioFromDropdown(src) { if (!src) return; const ap = document.getElementById('audio-player'); ap.src = src; ap.play().then(() => document.getElementById('pdf-play-pause-btn').textContent = '⏸'); }
+function playAudioFromDropdown(src) { 
+  if (!src) return; 
+  const ap = document.getElementById('audio-player'); 
+  ap.src = src; 
+  ap.currentTime = 0; // Reset progress
+  ap.play().then(() => document.getElementById('pdf-play-pause-btn').textContent = '⏸'); 
+}
 function updateAudioDropdown() {
   const sel = document.getElementById('pdf-audio-select'); if (!sel) return;
   sel.innerHTML = '<option value="">— Audio —</option>';
   
-  // Extract base lesson number from currentLessonId (handles '01-A' -> 1)
-  const baseLessonNum = parseInt(currentLessonId.split('-')[0]);
-  const lesson = manifest.lessons.find(l => l.id === baseLessonNum);
-  if (!lesson) return;
-
-  const count = currentBook === 'textbook' ? lesson.tracks : (manifest.workbookTracks[lesson.id] || 5);
-  for (let t = 1; t <= count; t++) {
-    const tid = String(lesson.id).padStart(2,'0') + '-' + (currentBook === 'textbook' ? String(t).padStart(2,'0') : t);
-    const o = document.createElement('option');
-    o.value = getAudioPath(currentBook, lesson.id, tid);
-    o.textContent = `${currentBook === 'textbook' ? 'Trk' : 'WB'} ${t}`;
-    sel.appendChild(o);
-  }
+  manifest.lessons.forEach(l => {
+    const count = currentBook === 'textbook' ? l.tracks : (manifest.workbookTracks[l.id] || 5);
+    for (let t = 1; t <= count; t++) {
+      const tid = String(l.id).padStart(2,'0') + '-' + (currentBook === 'textbook' ? String(t).padStart(2,'0') : t);
+      const o = document.createElement('option');
+      o.value = getAudioPath(currentBook, l.id, tid);
+      o.textContent = tid; // Simplified "01-01" format as requested
+      sel.appendChild(o);
+    }
+  });
 }
 
 // ─── WHITEBOARD, WAVEFORM, ETC ───────────────────────────────
@@ -606,7 +622,15 @@ function buildAudioList() {
   });
 }
 function setAudioSource(src) { audioSource = src; document.getElementById('asrc-textbook').classList.toggle('active', src === 'textbook'); document.getElementById('asrc-workbook').classList.toggle('active', src === 'workbook'); buildAudioList(); }
-function playTrack(idx) { currentTrackIndex = idx; const track = allTracks[idx], ap = document.getElementById('audio-player'); ap.src = track.src; ap.play().then(() => document.getElementById('play-btn').textContent = '⏸'); document.getElementById('anp-lesson').textContent = `Lesson ${track.lesson}`; document.getElementById('anp-track').textContent = track.label; }
+function playTrack(idx) { 
+  currentTrackIndex = idx; 
+  const track = allTracks[idx], ap = document.getElementById('audio-player'); 
+  ap.src = track.src; 
+  ap.currentTime = 0; // Reset progress
+  ap.play().then(() => document.getElementById('play-btn').textContent = '⏸'); 
+  document.getElementById('anp-lesson').textContent = `Lesson ${track.lesson}`; 
+  document.getElementById('anp-track').textContent = track.label; 
+}
 function audioPlayPause() { const ap = document.getElementById('audio-player'); if (ap.paused) { if (currentTrackIndex === -1 && allTracks.length > 0) playTrack(0); else ap.play().then(() => document.getElementById('play-btn').textContent = '⏸'); } else { ap.pause(); document.getElementById('play-btn').textContent = '▶'; } }
 function audioPrev() { if (currentTrackIndex > 0) playTrack(currentTrackIndex - 1); }
 function audioNext() { if (currentTrackIndex < allTracks.length - 1) playTrack(currentTrackIndex + 1); }
@@ -632,7 +656,8 @@ document.addEventListener('DOMContentLoaded', () => {
   ap.addEventListener('ended', () => {
     document.getElementById('play-btn').textContent = '▶';
     document.getElementById('pdf-play-pause-btn').textContent = '▶';
-    audioNext();
+    ap.currentTime = 0; // Reset progress on end
+    // Stopped auto-play next
   });
   
   const handleSeek = e => { if (ap.duration) ap.currentTime = (e.target.value / 100) * ap.duration; };
