@@ -676,12 +676,14 @@ let annotDrawing = false;
 let annotLastX = 0, annotLastY = 0;
 let activeDrawingPage = null;
 let renderedPages = new Set();
+let highResPages = new Set();
 let pageObserver = null;
 
 let renderQueue = [];
 let isRendering = false;
-let pageImageCache = {}; // Stores Blob URLs of rendered pages
-const RENDER_DPI = Math.min(window.devicePixelRatio, 1.5); 
+let pageImageCache = {}; 
+const RENDER_DPI_LOW = 1.0;
+const RENDER_DPI_HIGH = Math.max(window.devicePixelRatio, 2.2);
 
 // ──────────────────────────────────────────────
 // INITIALIZATION
@@ -721,33 +723,45 @@ function switchTab(name) {
 }
 
 function buildLessonSelect() {
-  const sel = document.getElementById('lesson-select');
-  sel.innerHTML = '<option value="">— Jump to lesson —</option>';
+  const topSel = document.getElementById('lesson-select');
+  const panelSel = document.getElementById('pdf-lesson-select');
+  
+  const options = ['<option value="">— Jump to lesson —</option>'];
   manifest.lessons.forEach(l => {
     const paddedId = String(l.id).padStart(2, '0');
-    const o1 = document.createElement('option');
-    o1.value = paddedId + '-A'; o1.textContent = `L${paddedId}-1: ${l.title}`;
-    sel.appendChild(o1);
-    const o2 = document.createElement('option');
-    o2.value = paddedId + '-B'; o2.textContent = `L${paddedId}-2: ${l.title}`;
-    sel.appendChild(o2);
+    if (currentBook === 'textbook') {
+      options.push(`<option value="${paddedId}-A">L${paddedId}-1: ${l.title}</option>`);
+      options.push(`<option value="${paddedId}-B">L${paddedId}-2: ${l.title}</option>`);
+    } else {
+      options.push(`<option value="${paddedId}">L${paddedId}: ${l.title}</option>`);
+    }
   });
+  
+  const html = options.join('');
+  if (topSel) topSel.innerHTML = html;
+  if (panelSel) panelSel.innerHTML = html;
 }
 
 function jumpToLesson(id) {
   if (!id) return;
   const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab;
   if (activeTab === 'audio') {
-    const header = document.querySelector(`[data-lesson="${id.split('-')[0]}"]`);
+    const lessonId = id.includes('-') ? id.split('-')[0] : id;
+    const header = document.querySelector(`[data-lesson="${lessonId}"]`);
     if (header) { if (!header.classList.contains('open')) header.click(); header.scrollIntoView({behavior:'smooth', block:'start'}); }
   }
-  document.getElementById('lesson-select').value = '';
   loadSplitPDF(id);
 }
 
 function switchBook(book) {
+  if (currentBook === book) return;
   currentBook = book;
   document.querySelectorAll('.book-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase().includes(book)));
+  
+  // Instantly rebuild dropdowns for the new book
+  buildLessonSelect();
+  
+  // Load the current lesson in the new book format
   loadSplitPDF(currentLessonId);
   updateAudioDropdown();
 }
@@ -757,9 +771,10 @@ function changeZoom(delta) {
   if (pdfScale < 0.5) pdfScale = 0.5;
   if (pdfScale > 3.0) pdfScale = 3.0;
   if (pdfDoc) {
-    // Clear image cache on zoom change as they are resolution-dependent
     Object.values(pageImageCache).forEach(url => URL.revokeObjectURL(url));
     pageImageCache = {};
+    renderedPages.clear();
+    highResPages.clear();
     loadPDF(lastLoadedUrl);
   }
 }
@@ -767,7 +782,7 @@ function changeZoom(delta) {
 function toggleFocusMode() { document.body.classList.toggle('focus-mode'); }
 
 // ──────────────────────────────────────────────
-// PDF VIEWER (Stable Image Rendering)
+// PDF VIEWER (Stable Image Rendering with HD Toggle)
 // ──────────────────────────────────────────────
 let lastLoadedUrl = '';
 function loadSplitPDF(lessonIdWithPart) {
@@ -786,9 +801,10 @@ function loadSplitPDF(lessonIdWithPart) {
   const prefix = currentBook === 'textbook' ? 'Textbook_Lesson' : 'Workbook_Lesson';
   let url = currentBook === 'textbook' ? `${folder}/${prefix}${paddedId}_${part}.pdf` : `${folder}/${prefix}${paddedId}.pdf`;
   
-  // Clear image cache when switching lessons
   Object.values(pageImageCache).forEach(url => URL.revokeObjectURL(url));
   pageImageCache = {};
+  renderedPages.clear();
+  highResPages.clear();
   
   loadPDF(url);
 }
@@ -797,7 +813,6 @@ async function loadPDF(url) {
   lastLoadedUrl = url;
   const viewer = document.getElementById('pdf-viewer');
   viewer.innerHTML = '<div style="color:var(--ink3); padding: 40px;">Loading...</div>';
-  renderedPages.clear();
   renderQueue = [];
   if (pageObserver) pageObserver.disconnect();
 
@@ -847,7 +862,6 @@ function setupPageObserver() {
         else addToRenderQueue(pageNum);
       } else {
         removeFromRenderQueue(pageNum);
-        // We keep the image but might want to hide it to save RAM if needed
       }
     });
   }, { root: viewer, threshold: 0, rootMargin: '600px' });
@@ -865,31 +879,29 @@ async function processQueue() {
   if (isRendering || renderQueue.length === 0) return;
   isRendering = true;
   const pageNum = renderQueue.shift();
-  await renderToImage(pageNum);
+  await renderToImage(pageNum, RENDER_DPI_LOW);
   isRendering = false;
   setTimeout(processQueue, 0);
 }
 
-async function renderToImage(num) {
-  if (renderedPages.has(num)) return;
+async function renderToImage(num, dpi) {
   try {
     const page = await pdfDoc.getPage(num);
     const viewport = page.getViewport({ scale: pdfScale });
 
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d', { alpha: false });
-    canvas.height = viewport.height * RENDER_DPI;
-    canvas.width = viewport.width * RENDER_DPI;
-    ctx.scale(RENDER_DPI, RENDER_DPI);
+    canvas.height = viewport.height * dpi;
+    canvas.width = viewport.width * dpi;
+    ctx.scale(dpi, dpi);
 
     await page.render({ canvasContext: ctx, viewport: viewport }).promise;
     
-    // Convert to Blob for stability and performance
     canvas.toBlob((blob) => {
       const url = URL.createObjectURL(blob);
+      if (pageImageCache[num]) URL.revokeObjectURL(pageImageCache[num]);
       pageImageCache[num] = url;
       showCachedImage(num);
-      // Cleanup
       canvas.width = 0; canvas.height = 0;
     }, 'image/jpeg', 0.9);
     
@@ -899,34 +911,57 @@ async function renderToImage(num) {
   }
 }
 
+async function enhancePage(num) {
+  const pageWrapper = document.getElementById(`page-wrapper-${num}`);
+  if (!pageWrapper) return;
+  
+  // Show indicator
+  const btn = pageWrapper.querySelector('.hd-btn');
+  if (btn) { btn.textContent = '⌛...'; btn.disabled = true; }
+  
+  highResPages.add(num);
+  await renderToImage(num, RENDER_DPI_HIGH);
+}
+
 function showCachedImage(num) {
   const pageWrapper = document.getElementById(`page-wrapper-${num}`);
   if (!pageWrapper || !pageImageCache[num]) return;
 
-  // Don't overwrite if already showing
-  if (pageWrapper.querySelector('.pdf-img')) return;
-
+  const isHD = highResPages.has(num);
+  
+  // Update inner content
+  pageWrapper.innerHTML = '';
+  
   const img = new Image();
   img.className = 'pdf-img';
   img.src = pageImageCache[num];
   img.style.width = '100%';
   img.style.height = '100%';
   img.style.display = 'block';
+  pageWrapper.appendChild(img);
+
+  // HD Button
+  if (!isHD) {
+    const hdBtn = document.createElement('button');
+    hdBtn.className = 'hd-btn';
+    hdBtn.textContent = '✨ HD';
+    hdBtn.onclick = (e) => { e.stopPropagation(); enhancePage(num); };
+    hdBtn.style.cssText = 'position:absolute; top:12px; right:12px; background:rgba(0,0,0,0.6); color:#fff; border:none; padding:4px 10px; border-radius:12px; font-size:11px; font-weight:600; cursor:pointer; z-index:10; backdrop-filter:blur(4px);';
+    pageWrapper.appendChild(hdBtn);
+  }
 
   const annotCanvas = document.createElement('canvas');
   annotCanvas.className = 'annot-canvas';
-  annotCanvas.width = pageWrapper.offsetWidth * RENDER_DPI;
-  annotCanvas.height = pageWrapper.offsetHeight * RENDER_DPI;
+  annotCanvas.width = pageWrapper.offsetWidth * RENDER_DPI_LOW; // Low-res canvas for faster strokes
+  annotCanvas.height = pageWrapper.offsetHeight * RENDER_DPI_LOW;
   annotCanvas.style.width = '100%';
   annotCanvas.style.height = '100%';
   annotCanvas.style.position = 'absolute'; annotCanvas.style.top = '0'; annotCanvas.style.left = '0';
   annotCanvas.style.pointerEvents = annotating ? 'all' : 'none';
   annotCanvas.dataset.pageNumber = num;
   const annotCtx = annotCanvas.getContext('2d');
-  annotCtx.scale(RENDER_DPI, RENDER_DPI);
+  annotCtx.scale(RENDER_DPI_LOW, RENDER_DPI_LOW);
 
-  pageWrapper.innerHTML = ''; 
-  pageWrapper.appendChild(img);
   pageWrapper.appendChild(annotCanvas);
   drawPageAnnotations(num, annotCanvas);
 
@@ -938,7 +973,6 @@ function showCachedImage(num) {
 
 function unrenderPage(num) {
   // To save memory, we could clear the innerHTML but keep the cache
-  // But let's keep them for now for instant scrolling.
 }
 
 function openFullPDF() { if (lastLoadedUrl) window.open(lastLoadedUrl, '_blank'); }
