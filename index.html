@@ -682,8 +682,9 @@ let pageObserver = null;
 let renderQueue = [];
 let isRendering = false;
 let pageImageCache = {}; 
-const RENDER_DPI_LOW = 1.0;
-const RENDER_DPI_HIGH = Math.max(window.devicePixelRatio, 2.2);
+const RENDER_DPI_LOW = 0.6;
+const RENDER_DPI_HIGH = Math.max(window.devicePixelRatio, 2.0);
+const ANNOT_DPI = 2.0; 
 
 // ──────────────────────────────────────────────
 // INITIALIZATION
@@ -879,12 +880,12 @@ async function processQueue() {
   if (isRendering || renderQueue.length === 0) return;
   isRendering = true;
   const pageNum = renderQueue.shift();
-  await renderToImage(pageNum, RENDER_DPI_LOW);
+  await renderToImage(pageNum, RENDER_DPI_LOW, 0.4);
   isRendering = false;
   setTimeout(processQueue, 0);
 }
 
-async function renderToImage(num, dpi) {
+async function renderToImage(num, dpi, quality) {
   try {
     const page = await pdfDoc.getPage(num);
     const viewport = page.getViewport({ scale: pdfScale });
@@ -903,7 +904,7 @@ async function renderToImage(num, dpi) {
       pageImageCache[num] = url;
       showCachedImage(num);
       canvas.width = 0; canvas.height = 0;
-    }, 'image/jpeg', 0.9);
+    }, 'image/jpeg', quality);
     
     renderedPages.add(num);
   } catch (e) {
@@ -914,13 +915,10 @@ async function renderToImage(num, dpi) {
 async function enhancePage(num) {
   const pageWrapper = document.getElementById(`page-wrapper-${num}`);
   if (!pageWrapper) return;
-  
-  // Show indicator
   const btn = pageWrapper.querySelector('.hd-btn');
   if (btn) { btn.textContent = '⌛...'; btn.disabled = true; }
-  
   highResPages.add(num);
-  await renderToImage(num, RENDER_DPI_HIGH);
+  await renderToImage(num, RENDER_DPI_HIGH, 0.95);
 }
 
 function showCachedImage(num) {
@@ -928,8 +926,6 @@ function showCachedImage(num) {
   if (!pageWrapper || !pageImageCache[num]) return;
 
   const isHD = highResPages.has(num);
-  
-  // Update inner content
   pageWrapper.innerHTML = '';
   
   const img = new Image();
@@ -940,7 +936,6 @@ function showCachedImage(num) {
   img.style.display = 'block';
   pageWrapper.appendChild(img);
 
-  // HD Button
   if (!isHD) {
     const hdBtn = document.createElement('button');
     hdBtn.className = 'hd-btn';
@@ -952,15 +947,15 @@ function showCachedImage(num) {
 
   const annotCanvas = document.createElement('canvas');
   annotCanvas.className = 'annot-canvas';
-  annotCanvas.width = pageWrapper.offsetWidth * RENDER_DPI_LOW; // Low-res canvas for faster strokes
-  annotCanvas.height = pageWrapper.offsetHeight * RENDER_DPI_LOW;
+  annotCanvas.width = pageWrapper.offsetWidth * ANNOT_DPI; 
+  annotCanvas.height = pageWrapper.offsetHeight * ANNOT_DPI;
   annotCanvas.style.width = '100%';
   annotCanvas.style.height = '100%';
   annotCanvas.style.position = 'absolute'; annotCanvas.style.top = '0'; annotCanvas.style.left = '0';
   annotCanvas.style.pointerEvents = annotating ? 'all' : 'none';
   annotCanvas.dataset.pageNumber = num;
   const annotCtx = annotCanvas.getContext('2d');
-  annotCtx.scale(RENDER_DPI_LOW, RENDER_DPI_LOW);
+  annotCtx.scale(ANNOT_DPI, ANNOT_DPI);
 
   pageWrapper.appendChild(annotCanvas);
   drawPageAnnotations(num, annotCanvas);
