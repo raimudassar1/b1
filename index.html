@@ -680,6 +680,7 @@ let pageObserver = null;
 
 let renderQueue = [];
 let isRendering = false;
+let pageImageCache = {}; // Stores Blob URLs of rendered pages
 const RENDER_DPI = Math.min(window.devicePixelRatio, 1.5); 
 
 // ──────────────────────────────────────────────
@@ -688,9 +689,6 @@ const RENDER_DPI = Math.min(window.devicePixelRatio, 1.5);
 async function init() {
   if (typeof pdfjsLib !== 'undefined') {
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
-  } else {
-    console.error("PDF.js failed to load from CDN.");
-    showToast("Warning: PDF Library failed to load.");
   }
 
   try {
@@ -698,15 +696,9 @@ async function init() {
     if (!res.ok) throw new Error('Manifest not found');
     manifest = await res.json();
   } catch(e) {
-    console.error("Using fallback manifest:", e);
     manifest = {
-      lessons: Array.from({length:15}, (_,i) => ({
-        id: i+1,
-        title: `Lesson ${i+1}`,
-        tracks: [10,9,9,10,8,9,9,9,9,9,9,8,12,9,11][i]
-      })),
-      workbookTracks: {1:5,2:5,3:5,4:5,5:5,6:6,7:6,8:6,9:6,10:6,11:5,12:5,13:5,14:5,15:5},
-      tests: []
+      lessons: Array.from({length:15}, (_,i) => ({ id: i+1, title: `Lesson ${i+1}`, tracks: 10 })),
+      workbookTracks: {}, tests: []
     };
   }
   
@@ -734,12 +726,10 @@ function buildLessonSelect() {
   manifest.lessons.forEach(l => {
     const paddedId = String(l.id).padStart(2, '0');
     const o1 = document.createElement('option');
-    o1.value = paddedId + '-A';
-    o1.textContent = `L${paddedId}-1: ${l.title}`;
+    o1.value = paddedId + '-A'; o1.textContent = `L${paddedId}-1: ${l.title}`;
     sel.appendChild(o1);
     const o2 = document.createElement('option');
-    o2.value = paddedId + '-B';
-    o2.textContent = `L${paddedId}-2: ${l.title}`;
+    o2.value = paddedId + '-B'; o2.textContent = `L${paddedId}-2: ${l.title}`;
     sel.appendChild(o2);
   });
 }
@@ -749,10 +739,7 @@ function jumpToLesson(id) {
   const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab;
   if (activeTab === 'audio') {
     const header = document.querySelector(`[data-lesson="${id.split('-')[0]}"]`);
-    if (header) {
-      if (!header.classList.contains('open')) header.click();
-      header.scrollIntoView({behavior:'smooth', block:'start'});
-    }
+    if (header) { if (!header.classList.contains('open')) header.click(); header.scrollIntoView({behavior:'smooth', block:'start'}); }
   }
   document.getElementById('lesson-select').value = '';
   loadSplitPDF(id);
@@ -769,15 +756,18 @@ function changeZoom(delta) {
   pdfScale += delta;
   if (pdfScale < 0.5) pdfScale = 0.5;
   if (pdfScale > 3.0) pdfScale = 3.0;
-  if (pdfDoc) loadPDF(lastLoadedUrl);
+  if (pdfDoc) {
+    // Clear image cache on zoom change as they are resolution-dependent
+    Object.values(pageImageCache).forEach(url => URL.revokeObjectURL(url));
+    pageImageCache = {};
+    loadPDF(lastLoadedUrl);
+  }
 }
 
-function toggleFocusMode() {
-  document.body.classList.toggle('focus-mode');
-}
+function toggleFocusMode() { document.body.classList.toggle('focus-mode'); }
 
 // ──────────────────────────────────────────────
-// PDF VIEWER (Ultra Responsive Queue)
+// PDF VIEWER (Stable Image Rendering)
 // ──────────────────────────────────────────────
 let lastLoadedUrl = '';
 function loadSplitPDF(lessonIdWithPart) {
@@ -795,6 +785,11 @@ function loadSplitPDF(lessonIdWithPart) {
   const folder = currentBook === 'textbook' ? 'Textbook PDFs' : 'Workbook PDFs';
   const prefix = currentBook === 'textbook' ? 'Textbook_Lesson' : 'Workbook_Lesson';
   let url = currentBook === 'textbook' ? `${folder}/${prefix}${paddedId}_${part}.pdf` : `${folder}/${prefix}${paddedId}.pdf`;
+  
+  // Clear image cache when switching lessons
+  Object.values(pageImageCache).forEach(url => URL.revokeObjectURL(url));
+  pageImageCache = {};
+  
   loadPDF(url);
 }
 
@@ -805,8 +800,6 @@ async function loadPDF(url) {
   renderedPages.clear();
   renderQueue = [];
   if (pageObserver) pageObserver.disconnect();
-
-  if (Object.keys(cachedPdfDocs).length > 3) cachedPdfDocs = {};
 
   try {
     if (cachedPdfDocs[url]) pdfDoc = cachedPdfDocs[url];
@@ -828,14 +821,16 @@ async function loadPDF(url) {
       pageWrapper.style.height = viewport.height + 'px';
       pageWrapper.style.position = 'relative';
       pageWrapper.style.marginBottom = '24px';
-      pageWrapper.style.background = '#fff';
+      pageWrapper.style.background = '#f8f8f8';
       pageWrapper.style.boxShadow = '0 1px 3px rgba(0,0,0,0.1)';
-      pageWrapper.style.contain = 'size layout';
+      pageWrapper.style.display = 'flex';
+      pageWrapper.style.alignItems = 'center';
+      pageWrapper.style.justifyContent = 'center';
+      pageWrapper.innerHTML = `<span style="color:#ccc; font-size:14px;">Page ${i}</span>`;
       viewer.appendChild(pageWrapper);
     }
     setupPageObserver();
   } catch (e) {
-    console.error(e);
     viewer.innerHTML = `<div style="color:var(--red); padding: 40px;">Load Error</div>`;
   }
 }
@@ -848,13 +843,14 @@ function setupPageObserver() {
       const pageNum = parseInt(entry.target.dataset.pageNumber);
       if (entry.isIntersecting) {
         info.textContent = `Page ${pageNum} / ${pdfDoc.numPages}`;
-        addToRenderQueue(pageNum);
+        if (pageImageCache[pageNum]) showCachedImage(pageNum);
+        else addToRenderQueue(pageNum);
       } else {
         removeFromRenderQueue(pageNum);
-        unrenderPage(pageNum);
+        // We keep the image but might want to hide it to save RAM if needed
       }
     });
-  }, { root: viewer, threshold: 0, rootMargin: '400px' });
+  }, { root: viewer, threshold: 0, rootMargin: '600px' });
   document.querySelectorAll('.pdf-page-wrapper').forEach(p => pageObserver.observe(p));
 }
 
@@ -869,68 +865,83 @@ async function processQueue() {
   if (isRendering || renderQueue.length === 0) return;
   isRendering = true;
   const pageNum = renderQueue.shift();
-  await actualRender(pageNum);
+  await renderToImage(pageNum);
   isRendering = false;
   setTimeout(processQueue, 0);
 }
 
-async function actualRender(num) {
+async function renderToImage(num) {
   if (renderedPages.has(num)) return;
   try {
-    const pageWrapper = document.getElementById(`page-wrapper-${num}`);
-    if (!pageWrapper) return;
-    renderedPages.add(num);
     const page = await pdfDoc.getPage(num);
     const viewport = page.getViewport({ scale: pdfScale });
 
     const canvas = document.createElement('canvas');
-    canvas.className = 'pdf-page-canvas';
     const ctx = canvas.getContext('2d', { alpha: false });
     canvas.height = viewport.height * RENDER_DPI;
     canvas.width = viewport.width * RENDER_DPI;
-    canvas.style.width = viewport.width + 'px';
-    canvas.style.height = viewport.height + 'px';
     ctx.scale(RENDER_DPI, RENDER_DPI);
 
     await page.render({ canvasContext: ctx, viewport: viewport }).promise;
-    if (!renderedPages.has(num)) return;
-
-    const annotCanvas = document.createElement('canvas');
-    annotCanvas.className = 'annot-canvas';
-    annotCanvas.width = viewport.width * RENDER_DPI;
-    annotCanvas.height = viewport.height * RENDER_DPI;
-    annotCanvas.style.width = viewport.width + 'px';
-    annotCanvas.style.height = viewport.height + 'px';
-    annotCanvas.style.position = 'absolute'; annotCanvas.style.top = '0'; annotCanvas.style.left = '0';
-    annotCanvas.style.pointerEvents = annotating ? 'all' : 'none';
-    annotCanvas.dataset.pageNumber = num;
-    const annotCtx = annotCanvas.getContext('2d');
-    annotCtx.scale(RENDER_DPI, RENDER_DPI);
-
-    pageWrapper.innerHTML = ''; 
-    pageWrapper.appendChild(canvas);
-    pageWrapper.appendChild(annotCanvas);
-    drawPageAnnotations(num, annotCanvas);
-
-    annotCanvas.addEventListener('pointerdown', e => annotStart(e, num, annotCanvas));
-    annotCanvas.addEventListener('pointermove', e => annotMove(e, num, annotCanvas));
-    annotCanvas.addEventListener('pointerup', annotEnd);
-    annotCanvas.addEventListener('pointercancel', annotEnd);
+    
+    // Convert to Blob for stability and performance
+    canvas.toBlob((blob) => {
+      const url = URL.createObjectURL(blob);
+      pageImageCache[num] = url;
+      showCachedImage(num);
+      // Cleanup
+      canvas.width = 0; canvas.height = 0;
+    }, 'image/jpeg', 0.9);
+    
+    renderedPages.add(num);
   } catch (e) {
-    console.error(e);
     renderedPages.delete(num);
   }
 }
 
-function unrenderPage(num) {
-  renderedPages.delete(num);
+function showCachedImage(num) {
   const pageWrapper = document.getElementById(`page-wrapper-${num}`);
-  if (pageWrapper) pageWrapper.innerHTML = '';
+  if (!pageWrapper || !pageImageCache[num]) return;
+
+  // Don't overwrite if already showing
+  if (pageWrapper.querySelector('.pdf-img')) return;
+
+  const img = new Image();
+  img.className = 'pdf-img';
+  img.src = pageImageCache[num];
+  img.style.width = '100%';
+  img.style.height = '100%';
+  img.style.display = 'block';
+
+  const annotCanvas = document.createElement('canvas');
+  annotCanvas.className = 'annot-canvas';
+  annotCanvas.width = pageWrapper.offsetWidth * RENDER_DPI;
+  annotCanvas.height = pageWrapper.offsetHeight * RENDER_DPI;
+  annotCanvas.style.width = '100%';
+  annotCanvas.style.height = '100%';
+  annotCanvas.style.position = 'absolute'; annotCanvas.style.top = '0'; annotCanvas.style.left = '0';
+  annotCanvas.style.pointerEvents = annotating ? 'all' : 'none';
+  annotCanvas.dataset.pageNumber = num;
+  const annotCtx = annotCanvas.getContext('2d');
+  annotCtx.scale(RENDER_DPI, RENDER_DPI);
+
+  pageWrapper.innerHTML = ''; 
+  pageWrapper.appendChild(img);
+  pageWrapper.appendChild(annotCanvas);
+  drawPageAnnotations(num, annotCanvas);
+
+  annotCanvas.addEventListener('pointerdown', e => annotStart(e, num, annotCanvas));
+  annotCanvas.addEventListener('pointermove', e => annotMove(e, num, annotCanvas));
+  annotCanvas.addEventListener('pointerup', annotEnd);
+  annotCanvas.addEventListener('pointercancel', annotEnd);
 }
 
-function openFullPDF() {
-  if (lastLoadedUrl) window.open(lastLoadedUrl, '_blank');
+function unrenderPage(num) {
+  // To save memory, we could clear the innerHTML but keep the cache
+  // But let's keep them for now for instant scrolling.
 }
+
+function openFullPDF() { if (lastLoadedUrl) window.open(lastLoadedUrl, '_blank'); }
 
 function speakText(text) {
   if ('speechSynthesis' in window) {
