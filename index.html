@@ -607,15 +607,16 @@ function buildAudioList() {
   const list = document.getElementById('audio-lesson-list'); list.innerHTML = ''; allTracks = [];
   manifest.lessons.forEach(lesson => {
     const header = document.createElement('div'); header.className = 'audio-lesson-header';
-    header.innerHTML = `<span>L${String(lesson.id).padStart(2,'0')} · ${lesson.title}</span><span class="chevron">›</span>`;
+    const bookLabel = currentBook === 'textbook' ? 'Textbook' : 'Workbook';
+    header.innerHTML = `<span>L${String(lesson.id).padStart(2,'0')} · ${bookLabel} · ${lesson.title}</span><span class="chevron">›</span>`;
     const trackList = document.createElement('div'); trackList.className = 'audio-track-list';
     header.onclick = () => header.classList.toggle('open');
-    const count = audioSource === 'textbook' ? lesson.tracks : (manifest.workbookTracks[lesson.id] || 5);
+    const count = currentBook === 'textbook' ? lesson.tracks : (manifest.workbookTracks[lesson.id] || 5);
     for (let t = 1; t <= count; t++) {
-      const tid = String(lesson.id).padStart(2,'0') + '-' + (audioSource === 'textbook' ? String(t).padStart(2,'0') : t);
-      const src = getAudioPath(audioSource, lesson.id, tid); const idx = allTracks.length;
-      allTracks.push({ src, label: `Track ${tid}`, lesson: lesson.id, lessonTitle: lesson.title });
-      const item = document.createElement('div'); item.className = 'audio-track-item'; item.innerHTML = `<span class="track-num">${tid}</span><span>Track ${t}</span>`;
+      const trackId = String(lesson.id).padStart(2,'0') + '-' + (currentBook === 'textbook' ? String(t).padStart(2,'0') : t);
+      const src = getAudioPath(currentBook, lesson.id, trackId); const idx = allTracks.length;
+      allTracks.push({ src, label: trackId, lesson: lesson.id, lessonTitle: lesson.title });
+      const item = document.createElement('div'); item.className = 'audio-track-item'; item.innerHTML = `<span class="track-num">${trackId}</span><span>Track ${t}</span>`;
       item.onclick = () => playTrack(idx); trackList.appendChild(item);
     }
     list.appendChild(header); list.appendChild(trackList);
