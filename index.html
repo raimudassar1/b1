@@ -188,9 +188,12 @@ body.focus-mode .tab-text { display: none; }
         <button onclick="changeZoom(-0.2)">➖</button>
         <button onclick="toggleFocusMode()">⛶ Focus</button>
         <div class="spacer"></div>
-        <div style="display: flex; align-items: center; gap: 4px; background: var(--bg3); padding: 2px 6px; border-radius: 8px;">
-          <button onclick="togglePdfAudio()" id="pdf-play-pause-btn" style="border:none; background:none; padding: 4px 8px;">▶</button>
-          <select id="pdf-audio-select" onchange="playAudioFromDropdown(this.value)" style="padding: 4px; border: none; background: transparent; font-family: var(--sans); font-size: 13px; max-width: 90px;"><option value="">— Audio —</option></select>
+        <div style="display: flex; align-items: center; gap: 4px; background: var(--bg3); padding: 2px 8px; border-radius: 8px; min-width: 220px;">
+          <button onclick="togglePdfAudio()" id="pdf-play-pause-btn" style="border:none; background:none; padding: 4px; cursor:pointer;">▶</button>
+          <input type="range" id="pdf-audio-progress" min="0" max="100" value="0" step="0.1" style="flex:1; height:4px; accent-color:var(--red); cursor:pointer;">
+          <select id="pdf-audio-select" onchange="playAudioFromDropdown(this.value)" style="padding: 4px; border: none; background: transparent; font-family: var(--sans); font-size: 12px; max-width: 80px; cursor:pointer;">
+            <option value="">— Audio —</option>
+          </select>
         </div>
         <span class="page-info" id="pdf-page-info">1 / --</span>
       </div>
@@ -347,6 +350,7 @@ function loadSplitPDF(lessonIdWithPart) {
   
   Object.values(pageImageCache).forEach(e => URL.revokeObjectURL(e.url));
   pageImageCache = {}; renderedPages.clear(); highResPages.clear();
+  updateAudioDropdown();
   loadPDF(url);
 }
 
@@ -543,14 +547,22 @@ function togglePdfAudio() {
 }
 function playAudioFromDropdown(src) { if (!src) return; const ap = document.getElementById('audio-player'); ap.src = src; ap.play().then(() => document.getElementById('pdf-play-pause-btn').textContent = '⏸'); }
 function updateAudioDropdown() {
-  const sel = document.getElementById('pdf-audio-select'); if (!sel) return; sel.innerHTML = '<option value="">— Audio —</option>';
-  manifest.lessons.forEach(l => {
-    const count = currentBook === 'textbook' ? l.tracks : (manifest.workbookTracks[l.id] || 5);
-    for (let t = 1; t <= count; t++) {
-      const tid = String(l.id).padStart(2,'0') + '-' + (currentBook === 'textbook' ? String(t).padStart(2,'0') : t);
-      const o = document.createElement('option'); o.value = getAudioPath(currentBook, l.id, tid); o.textContent = `L${l.id} ${currentBook === 'textbook' ? 'Trk' : 'WB'} ${t}`; sel.appendChild(o);
-    }
-  });
+  const sel = document.getElementById('pdf-audio-select'); if (!sel) return;
+  sel.innerHTML = '<option value="">— Audio —</option>';
+  
+  // Extract base lesson number from currentLessonId (handles '01-A' -> 1)
+  const baseLessonNum = parseInt(currentLessonId.split('-')[0]);
+  const lesson = manifest.lessons.find(l => l.id === baseLessonNum);
+  if (!lesson) return;
+
+  const count = currentBook === 'textbook' ? lesson.tracks : (manifest.workbookTracks[lesson.id] || 5);
+  for (let t = 1; t <= count; t++) {
+    const tid = String(lesson.id).padStart(2,'0') + '-' + (currentBook === 'textbook' ? String(t).padStart(2,'0') : t);
+    const o = document.createElement('option');
+    o.value = getAudioPath(currentBook, lesson.id, tid);
+    o.textContent = `${currentBook === 'textbook' ? 'Trk' : 'WB'} ${t}`;
+    sel.appendChild(o);
+  }
 }
 
 // ─── WHITEBOARD, WAVEFORM, ETC ───────────────────────────────
@@ -601,10 +613,31 @@ function audioNext() { if (currentTrackIndex < allTracks.length - 1) playTrack(c
 
 document.addEventListener('DOMContentLoaded', () => {
   const ap = document.getElementById('audio-player');
-  ap.addEventListener('timeupdate', () => { if (!ap.duration) return; const pct = (ap.currentTime / ap.duration) * 100; document.getElementById('audio-progress').value = pct; document.getElementById('audio-cur').textContent = fmtTime(ap.currentTime); updateWaveform(pct); });
-  ap.addEventListener('durationchange', () => document.getElementById('audio-dur').textContent = fmtTime(ap.duration));
-  ap.addEventListener('ended', () => { document.getElementById('play-btn').textContent = '▶'; audioNext(); });
-  document.getElementById('audio-progress').addEventListener('input', e => { if (ap.duration) ap.currentTime = (e.target.value / 100) * ap.duration; });
+  const progMain = document.getElementById('audio-progress');
+  const progToolbar = document.getElementById('pdf-audio-progress');
+  
+  ap.addEventListener('timeupdate', () => {
+    if (!ap.duration) return;
+    const pct = (ap.currentTime / ap.duration) * 100;
+    if (progMain) progMain.value = pct;
+    if (progToolbar) progToolbar.value = pct;
+    if (document.getElementById('audio-cur')) document.getElementById('audio-cur').textContent = fmtTime(ap.currentTime);
+    updateWaveform(pct);
+  });
+  
+  ap.addEventListener('durationchange', () => {
+    if (document.getElementById('audio-dur')) document.getElementById('audio-dur').textContent = fmtTime(ap.duration);
+  });
+  
+  ap.addEventListener('ended', () => {
+    document.getElementById('play-btn').textContent = '▶';
+    document.getElementById('pdf-play-pause-btn').textContent = '▶';
+    audioNext();
+  });
+  
+  const handleSeek = e => { if (ap.duration) ap.currentTime = (e.target.value / 100) * ap.duration; };
+  if (progMain) progMain.addEventListener('input', handleSeek);
+  if (progToolbar) progToolbar.addEventListener('input', handleSeek);
 });
 
 init();
