@@ -514,18 +514,8 @@ body.focus-mode .tab-icon { font-size: 24px; margin: 0; }
     <button class="tab-btn" data-tab="audio" onclick="switchTab('audio')">
       <span class="tab-icon">🎧</span> <span class="tab-text">Audio</span>
     </button>
-    <button class="tab-btn" data-tab="videos" onclick="switchTab('videos')">
-      <span class="tab-icon">🎬</span> <span class="tab-text">Videos</span>
-    </button>
-    <button class="tab-btn" data-tab="tests" onclick="switchTab('tests')">
-      <span class="tab-icon">📝</span> <span class="tab-text">Tests</span>
-    </button>
     <button class="tab-btn" data-tab="whiteboard" onclick="switchTab('whiteboard')">
       <span class="tab-icon">✏️</span> <span class="tab-text">Whiteboard</span>
-    </button>
-
-    <button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">
-      <span class="tab-icon">🧠</span> <span class="tab-text">Practice</span>
     </button>
   </div>
 
@@ -580,7 +570,7 @@ body.focus-mode .tab-icon { font-size: 24px; margin: 0; }
         <span class="page-info" id="pdf-page-info">1 / --</span>
       </div>
       <div id="pdf-frame-wrap">
-        <div id="pdf-viewer" style="width: 100%; height: 100%; overflow: auto; background: var(--bg3); display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px 0;"></div>
+        <div id="pdf-viewer" style="width: 100%; height: 100%; overflow: auto; background: var(--bg3); display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px 0; will-change: scroll-position; -webkit-overflow-scrolling: touch;"></div>
       </div>
     </div>
 
@@ -621,38 +611,6 @@ body.focus-mode .tab-icon { font-size: 24px; margin: 0; }
       </div>
     </div>
 
-    <!-- ══ VIDEOS PANEL ══ -->
-    <div id="panel-videos" class="panel">
-      <div style="padding: 40px; text-align: center;">
-        <h2 style="font-family: var(--serif); margin-bottom: 16px;">Video Dialogues & Lessons</h2>
-        <p style="color: var(--ink3); margin-bottom: 32px;">All videos are hosted on Google Drive for fast streaming and easy access.</p>
-        <a href="https://drive.google.com/drive/folders/19ZZveum9YgJNrdFMYiZ9-yq3XBur2qFI?usp=drive_link" target="_blank" style="display: inline-block; background: var(--red); color: #fff; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 18px; box-shadow: var(--shadow);">
-          🎬 Open Videos in Google Drive
-        </a>
-      </div>
-    </div>
-
-    <!-- ══ TESTS PANEL ══ -->
-    <div id="panel-tests" class="panel">
-      <div class="tests-grid-wrap">
-        <p class="tests-intro">Cumulative tests covering two lessons each. Open the blank version to print or write on screen, then check with the answer key.</p>
-        <div id="tests-list"></div>
-      </div>
-    </div>
-
-    
-    <!-- ══ PRACTICE PANEL ══ -->
-    <div id="panel-practice" class="panel">
-      <div class="practice-subnav">
-        <button class="p-sub-btn active" onclick="setPracticeMode('vocab')">Vocabulary</button>
-        <button class="p-sub-btn" onclick="setPracticeMode('dialogue')">Dialogues</button>
-        <button class="p-sub-btn" onclick="setPracticeMode('exercise')">Exercises</button>
-      </div>
-      <div class="practice-content" id="practice-content-area">
-        <!-- Dynamic Content -->
-      </div>
-    </div>
-
     <!-- ══ WHITEBOARD PANEL ══ -->
     <div id="panel-whiteboard" class="panel">
       <div class="wb-toolbar">
@@ -681,17 +639,6 @@ body.focus-mode .tab-icon { font-size: 24px; margin: 0; }
   </div><!-- /content -->
 </div><!-- /app -->
 
-<!-- VIDEO MODAL -->
-<div id="video-modal" onclick="closeVideo(event)">
-  <div id="video-modal-inner">
-    <div id="video-modal-head">
-      <span id="video-modal-title">Video</span>
-      <button id="video-modal-close" onclick="closeVideoForce()">✕</button>
-    </div>
-    <video id="video-player" controls playsinline></video>
-  </div>
-</div>
-
 <!-- TOAST -->
 <div id="toast"></div>
 
@@ -705,7 +652,6 @@ let currentLessonId = '01';
 let audioSource = 'textbook';
 let currentTrackIndex = -1;
 let allTracks = [];
-let videoType = 'dialogue';
 
 // Whiteboard State
 let wbTool = 'pen';
@@ -732,14 +678,8 @@ let activeDrawingPage = null;
 let renderedPages = new Set();
 let pageObserver = null;
 
-const GOOGLE_DRIVE_VIDEOS = {
-  dialogues: {}, 
-  lessons: {}    
-};
-
 // ──────────────────────────────────────────────
-// INITIALIZATION
-// ──────────────────────────────────────────────
+// INITIALIZATION// ──────────────────────────────────────────────
 async function init() {
   if (typeof pdfjsLib !== 'undefined') {
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
@@ -852,7 +792,14 @@ function toggleFocusMode() {
 // ──────────────────────────────────────────────
 // PDF VIEWER (High Performance Lazy Loading)
 // ──────────────────────────────────────────────
+// ──────────────────────────────────────────────
+// PDF VIEWER (Extreme Android Optimization)
+// ──────────────────────────────────────────────
 let lastLoadedUrl = '';
+let scrollTimeout = null;
+const RENDER_DPI_LOW = 1.0;
+const RENDER_DPI_HIGH = Math.min(window.devicePixelRatio, 2.0);
+
 function loadSplitPDF(lessonIdWithPart) {
   if (!lessonIdWithPart) return;
 
@@ -881,15 +828,21 @@ function loadSplitPDF(lessonIdWithPart) {
 
   loadPDF(url);
 }
+
 async function loadPDF(url) {
   lastLoadedUrl = url;
   const viewer = document.getElementById('pdf-viewer');
   viewer.innerHTML = '<div style="color:var(--ink3); padding: 40px;">Loading PDF...</div>';
   renderedPages.clear();
-  if (pageObserver) pageObserver.disconnect();
+  highResPages.clear();
   
+  if (pageObserver) {
+    pageObserver.disconnect();
+    pageObserver = null;
+  }
+
   if (typeof pdfjsLib === 'undefined') {
-    viewer.innerHTML = '<div style="color:var(--red); padding: 40px;">Error: PDF Viewer engine not loaded. Check internet connection.</div>';
+    viewer.innerHTML = '<div style="color:var(--red); padding: 40px;">PDF Library Error.</div>';
     return;
   }
 
@@ -919,13 +872,15 @@ async function loadPDF(url) {
       pageWrapper.style.marginBottom = '20px';
       pageWrapper.style.background = '#fff';
       pageWrapper.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+      pageWrapper.style.contain = 'layout size'; 
       viewer.appendChild(pageWrapper);
     }
     
     setupPageObserver();
+    setupScrollOptimization();
   } catch (e) {
     console.error("Error loading PDF:", e);
-    viewer.innerHTML = `<div style="color:var(--red); padding: 40px;">Failed to load PDF (${url}).</div>`;
+    viewer.innerHTML = `<div style="color:var(--red); padding: 40px;">Failed to load PDF.</div>`;
   }
 }
 
@@ -938,7 +893,7 @@ function setupPageObserver() {
       const pageNum = parseInt(entry.target.dataset.pageNumber);
       if (entry.isIntersecting) {
         info.textContent = `Page ${pageNum} / ${pdfDoc.numPages}`;
-        renderPage(pageNum);
+        renderPage(pageNum, false); 
       } else {
         unrenderPage(pageNum);
       }
@@ -946,34 +901,67 @@ function setupPageObserver() {
   }, {
     root: viewer,
     threshold: 0,
-    rootMargin: '600px'
+    rootMargin: '300px'
   });
   
   document.querySelectorAll('.pdf-page-wrapper').forEach(p => pageObserver.observe(p));
 }
 
-async function renderPage(num) {
-  if (renderedPages.has(num)) return;
+function setupScrollOptimization() {
+  const viewer = document.getElementById('pdf-viewer');
+  viewer.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(renderVisibleHighRes, 200);
+  }, { passive: true });
+}
+
+function renderVisibleHighRes() {
+  const viewer = document.getElementById('pdf-viewer');
+  const wrappers = document.querySelectorAll('.pdf-page-wrapper');
+  let mostVisible = null;
+  let maxVisibleHeight = 0;
+  const viewerRect = viewer.getBoundingClientRect();
+
+  wrappers.forEach(w => {
+    const rect = w.getBoundingClientRect();
+    const visibleHeight = Math.min(rect.bottom, viewerRect.bottom) - Math.max(rect.top, viewerRect.top);
+    if (visibleHeight > maxVisibleHeight) {
+      maxVisibleHeight = visibleHeight;
+      mostVisible = w;
+    }
+  });
+
+  if (mostVisible) {
+    const pageNum = parseInt(mostVisible.dataset.pageNumber);
+    renderPage(pageNum, true); 
+  }
+}
+
+async function renderPage(num, isHighRes) {
+  if (isHighRes && highResPages.has(num)) return;
+  if (!isHighRes && renderedPages.has(num)) return;
+
   renderedPages.add(num);
+  if (isHighRes) highResPages.add(num);
   
   try {
     const pageWrapper = document.getElementById(`page-wrapper-${num}`);
     if (!pageWrapper) return;
     
-    pageWrapper.innerHTML = '<div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:var(--ink3);">Loading...</div>';
+    if (!isHighRes && pageWrapper.innerHTML === '') {
+      pageWrapper.innerHTML = '<div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:var(--ink3); font-size:12px;">...</div>';
+    }
 
     const page = await pdfDoc.getPage(num);
     const viewport = page.getViewport({ scale: pdfScale });
 
     if (!renderedPages.has(num)) return; 
 
-    pageWrapper.innerHTML = ''; 
-
-    const ratio = window.devicePixelRatio || 1;
+    const ratio = isHighRes ? RENDER_DPI_HIGH : RENDER_DPI_LOW;
     
     const canvas = document.createElement('canvas');
-    canvas.className = 'pdf-page-canvas';
-    const ctx = canvas.getContext('2d');
+    canvas.className = isHighRes ? 'pdf-page-canvas high-res' : 'pdf-page-canvas';
+    const ctx = canvas.getContext('2d', { alpha: false });
     canvas.height = viewport.height * ratio;
     canvas.width = viewport.width * ratio;
     canvas.style.width = viewport.width + 'px';
@@ -983,8 +971,8 @@ async function renderPage(num) {
 
     const annotCanvas = document.createElement('canvas');
     annotCanvas.className = 'annot-canvas';
-    annotCanvas.width = viewport.width * ratio;
-    annotCanvas.height = viewport.height * ratio;
+    annotCanvas.width = viewport.width * RENDER_DPI_HIGH;
+    annotCanvas.height = viewport.height * RENDER_DPI_HIGH;
     annotCanvas.style.width = viewport.width + 'px';
     annotCanvas.style.height = viewport.height + 'px';
     annotCanvas.style.position = 'absolute';
@@ -994,8 +982,9 @@ async function renderPage(num) {
     annotCanvas.dataset.pageNumber = num;
     annotCanvas.style.touchAction = 'none'; 
     const annotCtx = annotCanvas.getContext('2d');
-    annotCtx.scale(ratio, ratio);
+    annotCtx.scale(RENDER_DPI_HIGH, RENDER_DPI_HIGH);
 
+    pageWrapper.innerHTML = ''; 
     pageWrapper.appendChild(canvas);
     pageWrapper.appendChild(annotCanvas);
 
@@ -1016,12 +1005,10 @@ async function renderPage(num) {
 }
 
 function unrenderPage(num) {
-  if (!renderedPages.has(num)) return;
   renderedPages.delete(num);
+  highResPages.delete(num);
   const pageWrapper = document.getElementById(`page-wrapper-${num}`);
-  if (pageWrapper) {
-    pageWrapper.innerHTML = '';
-  }
+  if (pageWrapper) pageWrapper.innerHTML = '';
 }
 
 function openFullPDF() {
@@ -1029,186 +1016,14 @@ function openFullPDF() {
   window.open(lastLoadedUrl, '_blank');
 }
 
-
-// ──────────────────────────────────────────────
-// PRACTICE TAB LOGIC
-// ──────────────────────────────────────────────
-let practiceData = null;
-let currentPracticeMode = 'vocab';
-let currentFcIndex = 0;
-let showChatPy = false;
-let showChatEn = false;
-
-async function loadPracticeData() {
-  try {
-    const res = await fetch('data/content.json');
-    if (res.ok) {
-      practiceData = await res.json();
-    }
-  } catch (e) {
-    console.log("No practice data available.");
-  }
-}
-
-function setPracticeMode(mode) {
-  currentPracticeMode = mode;
-  document.querySelectorAll('.p-sub-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase().includes(mode.substring(0,4))));
-  renderPracticeContent();
-}
-
-function renderPracticeContent() {
-  const area = document.getElementById('practice-content-area');
-  area.innerHTML = '';
-  
-  if (!practiceData || !practiceData[parseInt(currentLessonId)]) {
-    area.innerHTML = '<div style="color:var(--ink3); margin-top: 40px;">No practice content available for this lesson.</div>';
-    return;
-  }
-  
-  const data = practiceData[parseInt(currentLessonId)];
-  
-  if (currentPracticeMode === 'vocab') {
-    if (!data.vocabulary || data.vocabulary.length === 0) {
-      area.innerHTML = '<div style="color:var(--ink3); margin-top: 40px;">No vocabulary found for this lesson.</div>';
-      return;
-    }
-    
-    let html = `
-      <div style="width:100%; max-width:700px; background:var(--white); border-radius:var(--radius); border:1px solid var(--border); overflow:hidden; box-shadow:var(--shadow-sm);">
-        <div style="padding:16px; border-bottom:1px solid var(--border); background:var(--bg2); font-weight:600; display:flex; justify-content:space-between; align-items:center;">
-          <span>Lesson ${currentLessonId} Vocabulary List</span>
-          <span style="font-size:12px; color:var(--ink3); font-weight:normal;">Tap any row to listen 🔊</span>
-        </div>
-        <div style="overflow-x:auto;">
-          <table style="width:100%; border-collapse:collapse; text-align:left;">
-            <thead>
-              <tr style="background:var(--bg2); border-bottom:1px solid var(--border);">
-                <th style="padding:12px 16px; font-size:13px; color:var(--ink3); width:30%;">Character</th>
-                <th style="padding:12px 16px; font-size:13px; color:var(--ink3); width:30%;">Pinyin</th>
-                <th style="padding:12px 16px; font-size:13px; color:var(--ink3); width:40%;">English</th>
-              </tr>
-            </thead>
-            <tbody>
-    `;
-    
-    data.vocabulary.forEach((v, i) => {
-      const escapedCh = v.ch.replace(/'/g, "\\'");
-      html += `
-        <tr onclick="speakText('${escapedCh}')" style="border-bottom:1px solid var(--border2); cursor:pointer;" onmouseover="this.style.background='var(--bg2)'" onmouseout="this.style.background='none'">
-          <td style="padding:14px 16px; font-family:var(--serif); font-size:20px; color:var(--red);">${v.ch}</td>
-          <td style="padding:14px 16px; color:var(--ink); font-weight:500;">${v.py}</td>
-          <td style="padding:14px 16px; color:var(--ink2); font-size:14px;">${v.en}</td>
-        </tr>
-      `;
-    });
-    
-    html += `
-            </tbody>
-          </table>
-        </div>
-      </div>
-    `;
-    area.innerHTML = html;
-  } 
-  else if (currentPracticeMode === 'dialogue') {
-    if (!data.dialogues || data.dialogues.length === 0) {
-      area.innerHTML = '<div>No dialogues found.</div>';
-      return;
-    }
-    
-    let chatHtml = `
-      <div class="chat-controls">
-        <button class="fc-btn" onclick="toggleChatHint('py')">${showChatPy ? 'Hide' : 'Show'} Pinyin</button>
-        <button class="fc-btn" onclick="toggleChatHint('en')">${showChatEn ? 'Hide' : 'Show'} English</button>
-      </div>
-      <div class="chat-container ${showChatPy ? 'show-py' : ''} ${showChatEn ? 'show-en' : ''}">
-    `;
-    
-    data.dialogues.forEach(d => {
-      chatHtml += `<h3 style="text-align:center; font-family:var(--serif); margin: 24px 0 16px;">${d.title}</h3>`;
-      d.messages.forEach((msg, idx) => {
-        // Just alternating sides based on index for demo purposes
-        const side = idx % 2 === 0 ? 'left' : 'right';
-        const escapedCh = msg.ch.replace(/'/g, "\\'");
-        chatHtml += `
-          <div class="chat-bubble-wrapper ${side}">
-            ${side === 'left' ? `<div class="chat-speaker">${msg.speaker}</div>` : ''}
-            <div class="chat-bubble">
-              <button onclick="speakText('${escapedCh}')" style="float:${side === 'left' ? 'right' : 'left'}; margin-${side === 'left' ? 'left' : 'right'}:8px; background:none; border:none; font-size:16px; cursor:pointer;" title="Listen">🔊</button>
-              <div class="chat-ch">${msg.ch}</div>
-              <div class="chat-py">${msg.py}</div>
-              <div class="chat-en">${msg.en}</div>
-            </div>
-            ${side === 'right' ? `<div class="chat-speaker" style="background:#C0392B;color:#fff;">${msg.speaker}</div>` : ''}
-          </div>
-        `;
-      });
-    });
-    chatHtml += '</div>';
-    area.innerHTML = chatHtml;
-  }
-  else if (currentPracticeMode === 'exercise') {
-    if (!data.exercises || data.exercises.length === 0) {
-      area.innerHTML = '<div>No exercises found.</div>';
-      return;
-    }
-    
-    let exHtml = '<div style="width:100%; max-width: 600px;">';
-    data.exercises.forEach(ex => {
-      exHtml += `
-        <div style="background:var(--white); border:1px solid var(--border); padding:20px; border-radius:var(--radius); margin-bottom:16px;">
-          <h3 style="font-family:var(--serif); margin-bottom: 12px; color:var(--red);">${ex.title}</h3>
-          <p style="color:var(--ink2); line-height:1.6;">${ex.content}</p>
-        </div>
-      `;
-    });
-    exHtml += '</div>';
-    area.innerHTML = exHtml;
-  }
-}
-
 function speakText(text) {
   if ('speechSynthesis' in window) {
-    window.speechSynthesis.cancel(); // Stop any currently playing audio
+    window.speechSynthesis.cancel();
     const msg = new SpeechSynthesisUtterance(text);
     msg.lang = 'zh-TW';
-    msg.rate = 0.85; // Slightly slower for language learners
+    msg.rate = 0.85;
     window.speechSynthesis.speak(msg);
-  } else {
-    showToast("Text-to-speech not supported in this browser.");
   }
-}
-
-function changeFlashcard(delta) {
-  if (!practiceData || !practiceData[parseInt(currentLessonId)]) return;
-  const data = practiceData[parseInt(currentLessonId)];
-  currentFcIndex += delta;
-  if (currentFcIndex < 0) currentFcIndex = data.vocabulary.length - 1;
-  if (currentFcIndex >= data.vocabulary.length) currentFcIndex = 0;
-  renderPracticeContent();
-}
-
-function toggleChatHint(type) {
-  if (type === 'py') showChatPy = !showChatPy;
-  if (type === 'en') showChatEn = !showChatEn;
-  renderPracticeContent();
-}
-
-// Hook into loadSplitPDF to auto-update practice tab when lesson changes
-const originalLoadSplitPDF = loadSplitPDF;
-loadSplitPDF = function(lessonId) {
-  originalLoadSplitPDF(lessonId);
-  currentFcIndex = 0; // Reset flashcard index
-  if (document.getElementById('panel-practice').classList.contains('active')) {
-    renderPracticeContent();
-  }
-}
-
-// Hook into init to load data
-const originalInit = init;
-init = async function() {
-  await loadPracticeData();
-  await originalInit();
 }
 
 // ──────────────────────────────────────────────
