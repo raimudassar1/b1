@@ -41,48 +41,27 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 /* ─── TOP NAV ───────────────────────────────────────────────── */
 #top-nav {
   height: var(--nav-h);
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center;
-  padding: 0 20px; gap: 12px;
-  position: relative; z-index: 100;
-  flex-shrink: 0;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; padding: 0 20px; gap: 12px;
+  position: relative; z-index: 100; flex-shrink: 0;
 }
-#top-nav .logo {
-  font-family: var(--serif);
-  font-size: 18px; font-weight: 600;
-  color: var(--red); letter-spacing: -0.3px;
-  flex-shrink: 0;
-}
+#top-nav .logo { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--red); letter-spacing: -0.3px; flex-shrink: 0; }
 #top-nav .logo span { font-size: 12px; color: var(--ink3); font-family: var(--sans); font-weight: 400; display: block; line-height: 1; margin-top: 1px; }
 .nav-spacer { flex: 1; }
-#lesson-select {
-  font-family: var(--sans); font-size: 14px;
-  border: 1px solid var(--border2); border-radius: 8px;
-  padding: 6px 10px; background: var(--bg2);
-  color: var(--ink); cursor: pointer;
-  min-width: 160px;
-}
+#lesson-select { font-family: var(--sans); font-size: 14px; border: 1px solid var(--border2); border-radius: 8px; padding: 6px 10px; background: var(--bg2); color: var(--ink); cursor: pointer; min-width: 160px; }
 
 /* ─── TAB BAR ───────────────────────────────────────────────── */
 #tab-bar {
   height: var(--tab-h);
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: stretch;
-  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  display: flex; align-items: stretch; overflow-x: auto; -webkit-overflow-scrolling: touch;
   scrollbar-width: none; flex-shrink: 0;
 }
 #tab-bar::-webkit-scrollbar { display: none; }
 .tab-btn {
-  flex-shrink: 0;
-  padding: 0 20px;
-  font-family: var(--sans); font-size: 14px; font-weight: 500;
-  color: var(--ink3); background: none; border: none;
-  border-bottom: 2.5px solid transparent;
-  cursor: pointer; transition: all 0.18s;
-  display: flex; align-items: center; gap: 6px;
-  white-space: nowrap;
+  flex-shrink: 0; padding: 0 20px; font-family: var(--sans); font-size: 14px; font-weight: 500;
+  color: var(--ink3); background: none; border: none; border-bottom: 2.5px solid transparent;
+  cursor: pointer; transition: all 0.18s; display: flex; align-items: center; gap: 6px; white-space: nowrap;
 }
 .tab-btn:hover { color: var(--ink); background: var(--bg2); }
 .tab-btn.active { color: var(--red); border-bottom-color: var(--red); }
@@ -94,33 +73,12 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 .panel.active { display: flex; flex-direction: column; }
 
 /* ─── BOOKS / PDF ───────────────────────────────────────────── */
-#panel-books .book-switcher {
-  display: flex; gap: 8px; padding: 12px 16px;
-  background: var(--white); border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-}
-.book-btn {
-  flex: 1; padding: 10px; border-radius: 8px;
-  font-family: var(--sans); font-size: 14px; font-weight: 500;
-  cursor: pointer; transition: all 0.18s;
-  border: 1.5px solid var(--border2);
-  background: var(--bg2); color: var(--ink2);
-}
+#panel-books .book-switcher { display: flex; gap: 8px; padding: 12px 16px; background: var(--white); border-bottom: 1px solid var(--border); flex-shrink: 0; }
+.book-btn { flex: 1; padding: 10px; border-radius: 8px; font-family: var(--sans); font-size: 14px; font-weight: 500; cursor: pointer; transition: all 0.18s; border: 1.5px solid var(--border2); background: var(--bg2); color: var(--ink2); }
 .book-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
 
-.pdf-toolbar {
-  display: flex; align-items: center; gap: 8px;
-  padding: 8px 16px; background: var(--bg2);
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0; flex-wrap: wrap;
-}
-.pdf-toolbar button {
-  font-family: var(--sans); font-size: 13px;
-  padding: 6px 12px; border-radius: 6px;
-  border: 1px solid var(--border2); background: var(--white);
-  color: var(--ink2); cursor: pointer; transition: all 0.15s;
-}
-.pdf-toolbar button:hover { background: var(--bg3); }
+.pdf-toolbar { display: flex; align-items: center; gap: 8px; padding: 8px 16px; background: var(--bg2); border-bottom: 1px solid var(--border); flex-shrink: 0; flex-wrap: wrap; }
+.pdf-toolbar button { font-family: var(--sans); font-size: 13px; padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border2); background: var(--white); color: var(--ink2); cursor: pointer; transition: all 0.15s; }
 .pdf-toolbar button.active { background: var(--red); color: #fff; border-color: var(--red); }
 .pdf-toolbar .page-info { font-size: 13px; color: var(--ink3); margin: 0 4px; }
 .pdf-toolbar .spacer { flex: 1; }
@@ -138,38 +96,18 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 
 /* ─── AUDIO ─────────────────────────────────────────────────── */
 #panel-audio { flex-direction: row; }
-.audio-sidebar {
-  width: 260px; flex-shrink: 0;
-  background: var(--white); border-right: 1px solid var(--border);
-  display: flex; flex-direction: column; overflow: hidden;
-}
-@media (max-width: 700px) {
-  #panel-audio { flex-direction: column; }
-  .audio-sidebar { width: 100%; max-height: 220px; border-right: none; border-bottom: 1px solid var(--border); }
-}
+.audio-sidebar { width: 260px; flex-shrink: 0; background: var(--white); border-right: 1px solid var(--border); display: flex; flex-direction: column; overflow: hidden; }
+@media (max-width: 700px) { #panel-audio { flex-direction: column; } .audio-sidebar { width: 100%; max-height: 220px; border-right: none; border-bottom: 1px solid var(--border); } }
 .audio-sidebar-head { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; gap: 6px; flex-shrink: 0; }
-.audio-src-btn {
-  flex: 1; font-family: var(--sans); font-size: 13px; font-weight: 500;
-  padding: 7px 6px; border-radius: 7px;
-  border: 1.5px solid var(--border2);
-  background: var(--bg2); color: var(--ink2);
-  cursor: pointer; transition: all 0.15s;
-}
+.audio-src-btn { flex: 1; font-family: var(--sans); font-size: 13px; font-weight: 500; padding: 7px 6px; border-radius: 7px; border: 1.5px solid var(--border2); background: var(--bg2); color: var(--ink2); cursor: pointer; transition: all 0.15s; }
 .audio-src-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
 .audio-lesson-list { overflow-y: auto; flex: 1; -webkit-overflow-scrolling: touch; }
 .audio-lesson-group { border-bottom: 1px solid var(--border); }
-.audio-lesson-header {
-  padding: 10px 16px; font-size: 12px; font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.6px; color: var(--ink3); background: var(--bg2); cursor: pointer;
-  display: flex; align-items: center; justify-content: space-between; user-select: none;
-}
+.audio-lesson-header { padding: 10px 16px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--ink3); background: var(--bg2); cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; }
 .audio-lesson-header.open .chevron { transform: rotate(90deg); }
 .audio-track-list { display: none; }
 .audio-lesson-header.open + .audio-track-list { display: block; }
-.audio-track-item {
-  padding: 9px 16px 9px 24px; font-size: 13px; color: var(--ink2);
-  cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.12s;
-}
+.audio-track-item { padding: 9px 16px 9px 24px; font-size: 13px; color: var(--ink2); cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.12s; }
 .audio-track-item:hover { background: var(--bg2); }
 .audio-track-item.playing { color: var(--red); font-weight: 500; background: var(--red-lt); }
 
@@ -208,6 +146,11 @@ body.focus-mode #tab-bar { flex-direction: column; width: 64px; height: 100%; bo
 body.focus-mode .tab-btn { padding: 16px 0; justify-content: center; border-bottom: none; border-left: 3px solid transparent; }
 body.focus-mode .tab-btn.active { border-bottom-color: transparent; border-left-color: var(--red); }
 body.focus-mode .tab-text { display: none; }
+
+/* ─── LOADING SPINNER ───────────────────────────────────────── */
+.spinner { width: 40px; height: 40px; border: 4px solid var(--bg3); border-top-color: var(--red); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 16px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
 @media (max-width: 600px) { #top-nav .logo span { display: none; } #lesson-select { min-width: 120px; font-size: 13px; } .tab-btn { padding: 0 14px; font-size: 13px; } }
 </style>
 </head>
@@ -302,7 +245,7 @@ body.focus-mode .tab-text { display: none; }
 // ─── CONFIG & STATE ──────────────────────────────────────────
 let manifest = null;
 let currentBook = 'textbook';
-let currentLessonId = '01';
+let currentLessonId = '01-A';
 let audioSource = 'textbook';
 let currentTrackIndex = -1;
 let allTracks = [];
@@ -316,7 +259,7 @@ let renderedPages = new Set(), highResPages = new Set(), pageObserver = null, re
 const RENDER_DPI_ULTRA_LOW = 0.2; 
 const RENDER_DPI_LOW = 1.0;       
 const RENDER_DPI_HIGH = Math.max(window.devicePixelRatio, 2.2); 
-const ANNOT_DPI = 2.0; // Fixed high res for drawing stability
+const ANNOT_DPI = 2.0; 
 
 // ─── INITIALIZATION ──────────────────────────────────────────
 async function init() {
@@ -338,7 +281,8 @@ async function init() {
 function getFallbackManifest() {
   return {
     lessons: Array.from({length:15}, (_,i) => ({ id: i+1, title: `Lesson ${i+1}`, tracks: 10 })),
-    workbookTracks: {}, tests: []
+    workbookTracks: {1:5,2:5,3:5,4:5,5:5,6:6,7:6,8:6,9:6,10:6,11:5,12:5,13:5,14:5,15:5},
+    tests: []
   };
 }
 
@@ -355,12 +299,8 @@ function buildLessonSelect() {
   const options = ['<option value="">— Jump to lesson —</option>'];
   manifest.lessons.forEach(l => {
     const paddedId = String(l.id).padStart(2, '0');
-    if (currentBook === 'textbook') {
-      options.push(`<option value="${paddedId}-A">L${paddedId}-1: ${l.title}</option>`);
-      options.push(`<option value="${paddedId}-B">L${paddedId}-2: ${l.title}</option>`);
-    } else {
-      options.push(`<option value="${paddedId}">L${paddedId}: ${l.title}</option>`);
-    }
+    options.push(`<option value="${paddedId}-A">L${paddedId}-1: ${l.title}</option>`);
+    options.push(`<option value="${paddedId}-B">L${paddedId}-2: ${l.title}</option>`);
   });
   if (topSel) topSel.innerHTML = options.join('');
   if (panelSel) panelSel.innerHTML = options.join('');
@@ -388,7 +328,7 @@ function changeZoom(delta) {
 }
 function toggleFocusMode() { document.body.classList.toggle('focus-mode'); }
 
-// ─── PDF VIEWER (Triple-Pass Rendering) ───────────────────────
+// ─── PDF VIEWER (Triple-Pass & Eager Rendering) ───────────────────────
 let lastLoadedUrl = '';
 function loadSplitPDF(lessonIdWithPart) {
   if (!lessonIdWithPart) return;
@@ -397,12 +337,13 @@ function loadSplitPDF(lessonIdWithPart) {
     [lessonId, part] = lessonIdWithPart.split('-');
   } else { lessonId = lessonIdWithPart; part = 'A'; }
   const paddedId = String(lessonId).padStart(2, '0');
-  currentLessonId = paddedId;
+  currentLessonId = paddedId + '-' + part;
   const selectEl = document.getElementById('pdf-lesson-select');
   if (selectEl) selectEl.value = lessonIdWithPart;
 
   const folder = currentBook === 'textbook' ? 'Textbook PDFs' : 'Workbook PDFs';
-  const url = currentBook === 'textbook' ? `${folder}/Textbook_Lesson${paddedId}_${part}.pdf` : `${folder}/Workbook_Lesson${paddedId}.pdf`;
+  const prefix = currentBook === 'textbook' ? 'Textbook_Lesson' : 'Workbook_Lesson';
+  const url = `${folder}/${prefix}${paddedId}_${part}.pdf`;
   
   Object.values(pageImageCache).forEach(e => URL.revokeObjectURL(e.url));
   pageImageCache = {}; renderedPages.clear(); highResPages.clear();
@@ -412,7 +353,7 @@ function loadSplitPDF(lessonIdWithPart) {
 async function loadPDF(url) {
   lastLoadedUrl = url;
   const viewer = document.getElementById('pdf-viewer');
-  viewer.innerHTML = '<div style="color:var(--ink3); padding: 40px;">Loading...</div>';
+  viewer.innerHTML = '<div style="display:flex; flex-direction:column; align-items:center; padding:100px 0;"><div class="spinner"></div><div style="color:var(--ink3)">Opening Document...</div></div>';
   renderQueue = []; if (pageObserver) pageObserver.disconnect();
 
   try {
@@ -434,7 +375,12 @@ async function loadPDF(url) {
       viewer.appendChild(pageWrapper);
     }
     setupPageObserver();
-  } catch (e) { viewer.innerHTML = `<div style="color:var(--red); padding: 40px;">Load Error</div>`; }
+    // Pre-render first 4 pages
+    for(let i=1; i<=Math.min(4, pdfDoc.numPages); i++) addToRenderQueue(i);
+  } catch (e) { 
+    console.error(e);
+    viewer.innerHTML = `<div style="color:var(--red); padding: 40px;">Load Error</div>`; 
+  }
 }
 
 function setupPageObserver() {
@@ -499,13 +445,15 @@ function showCachedImage(num) {
   const pageWrapper = document.getElementById(`page-wrapper-${num}`);
   if (!pageWrapper || !pageImageCache[num]) return;
 
+  const isHD = highResPages.has(num);
+  const cacheEntry = pageImageCache[num];
   let img = pageWrapper.querySelector('.pdf-img');
   if (!img) {
     img = new Image(); img.className = 'pdf-img';
     img.style.cssText = 'width:100%; height:100%; display:block; position:absolute; inset:0;';
     pageWrapper.innerHTML = ''; pageWrapper.appendChild(img);
   }
-  img.src = pageImageCache[num].url;
+  img.src = cacheEntry.url;
 
   let annotCanvas = pageWrapper.querySelector('.annot-canvas');
   if (!annotCanvas) {
@@ -585,7 +533,7 @@ function clearAnnotations() { if (confirm('Clear all in this book?')) { annotStr
 // ─── AUDIO CONTROLS ──────────────────────────────────────────
 function getAudioPath(book, lessonId, trackId) {
   const folderBase = book === 'textbook' ? 'Audio Textbook' : 'Audio Workbook';
-  const folderSuffix = lessonId <= 7 ? ' 1' : ' 2';
+  const folderSuffix = parseInt(lessonId) <= 7 ? ' 1' : ' 2';
   return `${folderBase}${folderSuffix}/${trackId}.mp3`;
 }
 function togglePdfAudio() {
