@@ -10,6 +10,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
+<script src="vocab_data.js"></script>
+<script src="audio_data.js"></script>
 <style>
 /* ─── RESET & ROOT ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -151,6 +154,75 @@ body.focus-mode .tab-text { display: none; }
 .spinner { width: 40px; height: 40px; border: 4px solid var(--bg3); border-top-color: var(--red); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 16px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ─── VOCAB PANEL ───────────────────────────────────────────── */
+#panel-vocab { background: var(--white); }
+.vocab-controls { padding: 16px; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: center; background: var(--bg); flex-wrap: wrap; }
+.vocab-search { flex: 1; min-width: 200px; padding: 10px 16px; border: 1px solid var(--border2); border-radius: 10px; font-family: var(--sans); font-size: 15px; box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); }
+.vocab-list { flex: 1; overflow-y: auto; padding: 16px; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.vocab-item { padding: 18px; background: var(--white); border: 1.5px solid var(--border); border-radius: 14px; display: flex; flex-direction: column; gap: 10px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
+.vocab-item:hover { border-color: var(--red); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(192, 57, 43, 0.08); }
+.vocab-top { display: flex; align-items: flex-start; justify-content: space-between; }
+.vocab-chars { font-family: var(--serif); font-size: 26px; color: var(--ink); font-weight: 600; }
+.vocab-pinyin { font-size: 15px; color: var(--red); font-weight: 600; }
+.vocab-meaning { font-size: 15px; color: var(--ink2); line-height: 1.5; }
+.vocab-meta { font-size: 11px; color: var(--ink3); text-transform: uppercase; letter-spacing: 1px; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; }
+.vocab-actions { display: flex; gap: 10px; margin-top: 5px; }
+.v-btn { flex: 1; padding: 10px; border-radius: 10px; border: 1px solid var(--border2); background: var(--bg2); color: var(--ink2); cursor: pointer; font-family: var(--sans); font-size: 14px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.15s; }
+.v-btn:hover { background: var(--bg3); border-color: var(--ink); color: var(--ink); }
+.v-btn.v-play { background: #fef0ef; color: var(--red); border-color: transparent; }
+.v-btn.v-play:hover { background: #fcdbd7; }
+
+/* ─── SENTENCES PANEL ────────────────────────────────────────── */
+#panel-sentences { background: var(--white); }
+.sent-controls { padding: 16px; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: center; background: var(--bg); flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+.sent-search { flex: 1; min-width: 200px; padding: 10px 16px; border: 1px solid var(--border2); border-radius: 10px; font-family: var(--sans); font-size: 15px; }
+.sent-list { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 20px; }
+.sent-group { display: flex; flex-direction: column; gap: 12px; }
+.sent-group-title { font-family: var(--sans); font-size: 13px; font-weight: 700; color: var(--ink3); text-transform: uppercase; letter-spacing: 1.5px; border-bottom: 2px solid var(--border); padding-bottom: 6px; margin-top: 10px; }
+.sent-item { padding: 18px; background: var(--white); border: 1.5px solid var(--border); border-radius: 16px; display: flex; flex-direction: column; gap: 8px; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
+.sent-item:hover { border-color: var(--red); transform: translateX(4px); background: #fffaf9; box-shadow: 0 4px 12px rgba(192, 57, 43, 0.05); }
+.sent-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.sent-chinese { font-family: var(--serif); font-size: 20px; color: var(--ink); font-weight: 600; line-height: 1.4; flex: 1; }
+.sent-play { width: 36px; height: 36px; border-radius: 50%; border: none; background: var(--red-lt); color: var(--red); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s; flex-shrink: 0; font-size: 14px; }
+.sent-play:hover { background: var(--red); color: white; transform: scale(1.1); }
+.sent-pinyin { font-size: 14px; color: var(--red); font-weight: 500; font-family: var(--sans); }
+.sent-english { font-size: 14px; color: var(--ink2); line-height: 1.5; font-style: italic; }
+
+/* ─── PRACTICE MODAL ───────────────────────────────────────── */
+#practice-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 16px; }
+#practice-modal.show { display: flex; }
+.pm-content { background: var(--white); width: 100%; max-width: 520px; border-radius: 24px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); position: relative; max-height: 90vh; }
+.pm-header { padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--bg); }
+.pm-title { font-family: var(--sans); font-size: 17px; font-weight: 700; color: var(--ink); }
+.pm-close { font-size: 28px; cursor: pointer; color: var(--ink3); background: none; border: none; padding: 4px; display: flex; line-height: 1; }
+.pm-body { padding: 24px; display: flex; flex-direction: column; gap: 20px; align-items: center; overflow-y: auto; }
+.pm-top-controls { width: 100%; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.pm-char-selector { display: flex; gap: 8px; margin-bottom: 8px; }
+.pm-char-btn { width: 44px; height: 44px; border-radius: 10px; border: 2px solid var(--border2); background: var(--white); font-family: var(--serif); font-size: 22px; cursor: pointer; transition: all 0.15s; }
+.pm-char-btn.active { border-color: var(--red); color: var(--red); background: var(--red-lt); font-weight: 600; }
+
+#practice-target-wrap { width: 280px; height: 280px; border: 2px solid var(--border2); border-radius: 16px; position: relative; background: #fff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+#practice-hanzi-writer { position: absolute; inset: 0; }
+#practice-canvas { position: absolute; inset: 0; cursor: crosshair; touch-action: none; z-index: 10; }
+
+.pm-tools { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pm-tgl-group { width: 100%; display: flex; gap: 10px; padding: 12px; background: var(--bg2); border-radius: 14px; margin-top: 10px; }
+.pm-tgl { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; color: var(--ink3); text-transform: uppercase; cursor: pointer; }
+.pm-tgl input { display: none; }
+.pm-tgl .slider { width: 44px; height: 24px; background: #ccc; border-radius: 12px; position: relative; transition: .3s; }
+.pm-tgl .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: .3s; }
+.pm-tgl input:checked + .slider { background: var(--red); }
+.pm-tgl input:checked + .slider:before { transform: translateX(20px); }
+
+.pm-info { text-align: center; margin-top: -10px; }
+.pm-pinyin { color: var(--red); font-weight: 700; font-size: 22px; margin-bottom: 2px; }
+.pm-meaning { color: var(--ink2); font-size: 15px; font-weight: 500; }
+
+/* ─── WHITEBOARD UPDATE ─────────────────────────────────────── */
+.wb-toolbar { flex-wrap: wrap; gap: 8px; }
+.tgl-btn { padding: 8px 12px; border-radius: 8px; border: 1.5px solid var(--border2); background: var(--white); cursor: pointer; font-family: var(--sans); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.tgl-btn.active { border-color: var(--red); color: var(--red); background: var(--red-lt); }
+
 @media (max-width: 600px) { #top-nav .logo span { display: none; } #lesson-select { min-width: 120px; font-size: 13px; } .tab-btn { padding: 0 14px; font-size: 13px; } }
 </style>
 </head>
@@ -165,6 +237,8 @@ body.focus-mode .tab-text { display: none; }
   <div id="tab-bar">
     <button class="tab-btn active" data-tab="books" onclick="switchTab('books')"><span class="tab-icon">📖</span> <span class="tab-text">Books</span></button>
     <button class="tab-btn" data-tab="audio" onclick="switchTab('audio')"><span class="tab-icon">🎧</span> <span class="tab-text">Audio</span></button>
+    <button class="tab-btn" data-tab="vocab" onclick="switchTab('vocab')"><span class="tab-icon">🔤</span> <span class="tab-text">Vocab</span></button>
+    <button class="tab-btn" data-tab="sentences" onclick="switchTab('sentences')"><span class="tab-icon">💬</span> <span class="tab-text">Sentences</span></button>
     <button class="tab-btn" data-tab="whiteboard" onclick="switchTab('whiteboard')"><span class="tab-icon">✏️</span> <span class="tab-text">Whiteboard</span></button>
   </div>
 
@@ -235,13 +309,89 @@ body.focus-mode .tab-text { display: none; }
         <div class="color-swatch" style="background:#1a73e8;" onclick="setWbColor('#1a73e8')"></div>
         <div class="wb-sep"></div>
         <input type="range" id="wb-size-range" min="1" max="24" value="3" oninput="setWbSize(this.value)">
+        <button class="tgl-btn" id="wb-pen-only-btn" onclick="toggleWbPenOnly()">🖋️ Pen Only</button>
         <button class="wb-btn" onclick="wbUndo()">↩ Undo</button>
         <button class="wb-btn danger" onclick="wbClear()">🗑 Clear</button>
       </div>
       <div id="wb-canvas-wrap"><canvas id="wb-canvas"></canvas></div>
     </div>
+
+    <div id="panel-vocab" class="panel">
+      <div class="vocab-controls">
+        <select id="vocab-lesson-select" onchange="filterVocab()" style="padding: 10px; border-radius: 10px; border: 1.5px solid var(--border2); font-family: var(--sans); font-size: 14px; font-weight: 600;">
+          <option value="all">All Lessons</option>
+        </select>
+        <input type="text" class="vocab-search" id="vocab-search" placeholder="Search characters, pinyin, or meaning..." oninput="filterVocab()">
+      </div>
+      <div class="vocab-list" id="vocab-list"></div>
+    </div>
+
+    <div id="panel-sentences" class="panel">
+      <div class="sent-controls">
+        <select id="sent-lesson-select" onchange="filterSentences()" style="padding: 10px; border-radius: 10px; border: 1.5px solid var(--border2); font-family: var(--sans); font-size: 14px; font-weight: 600;">
+          <option value="all">All Lessons</option>
+        </select>
+        <input type="text" class="sent-search" id="sent-search" placeholder="Search sentences, pinyin, or translation..." oninput="filterSentences()">
+      </div>
+      <div class="sent-list" id="sent-list">
+        <div style="padding:40px; text-align:center; color:var(--ink3);">
+          <div class="spinner" style="margin:0 auto 16px;"></div>
+          Loading sentences...
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- Practice Modal -->
+<div id="practice-modal">
+  <div class="pm-content">
+    <div class="pm-header">
+      <div class="pm-title">Writing Practice</div>
+      <button class="pm-close" onclick="closePractice()">×</button>
+    </div>
+    <div class="pm-body">
+      <div class="pm-top-controls">
+        <button class="v-btn" onclick="animateStroke()">🎬 Animate</button>
+        <button class="v-btn" onclick="clearPractice()">🗑 Clear</button>
+        <button class="v-btn" onclick="undoPractice()">↩ Undo</button>
+      </div>
+
+      <div class="pm-char-selector" id="pm-char-selector">
+        <!-- Character buttons will be injected here -->
+      </div>
+
+      <div id="practice-target-wrap">
+        <div id="practice-hanzi-writer"></div>
+        <canvas id="practice-canvas"></canvas>
+      </div>
+
+      <div class="pm-tgl-group">
+        <label class="pm-tgl">
+          <span>Guided Mode</span>
+          <input type="checkbox" id="tgl-guided" checked onchange="toggleGuidedMode(this.checked)">
+          <div class="slider"></div>
+        </label>
+        <label class="pm-tgl">
+          <span>Pen Only</span>
+          <input type="checkbox" id="tgl-pen-only" onchange="setPenOnlyMode(this.checked)">
+          <div class="slider"></div>
+        </label>
+        <label class="pm-tgl">
+          <span>Single Touch</span>
+          <input type="checkbox" id="tgl-single-touch" onchange="setSingleTouchMode(this.checked)">
+          <div class="slider"></div>
+        </label>
+      </div>
+
+      <div class="pm-info">
+        <div class="pm-pinyin" id="pm-pinyin">pīn yīn</div>
+        <div class="pm-meaning" id="pm-meaning">meaning</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="toast"></div>
 
 <script>
@@ -253,7 +403,15 @@ let audioSource = 'textbook';
 let currentTrackIndex = -1;
 let allTracks = [];
 
-let wbTool = 'pen', wbColor = '#1a1a1a', wbSize = 3, wbStrokes = [], wbCurrentStroke = null, wbDrawing = false, wbCtx = null;
+let vocabFiltered = [];
+let sentencesData = [];
+let practiceCurrentWord = null;
+let practiceWriter = null;
+let practiceIsPenOnly = false;
+let practiceIsSingleTouch = false;
+let pmCanvas = null, pmCtx = null, pmDrawing = false, pmStrokes = [], pmCurrentStroke = null;
+
+let wbTool = 'pen', wbColor = '#1a1a1a', wbSize = 3, wbStrokes = [], wbCurrentStroke = null, wbDrawing = false, wbCtx = null, wbIsPenOnly = false;
 
 let pdfDoc = null, cachedPdfDocs = {}, pdfScale = 1.4;
 let annotating = false, annotTool = 'pen', annotColor = 'red', annotStrokes = {}, annotDrawing = false, activeDrawingPage = null, annotLastX = 0, annotLastY = 0;
@@ -276,6 +434,9 @@ async function init() {
   
   buildLessonSelect();
   buildAudioList();
+  initVocab();
+  initSentences();
+  initPractice();
   initWhiteboard();
   buildWaveformBars();
   loadSplitPDF('01-A');
@@ -294,6 +455,8 @@ function switchTab(name) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
   document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + name));
   if (name === 'whiteboard') setTimeout(resizeWbCanvas, 50);
+  if (name === 'vocab') filterVocab();
+  if (name === 'sentences') filterSentences();
 }
 
 function buildLessonSelect() {
@@ -602,6 +765,340 @@ function buildWaveformBars() { const wrap = document.getElementById('waveform-ba
 function updateWaveform(pct) { const bars = document.querySelectorAll('.waveform-bar'), played = Math.round((pct / 100) * bars.length); bars.forEach((b, i) => b.classList.toggle('played', i < played)); }
 function showToast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2500); }
 function fmtTime(s) { const m = Math.floor(s / 60); return `${m}:${String(Math.floor(s % 60)).padStart(2,'0')}`; }
+
+// ─── VOCAB LOGIC ─────────────────────────────────────────────
+function initVocab() {
+  const lessonSel = document.getElementById('vocab-lesson-select');
+  lessonSel.innerHTML = '<option value="all">All Lessons</option>';
+  for (let i = 1; i <= 15; i++) {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = `Lesson ${i}`;
+    lessonSel.appendChild(opt);
+  }
+}
+
+function filterVocab() {
+  const lesson = document.getElementById('vocab-lesson-select').value;
+  const search = document.getElementById('vocab-search').value.toLowerCase();
+
+  vocabFiltered = VOCAB.filter(v => {
+    const matchLesson = lesson === 'all' || v.lesson === parseInt(lesson);
+    const matchSearch = !search || 
+      v.trad.includes(search) || 
+      v.pinyin.toLowerCase().includes(search) || 
+      v.meaning.toLowerCase().includes(search);
+    return matchLesson && matchSearch;
+  });
+
+  renderVocabList();
+}
+
+function renderVocabList() {
+  const container = document.getElementById('vocab-list');
+  container.innerHTML = vocabFiltered.map(v => `
+    <div class="vocab-item">
+      <div class="vocab-top">
+        <div class="vocab-chars">${v.trad}</div>
+        <div class="vocab-pinyin">${v.pinyin}</div>
+      </div>
+      <div class="vocab-meaning">${v.meaning}</div>
+      <div class="vocab-meta">
+        <span>Lesson ${v.lesson}</span>
+        <span>${v.pos}</span>
+      </div>
+      <div class="vocab-actions">
+        <button class="v-btn v-play" onclick="playVocabAudio('${v.audio}')">🔊 Play</button>
+        <button class="v-btn" onclick="openPractice('${v.id}')">🖊 Practice</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function playVocabAudio(filename) {
+  const b64 = AUDIO_B64[filename];
+  if (!b64) return showToast('Audio not found');
+  const ap = document.getElementById('audio-player');
+  ap.src = 'data:audio/mpeg;base64,' + b64;
+  ap.play();
+}
+
+// ─── SENTENCES LOGIC ─────────────────────────────────────────
+async function initSentences() {
+  const lessonSel = document.getElementById('sent-lesson-select');
+  lessonSel.innerHTML = '<option value="all">All Lessons</option>';
+  for (let i = 1; i <= 15; i++) {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = `Lesson ${i}`;
+    lessonSel.appendChild(opt);
+  }
+
+  try {
+    const res = await fetch('sentences_b1.json');
+    sentencesData = await res.json();
+    filterSentences();
+  } catch (e) {
+    console.error('Error loading sentences:', e);
+    document.getElementById('sent-list').innerHTML = '<div style="padding:20px; color:var(--red);">Failed to load sentences.</div>';
+  }
+}
+
+function filterSentences() {
+  const lesson = document.getElementById('sent-lesson-select').value;
+  const search = document.getElementById('sent-search').value.toLowerCase();
+  const container = document.getElementById('sent-list');
+
+  let html = '';
+  sentencesData.forEach(lessonObj => {
+    if (lesson !== 'all' && lessonObj.lesson !== parseInt(lesson)) return;
+
+    const filtered = lessonObj.sentences.filter(s => 
+      !search || 
+      s.chinese.includes(search) || 
+      s.pinyin.toLowerCase().includes(search) || 
+      s.english.toLowerCase().includes(search)
+    );
+
+    if (filtered.length === 0) return;
+
+    html += `<div class="sent-group">
+      <div class="sent-group-title">Lesson ${lessonObj.lesson}: ${lessonObj.title}</div>`;
+    
+    let currentGrammarPart = '';
+    filtered.forEach(s => {
+      // Extract grammar part e.g. "g1" from "b1l1g1-1-01"
+      const match = s.id.match(/g(\d+)/);
+      const grammarPart = match ? 'Section ' + match[1] : '';
+      
+      if (grammarPart !== currentGrammarPart && !search) {
+        currentGrammarPart = grammarPart;
+        html += `<div style="font-size:11px; font-weight:800; color:var(--red); text-transform:uppercase; margin: 15px 0 5px 5px; letter-spacing:1px;">${grammarPart}</div>`;
+      }
+
+      html += `
+        <div class="sent-item" onclick="playSentenceAudio('${s.audio_file}')">
+          <div class="sent-top">
+            <div class="sent-chinese">${s.chinese}</div>
+            <button class="sent-play">▶</button>
+          </div>
+          <div class="sent-pinyin">${s.pinyin}</div>
+          <div class="sent-english">${s.english}</div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  });
+
+  container.innerHTML = html || '<div style="padding:40px; text-align:center; color:var(--ink3);">No sentences found matching your search.</div>';
+}
+
+function playSentenceAudio(filename) {
+  const ap = document.getElementById('audio-player');
+  ap.src = 'audio/' + filename;
+  ap.play().catch(e => {
+    console.error('Audio playback failed:', e);
+    showToast('Audio file not found: ' + filename);
+  });
+}
+
+// ─── PRACTICE LOGIC ──────────────────────────────────────────
+function initPractice() {
+  pmCanvas = document.getElementById('practice-canvas');
+  pmCtx = pmCanvas.getContext('2d');
+  pmCanvas.width = 280; pmCanvas.height = 280;
+
+  const startDraw = (e) => {
+    if (practiceIsPenOnly && e.pointerType !== 'pen') return;
+    if (practiceIsSingleTouch && !e.isPrimary) return;
+    e.preventDefault(); pmDrawing = true;
+    const pt = getPmPoint(e);
+    pmCurrentStroke = { points: [pt] };
+    pmCtx.beginPath(); pmCtx.moveTo(pt.x, pt.y);
+  };
+
+  const moveDraw = (e) => {
+    if (!pmDrawing) return;
+    if (practiceIsPenOnly && e.pointerType !== 'pen') return;
+    e.preventDefault();
+    const pt = getPmPoint(e);
+    pmCurrentStroke.points.push(pt);
+    pmCtx.lineCap = 'round'; pmCtx.lineJoin = 'round';
+    pmCtx.strokeStyle = '#1a1a1a'; pmCtx.lineWidth = 4;
+    pmCtx.lineTo(pt.x, pt.y); pmCtx.stroke();
+  };
+
+  const endDraw = () => { if (pmDrawing) { pmStrokes.push(pmCurrentStroke); pmDrawing = false; } };
+
+  pmCanvas.addEventListener('pointerdown', startDraw);
+  pmCanvas.addEventListener('pointermove', moveDraw);
+  pmCanvas.addEventListener('pointerup', endDraw);
+  pmCanvas.addEventListener('pointercancel', endDraw);
+}
+
+function getPmPoint(e) {
+  const r = pmCanvas.getBoundingClientRect();
+  return { x: e.clientX - r.left, y: e.clientY - r.top };
+}
+
+function openPractice(vocabId) {
+  practiceCurrentWord = VOCAB.find(v => v.id === vocabId);
+  if (!practiceCurrentWord) return;
+
+  document.getElementById('pm-pinyin').textContent = practiceCurrentWord.pinyin;
+  document.getElementById('pm-meaning').textContent = practiceCurrentWord.meaning;
+  
+  const selector = document.getElementById('pm-char-selector');
+  selector.innerHTML = '';
+  const chars = practiceCurrentWord.trad.split('');
+  chars.forEach((char, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'pm-char-btn' + (idx === 0 ? ' active' : '');
+    btn.textContent = char;
+    btn.onclick = () => selectPracticeChar(char, btn);
+    selector.appendChild(btn);
+  });
+
+  selectPracticeChar(chars[0]);
+  document.getElementById('practice-modal').classList.add('show');
+}
+
+function selectPracticeChar(char, btn) {
+  if (btn) {
+    document.querySelectorAll('.pm-char-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  
+  document.getElementById('practice-hanzi-writer').innerHTML = '';
+  practiceWriter = HanziWriter.create('practice-hanzi-writer', char, {
+    width: 280, height: 280, padding: 20,
+    showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 200,
+    trad: true
+  });
+  
+  if (document.getElementById('tgl-guided').checked) practiceWriter.showOutline();
+  else practiceWriter.hideOutline();
+  
+  clearPractice();
+}
+
+function animateStroke() { if (practiceWriter) practiceWriter.animateCharacter(); }
+function toggleGuidedMode(val) { if (practiceWriter) val ? practiceWriter.showOutline() : practiceWriter.hideOutline(); }
+function setPenOnlyMode(val) { practiceIsPenOnly = val; }
+function setSingleTouchMode(val) { practiceIsSingleTouch = val; }
+
+function closePractice() { document.getElementById('practice-modal').classList.remove('show'); }
+
+function clearPractice() {
+  pmStrokes = [];
+  pmCtx.clearRect(0, 0, pmCanvas.width, pmCanvas.height);
+}
+
+function undoPractice() {
+  pmStrokes.pop();
+  pmCtx.clearRect(0, 0, pmCanvas.width, pmCanvas.height);
+  pmCtx.lineCap = 'round'; pmCtx.lineJoin = 'round';
+  pmCtx.strokeStyle = '#1a1a1a'; pmCtx.lineWidth = 4;
+  pmStrokes.forEach(s => {
+    pmCtx.beginPath();
+    pmCtx.moveTo(s.points[0].x, s.points[0].y);
+    s.points.slice(1).forEach(p => pmCtx.lineTo(p.x, p.y));
+    pmCtx.stroke();
+  });
+}
+
+// ─── WHITEBOARD LOGIC ────────────────────────────────────────
+function toggleWbPenOnly() {
+  wbIsPenOnly = !wbIsPenOnly;
+  document.getElementById('wb-pen-only-btn').classList.toggle('active', wbIsPenOnly);
+}
+
+function initWhiteboard() {
+  const canvas = document.getElementById('wb-canvas');
+  wbCtx = canvas.getContext('2d');
+  resizeWbCanvas();
+
+  const getPt = (e) => {
+    const r = canvas.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  };
+
+  const start = (e) => {
+    if (wbIsPenOnly && e.pointerType !== 'pen') return;
+    e.preventDefault(); wbDrawing = true;
+    const pt = getPt(e);
+    wbCurrentStroke = { tool: wbTool, color: wbColor, size: wbSize, points: [pt] };
+    wbCtx.beginPath(); wbCtx.moveTo(pt.x, pt.y);
+  };
+
+  const move = (e) => {
+    if (!wbDrawing) return;
+    if (wbIsPenOnly && e.pointerType !== 'pen') return;
+    e.preventDefault();
+    const pt = getPt(e);
+    wbCurrentStroke.points.push(pt);
+    wbCtx.lineCap = 'round'; wbCtx.lineJoin = 'round';
+    if (wbTool === 'eraser') {
+      wbCtx.globalCompositeOperation = 'destination-out';
+      wbCtx.lineWidth = wbSize * 4;
+    } else {
+      wbCtx.globalCompositeOperation = 'source-over';
+      wbCtx.strokeStyle = wbColor;
+      wbCtx.lineWidth = wbSize;
+      if (wbTool === 'highlight') { wbCtx.strokeStyle = wbColor + '44'; wbCtx.lineWidth = wbSize * 5; }
+    }
+    wbCtx.lineTo(pt.x, pt.y); wbCtx.stroke();
+  };
+
+  const stop = () => { if (wbDrawing) { wbStrokes.push(wbCurrentStroke); wbDrawing = false; } };
+
+  canvas.addEventListener('pointerdown', start);
+  canvas.addEventListener('pointermove', move);
+  canvas.addEventListener('pointerup', stop);
+  canvas.addEventListener('pointercancel', stop);
+}
+
+function resizeWbCanvas() {
+  const wrap = document.getElementById('wb-canvas-wrap');
+  const canvas = document.getElementById('wb-canvas');
+  if (!wrap || !canvas) return;
+  canvas.width = wrap.clientWidth;
+  canvas.height = wrap.clientHeight;
+  redrawWb();
+}
+
+function setWbTool(t) {
+  wbTool = t;
+  document.querySelectorAll('.wb-btn').forEach(b => b.classList.toggle('active', b.id === `wb-${t === 'highlight'?'hi':t}-btn`));
+}
+function setWbColor(c) {
+  wbColor = c;
+  document.querySelectorAll('.color-swatch').forEach(s => s.classList.toggle('active', s.style.backgroundColor === c || s.style.background === c));
+}
+function setWbSize(s) { wbSize = parseInt(s); }
+function wbClear() { wbStrokes = []; redrawWb(); }
+function wbUndo() { wbStrokes.pop(); redrawWb(); }
+
+function redrawWb() {
+  const canvas = document.getElementById('wb-canvas');
+  wbCtx.clearRect(0, 0, canvas.width, canvas.height);
+  wbStrokes.forEach(s => {
+    wbCtx.beginPath();
+    wbCtx.lineCap = 'round'; wbCtx.lineJoin = 'round';
+    if (s.tool === 'eraser') {
+      wbCtx.globalCompositeOperation = 'destination-out';
+      wbCtx.lineWidth = s.size * 4;
+    } else {
+      wbCtx.globalCompositeOperation = 'source-over';
+      wbCtx.strokeStyle = s.tool === 'highlight' ? s.color + '44' : s.color;
+      wbCtx.lineWidth = s.tool === 'highlight' ? s.size * 5 : s.size;
+    }
+    wbCtx.moveTo(s.points[0].x, s.points[0].y);
+    s.points.slice(1).forEach(p => wbCtx.lineTo(p.x, p.y));
+    wbCtx.stroke();
+  });
+  wbCtx.globalCompositeOperation = 'source-over';
+}
 
 function buildAudioList() {
   const list = document.getElementById('audio-lesson-list'); list.innerHTML = ''; allTracks = [];

@@ -1,0 +1,4664 @@
+[
+  {
+    "lesson": 1,
+    "title": "Lesson 1",
+    "sentence_count": 41,
+    "sentences": [
+      {
+        "id": "b1l1g1-1-01",
+        "chinese": "王先生要不要喝咖啡？",
+        "pinyin": "Wáng xiānshēng yào bù yào hē kāfēi?",
+        "english": "Does Mr. Wang want to drink coffee?",
+        "audio_file": "b1l1g1-1-01.mp3"
+      },
+      {
+        "id": "b1l1g1-1-02",
+        "chinese": "這是不是烏龍茶？",
+        "pinyin": "Zhè shì bù shì Wūlóng chá?",
+        "english": "Is this oolong tea?",
+        "audio_file": "b1l1g1-1-02.mp3"
+      },
+      {
+        "id": "b1l1g1-1-03",
+        "chinese": "臺灣人喜歡不喜歡喝茶？",
+        "pinyin": "Táiwān rén xǐhuān bù xǐhuān hē chá?",
+        "english": "Do Taiwanese people like drinking tea?",
+        "audio_file": "b1l1g1-1-03.mp3"
+      },
+      {
+        "id": "b1l1g1-1-04",
+        "chinese": "他喝咖啡。他喝不喝咖啡？",
+        "pinyin": "Tā hē kāfēi. Tā hē bù hē kāfēi?",
+        "english": "He drinks coffee. Does he drink coffee?",
+        "audio_file": "b1l1g1-1-04.mp3"
+      },
+      {
+        "id": "b1l1g1-1-05",
+        "chinese": "你是日本人。你是不是日本人？",
+        "pinyin": "Nǐ shì Rìběn rén. Nǐ shì bù shì Rìběn rén?",
+        "english": "You are Japanese. Are you Japanese?",
+        "audio_file": "b1l1g1-1-05.mp3"
+      },
+      {
+        "id": "b1l1g1-1-06",
+        "chinese": "他來臺灣。他來不來臺灣？",
+        "pinyin": "Tā lái Táiwān. Tā lái bù lái Táiwān?",
+        "english": "He is coming to Taiwan. Is he coming to Taiwan?",
+        "audio_file": "b1l1g1-1-06.mp3"
+      },
+      {
+        "id": "b1l1g1-2-01",
+        "chinese": "你好嗎？",
+        "pinyin": "Nǐ hǎo ma?",
+        "english": "How are you?",
+        "audio_file": "b1l1g1-2-01.mp3"
+      },
+      {
+        "id": "b1l1g1-2-02",
+        "chinese": "你來接我們嗎？",
+        "pinyin": "Nǐ lái jiē wǒmen ma?",
+        "english": "Are you coming to pick us up?",
+        "audio_file": "b1l1g1-2-02.mp3"
+      },
+      {
+        "id": "b1l1g1-2-03",
+        "chinese": "他是日本人嗎？",
+        "pinyin": "Tā shì Rìběn rén ma?",
+        "english": "Is he Japanese?",
+        "audio_file": "b1l1g1-2-03.mp3"
+      },
+      {
+        "id": "b1l1g1-2-04",
+        "chinese": "他不姓陳嗎？",
+        "pinyin": "Tā bù xìng Chén ma?",
+        "english": "Isn’t his last name Chen?",
+        "audio_file": "b1l1g1-2-04.mp3"
+      },
+      {
+        "id": "b1l1g1-2-05",
+        "chinese": "你不是臺灣人嗎？",
+        "pinyin": "Nǐ bù shì Táiwān rén ma?",
+        "english": "Aren’t you Taiwanese?",
+        "audio_file": "b1l1g1-2-05.mp3"
+      },
+      {
+        "id": "b1l1g1-2-06",
+        "chinese": "他不喝咖啡嗎？",
+        "pinyin": "Tā bù hē kāfēi ma?",
+        "english": "Doesn’t he drink coffee?",
+        "audio_file": "b1l1g1-2-06.mp3"
+      },
+      {
+        "id": "b1l1g1-2-07",
+        "chinese": "你好嗎？ ",
+        "pinyin": "Nǐ hǎo ma?",
+        "english": "How are you?",
+        "audio_file": "b1l1g1-2-07.mp3"
+      },
+      {
+        "id": "b1l1g1-2-08",
+        "chinese": "你要喝茶嗎？",
+        "pinyin": "Nǐ yào hē chá ma?",
+        "english": "Do you want to drink tea?",
+        "audio_file": "b1l1g1-2-08.mp3"
+      },
+      {
+        "id": "b1l1g1-2-09",
+        "chinese": "你們要不要喝烏龍茶？ ",
+        "pinyin": "Nǐmen yào bù yào hē Wūlóng chá?",
+        "english": "Do you (all) want to drink oolong tea?",
+        "audio_file": "b1l1g1-2-09.mp3"
+      },
+      {
+        "id": "b1l1g2-1-01",
+        "chinese": "他是不是臺灣人？／他是臺灣人嗎？是，他是臺灣人。",
+        "pinyin": "Tā shì bù shì Táiwān rén? / Tā shì Táiwān rén ma? Shì, tā shì Táiwān rén.",
+        "english": "Is he Taiwanese? / Is he Taiwanese? Yes, he is Taiwanese.",
+        "audio_file": "b1l1g2-1-01.mp3"
+      },
+      {
+        "id": "b1l1g2-1-02",
+        "chinese": "你喜不喜歡臺灣？／你喜歡臺灣嗎？ 喜歡，我喜歡臺灣。",
+        "pinyin": "Nǐ xǐ bù xǐhuān Táiwān? / Nǐ xǐhuān Táiwān ma? Xǐhuān, wǒ xǐhuān Táiwān.",
+        "english": "Do you like Taiwan? / Do you like Taiwan? Yes, I like Taiwan.",
+        "audio_file": "b1l1g2-1-02.mp3"
+      },
+      {
+        "id": "b1l1g2-1-03",
+        "chinese": "王先生是不是日本人?／王先生是日本人嗎？是，王先生是日本人。",
+        "pinyin": "Wáng xiānshēng shì bù shì Rìběn rén? / Wáng xiānshēng shì Rìběn rén ma? Shì, Wáng xiānshēng shì Rìběn rén.",
+        "english": "Is Mr. Wang Japanese? / Is Mr. Wang Japanese? Yes, Mr. Wang is Japanese.",
+        "audio_file": "b1l1g2-1-03.mp3"
+      },
+      {
+        "id": "b1l1g2-1-04",
+        "chinese": "他喝不喝烏龍茶？／他喝烏龍茶嗎？喝，他喝烏龍茶。",
+        "pinyin": "Tā hē bù hē Wūlóng chá? / Tā hē Wūlóng chá ma? Hē, tā hē Wūlóng chá.",
+        "english": "Does he drink oolong tea? / Does he drink oolong tea? Yes, he drinks oolong tea.",
+        "audio_file": "b1l1g2-1-04.mp3"
+      },
+      {
+        "id": "b1l1g2-1-05",
+        "chinese": "你是王先生嗎？是。",
+        "pinyin": "Nǐ shì Wáng xiānshēng ma? Shì.",
+        "english": "Are you Mr. Wang? Yes.",
+        "audio_file": "b1l1g2-1-05.mp3"
+      },
+      {
+        "id": "b1l1g2-1-06",
+        "chinese": "他來不來臺灣？來。",
+        "pinyin": "Tā lái bù lái Táiwān? Lái.",
+        "english": "Is he coming to Taiwan? Yes.",
+        "audio_file": "b1l1g2-1-06.mp3"
+      },
+      {
+        "id": "b1l1g2-1-07",
+        "chinese": "他喜歡不喜歡喝茶？喜歡。",
+        "pinyin": "Tā xǐhuān bù xǐhuān hē chá? Xǐhuān.",
+        "english": "Does he like drinking tea? Yes.",
+        "audio_file": "b1l1g2-1-07.mp3"
+      },
+      {
+        "id": "b1l1g2-2-01",
+        "chinese": "他是不是李先生？不是，他不是李先生。",
+        "pinyin": "Tā shì bù shì Lǐ xiānshēng? Bù shì, tā bù shì Lǐ xiānshēng.",
+        "english": "Is he Mr. Li? No, he is not Mr. Li.",
+        "audio_file": "b1l1g2-2-01.mp3"
+      },
+      {
+        "id": "b1l1g2-2-02",
+        "chinese": "王先生喝茶嗎？不，他不喝。",
+        "pinyin": "Wáng xiānshēng hē chá ma? Bù, tā bù hē.",
+        "english": "Does Mr. Wang drink tea? No, he doesn’t.",
+        "audio_file": "b1l1g2-2-02.mp3"
+      },
+      {
+        "id": "b1l1g2-2-03",
+        "chinese": "李小姐是不是臺灣人？不是，李小姐不是臺灣人。",
+        "pinyin": "Lǐ xiǎojiě shì bù shì Táiwān rén? Bù shì, Lǐ xiǎojiě bù shì Táiwān rén.",
+        "english": "Is Miss Li Taiwanese? No, Miss Li is not Taiwanese.",
+        "audio_file": "b1l1g2-2-03.mp3"
+      },
+      {
+        "id": "b1l1g2-2-04",
+        "chinese": "要不要喝咖啡？不要。",
+        "pinyin": "Yào bù yào hē kāfēi? Bù yào.",
+        "english": "Do you want to drink coffee? No.",
+        "audio_file": "b1l1g2-2-04.mp3"
+      },
+      {
+        "id": "b1l1g2-2-05",
+        "chinese": "你喜歡不喜歡喝烏龍茶？不喜歡。",
+        "pinyin": "Nǐ xǐhuān bù xǐhuān hē Wūlóng chá? Bù xǐhuān.",
+        "english": "Do you like drinking oolong tea? No, I don’t.",
+        "audio_file": "b1l1g2-2-05.mp3"
+      },
+      {
+        "id": "b1l1g2-2-06",
+        "chinese": "陳小姐是不是美國人？不是。",
+        "pinyin": "Chén xiǎojiě shì bù shì Měiguó rén? Bù shì.",
+        "english": "Is Miss Chen American? No.",
+        "audio_file": "b1l1g2-2-06.mp3"
+      },
+      {
+        "id": "b1l1g3-01",
+        "chinese": "我很好。",
+        "pinyin": "Wǒ hěn hǎo.",
+        "english": "I’m very good.",
+        "audio_file": "b1l1g3-01.mp3"
+      },
+      {
+        "id": "b1l1g3-02",
+        "chinese": "他很喜歡臺灣。",
+        "pinyin": "Tā hěn xǐhuān Táiwān.",
+        "english": "He really likes Taiwan.",
+        "audio_file": "b1l1g3-02.mp3"
+      },
+      {
+        "id": "b1l1g3-03",
+        "chinese": "臺灣人很喜歡喝烏龍茶。",
+        "pinyin": "Táiwān rén hěn xǐhuān hē Wūlóng chá.",
+        "english": "Taiwanese people really like drinking oolong tea.",
+        "audio_file": "b1l1g3-03.mp3"
+      },
+      {
+        "id": "b1l1g3-04",
+        "chinese": "烏龍茶很好喝。",
+        "pinyin": "Wūlóng chá hěn hǎo hē.",
+        "english": "Oolong tea is very delicious.",
+        "audio_file": "b1l1g3-04.mp3"
+      },
+      {
+        "id": "b1l1g3-05",
+        "chinese": "他很喜歡日本人。",
+        "pinyin": "Tā hěn xǐhuān Rìběn rén.",
+        "english": "He really likes Japanese people.",
+        "audio_file": "b1l1g3-05.mp3"
+      },
+      {
+        "id": "b1l1g3-06",
+        "chinese": "我們很好。  ",
+        "pinyin": "Wǒmen hěn hǎo.",
+        "english": "We are very good.",
+        "audio_file": "b1l1g3-06.mp3"
+      },
+      {
+        "id": "b1l1g4-01",
+        "chinese": "我要喝茶，你呢？",
+        "pinyin": "Wǒ yào hē chá, nǐ ne?",
+        "english": "I want to drink tea, how about you?",
+        "audio_file": "b1l1g4-01.mp3"
+      },
+      {
+        "id": "b1l1g4-02",
+        "chinese": "他不喝咖啡，陳小姐呢？",
+        "pinyin": "Tā bù hē kāfēi, Chén xiǎojiě ne?",
+        "english": "He doesn’t drink coffee, how about Miss Chen?",
+        "audio_file": "b1l1g4-02.mp3"
+      },
+      {
+        "id": "b1l1g4-03",
+        "chinese": "王先生是日本人，李先生呢？",
+        "pinyin": "Wáng xiānshēng shì Rìběn rén, Lǐ xiānshēng ne?",
+        "english": "Mr. Wang is Japanese, how about Mr. Li?",
+        "audio_file": "b1l1g4-03.mp3"
+      },
+      {
+        "id": "b1l1g4-04",
+        "chinese": "他是美國人，你呢？",
+        "pinyin": "Tā shì Měiguó rén, nǐ ne?",
+        "english": "He is American, how about you?",
+        "audio_file": "b1l1g4-04.mp3"
+      },
+      {
+        "id": "b1l1g4-05",
+        "chinese": "他喜歡我們，你呢？",
+        "pinyin": "Tā xǐhuān wǒmen, nǐ ne?",
+        "english": "He likes us, how about you?",
+        "audio_file": "b1l1g4-05.mp3"
+      },
+      {
+        "id": "b1l1g4-06",
+        "chinese": "你喜歡喝茶，咖啡呢？ ",
+        "pinyin": "Nǐ xǐhuān hē chá, kāfēi ne?",
+        "english": "You like drinking tea, how about coffee?",
+        "audio_file": "b1l1g4-06.mp3"
+      },
+      {
+        "id": "b1l1g4-07",
+        "chinese": "他不喝咖啡，茶呢？",
+        "pinyin": "Tā bù hē kāfēi, chá ne?",
+        "english": "He doesn’t drink coffee, how about tea?",
+        "audio_file": "b1l1g4-07.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 2,
+    "title": "Lesson 2",
+    "sentence_count": 36,
+    "sentences": [
+      {
+        "id": "b1l2g1-01",
+        "chinese": "我的書",
+        "pinyin": "Wǒ de shū",
+        "english": "My book",
+        "audio_file": "b1l2g1-01.mp3"
+      },
+      {
+        "id": "b1l2g1-02",
+        "chinese": "你們的照片",
+        "pinyin": "Nǐmen de zhàopiàn",
+        "english": "Your (plural) photos",
+        "audio_file": "b1l2g1-02.mp3"
+      },
+      {
+        "id": "b1l2g1-03",
+        "chinese": "李老師的姐姐",
+        "pinyin": "Lǐ lǎoshī de jiějiě",
+        "english": "Teacher Li’s older sister",
+        "audio_file": "b1l2g1-03.mp3"
+      },
+      {
+        "id": "b1l2g1-04",
+        "chinese": "哥哥的老師",
+        "pinyin": "Gēgē de lǎoshī",
+        "english": "Older brother’s teacher",
+        "audio_file": "b1l2g1-04.mp3"
+      },
+      {
+        "id": "b1l2g1-05",
+        "chinese": "我媽媽",
+        "pinyin": "Wǒ māma",
+        "english": "My mom",
+        "audio_file": "b1l2g1-05.mp3"
+      },
+      {
+        "id": "b1l2g1-06",
+        "chinese": "我們老師",
+        "pinyin": "Wǒmen lǎoshī",
+        "english": "Our teacher",
+        "audio_file": "b1l2g1-06.mp3"
+      },
+      {
+        "id": "b1l2g2-01",
+        "chinese": "漂亮的小姐",
+        "pinyin": "Piàoliàng de xiǎojiě",
+        "english": "A beautiful lady",
+        "audio_file": "b1l2g2-01.mp3"
+      },
+      {
+        "id": "b1l2g2-02",
+        "chinese": "好喝的咖啡",
+        "pinyin": "Hǎo hē de kāfēi",
+        "english": "Delicious coffee",
+        "audio_file": "b1l2g2-02.mp3"
+      },
+      {
+        "id": "b1l2g2-03",
+        "chinese": "很好看的房子",
+        "pinyin": "Hěn hǎo kàn de fángzi",
+        "english": "A very nice-looking house",
+        "audio_file": "b1l2g2-03.mp3"
+      },
+      {
+        "id": "b1l2g3-01",
+        "chinese": "我有很多照片。",
+        "pinyin": "Wǒ yǒu hěn duō zhàopiàn.",
+        "english": "I have many photos.",
+        "audio_file": "b1l2g3-01.mp3"
+      },
+      {
+        "id": "b1l2g3-02",
+        "chinese": "他們有好喝的茶。",
+        "pinyin": "Tāmen yǒu hǎo hē de chá.",
+        "english": "They have delicious tea.",
+        "audio_file": "b1l2g3-02.mp3"
+      },
+      {
+        "id": "b1l2g3-03",
+        "chinese": "他沒有房子。",
+        "pinyin": "Tā méiyǒu fángzi.",
+        "english": "He doesn’t have a house.",
+        "audio_file": "b1l2g3-03.mp3"
+      },
+      {
+        "id": "b1l2g3-04",
+        "chinese": "我沒有書。",
+        "pinyin": "Wǒ méiyǒu shū.",
+        "english": "I don’t have books.",
+        "audio_file": "b1l2g3-04.mp3"
+      },
+      {
+        "id": "b1l2g3-05",
+        "chinese": "對不起，我們沒有烏龍茶。",
+        "pinyin": "Duìbùqǐ, wǒmen méiyǒu Wūlóng chá.",
+        "english": "Sorry, we don’t have oolong tea.",
+        "audio_file": "b1l2g3-05.mp3"
+      },
+      {
+        "id": "b1l2g3-06",
+        "chinese": "我沒有兄弟姐妹。",
+        "pinyin": "Wǒ méiyǒu xiōngdì jiěmèi.",
+        "english": "I don’t have siblings.",
+        "audio_file": "b1l2g3-06.mp3"
+      },
+      {
+        "id": "b1l2g3-07",
+        "chinese": "你們有沒有好喝的咖啡？",
+        "pinyin": "Nǐmen yǒu méiyǒu hǎo hē de kāfēi?",
+        "english": "Do you (all) have delicious coffee?",
+        "audio_file": "b1l2g3-07.mp3"
+      },
+      {
+        "id": "b1l2g3-08",
+        "chinese": "你們有烏龍茶嗎？",
+        "pinyin": "Nǐmen yǒu Wūlóng chá ma?",
+        "english": "Do you (all) have oolong tea?",
+        "audio_file": "b1l2g3-08.mp3"
+      },
+      {
+        "id": "b1l2g3-09",
+        "chinese": "你有幾張照片？",
+        "pinyin": "Nǐ yǒu jǐ zhāng zhàopiàn?",
+        "english": "How many photos do you have?",
+        "audio_file": "b1l2g3-09.mp3"
+      },
+      {
+        "id": "b1l2g4-01",
+        "chinese": "我們都姓陳。",
+        "pinyin": "Wǒmen dōu xìng Chén.",
+        "english": "Our last name is all Chen.",
+        "audio_file": "b1l2g4-01.mp3"
+      },
+      {
+        "id": "b1l2g4-02",
+        "chinese": "他的兄弟姐妹都很好看。",
+        "pinyin": "Tā de xiōngdì jiěmèi dōu hěn hǎo kàn.",
+        "english": "His siblings are all very good-looking.",
+        "audio_file": "b1l2g4-02.mp3"
+      },
+      {
+        "id": "b1l2g4-03",
+        "chinese": "這兩個房子都是他的（房子）。",
+        "pinyin": "Zhè liǎng gè fángzi dōu shì tā de (fángzi).",
+        "english": "These two houses are both his (houses).",
+        "audio_file": "b1l2g4-03.mp3"
+      },
+      {
+        "id": "b1l2g4-04",
+        "chinese": "我們都是美國人。",
+        "pinyin": "Wǒmen dōu shì Měiguó rén.",
+        "english": "We are all Americans.",
+        "audio_file": "b1l2g4-04.mp3"
+      },
+      {
+        "id": "b1l2g4-05",
+        "chinese": "你爸爸媽媽都要喝咖啡。",
+        "pinyin": "Nǐ bàba māma dōu yào hē kāfēi.",
+        "english": "Your dad and mom both want to drink coffee.",
+        "audio_file": "b1l2g4-05.mp3"
+      },
+      {
+        "id": "b1l2g4-06",
+        "chinese": "李先生、陳小姐都喜歡喝茶。",
+        "pinyin": "Lǐ xiānshēng, Chén xiǎojiě dōu xǐhuān hē chá.",
+        "english": "Mr. Li and Miss Chen both like drinking tea.",
+        "audio_file": "b1l2g4-06.mp3"
+      },
+      {
+        "id": "b1l2g4-07",
+        "chinese": "我們都不是美國人。",
+        "pinyin": "Wǒmen dōu bú shì Měiguó rén.",
+        "english": "None of us are Americans.",
+        "audio_file": "b1l2g4-07.mp3"
+      },
+      {
+        "id": "b1l2g4-08",
+        "chinese": "我哥哥、我姊姊都不喜歡照相。",
+        "pinyin": "Wǒ gēgē, wǒ jiějiě dōu bù xǐhuān zhàoxiàng.",
+        "english": "My older brother and older sister both don’t like taking photos.",
+        "audio_file": "b1l2g4-08.mp3"
+      },
+      {
+        "id": "b1l2g4-09",
+        "chinese": "我們都沒有哥哥。",
+        "pinyin": "Wǒmen dōu méiyǒu gēgē.",
+        "english": "None of us have an older brother.",
+        "audio_file": "b1l2g4-09.mp3"
+      },
+      {
+        "id": "b1l2g4-10",
+        "chinese": "你們都是美國人嗎？",
+        "pinyin": "Nǐmen dōu shì Měiguó rén ma?",
+        "english": "Are you all Americans?",
+        "audio_file": "b1l2g4-10.mp3"
+      },
+      {
+        "id": "b1l2g4-11",
+        "chinese": "你的家人都要喝咖啡嗎？",
+        "pinyin": "Nǐ de jiārén dōu yào hē kāfēi ma?",
+        "english": "Do all your family members want to drink coffee?",
+        "audio_file": "b1l2g4-11.mp3"
+      },
+      {
+        "id": "b1l2g5-01",
+        "chinese": "一個哥哥          ",
+        "pinyin": "Yí gè gēgē",
+        "english": "One older brother",
+        "audio_file": "b1l2g5-01.mp3"
+      },
+      {
+        "id": "b1l2g5-02",
+        "chinese": "兩張好看的照片",
+        "pinyin": "Liǎng zhāng hǎo kàn de zhàopiàn",
+        "english": "Two nice-looking photos",
+        "audio_file": "b1l2g5-02.mp3"
+      },
+      {
+        "id": "b1l2g5-03",
+        "chinese": "幾個老師？   ",
+        "pinyin": "Jǐ gè lǎoshī?",
+        "english": "How many teachers?",
+        "audio_file": "b1l2g5-03.mp3"
+      },
+      {
+        "id": "b1l2g5-04",
+        "chinese": "哪三個人？",
+        "pinyin": "Nǎ sān gè rén?",
+        "english": "Which three people?",
+        "audio_file": "b1l2g5-04.mp3"
+      },
+      {
+        "id": "b1l2g5-05",
+        "chinese": "三個人",
+        "pinyin": "Sān gè rén",
+        "english": "Three people",
+        "audio_file": "b1l2g5-05.mp3"
+      },
+      {
+        "id": "b1l2g5-06",
+        "chinese": "幾張照片？",
+        "pinyin": "Jǐ zhāng zhàopiàn?",
+        "english": "How many photos?",
+        "audio_file": "b1l2g5-06.mp3"
+      },
+      {
+        "id": "b1l2g5-07",
+        "chinese": "哪一張照片？",
+        "pinyin": "Nǎ yì zhāng zhàopiàn?",
+        "english": "Which photo?",
+        "audio_file": "b1l2g5-07.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 3,
+    "title": "Lesson 3",
+    "sentence_count": 38,
+    "sentences": [
+      {
+        "id": "b1l3g1-01",
+        "chinese": "我們今天去看電影。",
+        "pinyin": "Wǒmen jīntiān qù kàn diànyǐng.",
+        "english": "We are going to watch a movie today.",
+        "audio_file": "b1l3g1-01.mp3"
+      },
+      {
+        "id": "b1l3g1-02",
+        "chinese": "你明天想去游泳嗎？",
+        "pinyin": "Nǐ míngtiān xiǎng qù yóuyǒng ma?",
+        "english": "Do you want to go swimming tomorrow?",
+        "audio_file": "b1l3g1-02.mp3"
+      },
+      {
+        "id": "b1l3g1-03",
+        "chinese": "週末他要去打籃球。",
+        "pinyin": "Zhōumò tā yào qù dǎ lánqiú.",
+        "english": "He is going to play basketball on the weekend.",
+        "audio_file": "b1l3g1-03.mp3"
+      },
+      {
+        "id": "b1l3g1-04",
+        "chinese": "明天你想做什麼？",
+        "pinyin": "Míngtiān nǐ xiǎng zuò shénme?",
+        "english": "What do you want to do tomorrow?",
+        "audio_file": "b1l3g1-04.mp3"
+      },
+      {
+        "id": "b1l3g2-01",
+        "chinese": "我去打網球。",
+        "pinyin": "Wǒ qù dǎ wǎngqiú.",
+        "english": "I’m going to play tennis.",
+        "audio_file": "b1l3g2-01.mp3"
+      },
+      {
+        "id": "b1l3g2-02",
+        "chinese": "他去踢足球。",
+        "pinyin": "Tā qù tī zúqiú.",
+        "english": "He is going to play soccer.",
+        "audio_file": "b1l3g2-02.mp3"
+      },
+      {
+        "id": "b1l3g2-03",
+        "chinese": "我們和老師都去看電影。",
+        "pinyin": "Wǒmen hé lǎoshī dōu qù kàn diànyǐng.",
+        "english": "Our teacher and we are all going to watch a movie.",
+        "audio_file": "b1l3g2-03.mp3"
+      },
+      {
+        "id": "b1l3g2-04",
+        "chinese": "我不去打籃球。",
+        "pinyin": "Wǒ bù qù dǎ lánqiú.",
+        "english": "I am not going to play basketball.",
+        "audio_file": "b1l3g2-04.mp3"
+      },
+      {
+        "id": "b1l3g2-05",
+        "chinese": "明天早上我不去游泳。",
+        "pinyin": "Míngtiān zǎoshàng wǒ bù qù yóuyǒng.",
+        "english": "I am not going swimming tomorrow morning.",
+        "audio_file": "b1l3g2-05.mp3"
+      },
+      {
+        "id": "b1l3g2-06",
+        "chinese": "你要去看電影嗎？  ",
+        "pinyin": "Nǐ yào qù kàn diànyǐng ma?",
+        "english": "Do you want to watch a movie?",
+        "audio_file": "b1l3g2-06.mp3"
+      },
+      {
+        "id": "b1l3g2-07",
+        "chinese": "你們常去吃越南菜嗎？",
+        "pinyin": "Nǐmen cháng qù chī Yuènán cài ma?",
+        "english": "Do you often eat Vietnamese food?",
+        "audio_file": "b1l3g2-07.mp3"
+      },
+      {
+        "id": "b1l3g2-08",
+        "chinese": "他不去打棒球嗎？  ",
+        "pinyin": "Tā bù qù dǎ bàngqiú ma?",
+        "english": "Is he not going to play baseball?",
+        "audio_file": "b1l3g2-08.mp3"
+      },
+      {
+        "id": "b1l3g3-01",
+        "chinese": "臺灣人喜歡喝烏龍茶嗎？烏龍茶，臺灣人都喜歡喝。",
+        "pinyin": "Táiwān rén xǐhuān hē Wūlóng chá ma? Wūlóng chá, Táiwān rén dōu xǐhuān hē.",
+        "english": "Do Taiwanese people like drinking oolong tea? Oolong tea, all Taiwanese people like to drink.",
+        "audio_file": "b1l3g3-01.mp3"
+      },
+      {
+        "id": "b1l3g3-02",
+        "chinese": "你有哥哥、姐姐嗎？哥哥、姐姐，我都沒有。",
+        "pinyin": "Nǐ yǒu gēgē, jiějiě ma? Gēgē, jiějiě, wǒ dōu méiyǒu.",
+        "english": "Do you have an older brother or sister? I don’t have an older brother or sister.",
+        "audio_file": "b1l3g3-02.mp3"
+      },
+      {
+        "id": "b1l3g3-03",
+        "chinese": "你想看美國電影還是臺灣電影？美國電影、臺灣電影，我都想看。",
+        "pinyin": "Nǐ xiǎng kàn Měiguó diànyǐng háishì Táiwān diànyǐng? Měiguó diànyǐng, Táiwān diànyǐng, wǒ dōu xiǎng kàn.",
+        "english": "Do you want to watch an American movie or a Taiwanese movie? I want to watch both American and Taiwanese movies.",
+        "audio_file": "b1l3g3-03.mp3"
+      },
+      {
+        "id": "b1l3g3-04",
+        "chinese": "打棒球，我不喜歡。",
+        "pinyin": "Dǎ bàngqiú, wǒ bù xǐhuān.",
+        "english": "Playing baseball, I don’t like it.",
+        "audio_file": "b1l3g3-04.mp3"
+      },
+      {
+        "id": "b1l3g3-05",
+        "chinese": "越南菜，我常吃。",
+        "pinyin": "Yuènán cài, wǒ cháng chī.",
+        "english": "Vietnamese food, I often eat it.",
+        "audio_file": "b1l3g3-05.mp3"
+      },
+      {
+        "id": "b1l3g3-06",
+        "chinese": "這張照片，我覺得很好看。",
+        "pinyin": "Zhè zhāng zhàopiàn, wǒ juéde hěn hǎo kàn.",
+        "english": "This photo, I think it looks very nice.",
+        "audio_file": "b1l3g3-06.mp3"
+      },
+      {
+        "id": "b1l3g3-07",
+        "chinese": "中國菜，我都喜歡吃。",
+        "pinyin": "Zhōngguó cài, wǒ dōu xǐhuān chī.",
+        "english": "Chinese food, I like eating all of it.",
+        "audio_file": "b1l3g3-07.mp3"
+      },
+      {
+        "id": "b1l3g3-08",
+        "chinese": "弟弟、妹妹，我都有。",
+        "pinyin": "Dìdì, mèimei, wǒ dōu yǒu.",
+        "english": "I have both a younger brother and a younger sister.",
+        "audio_file": "b1l3g3-08.mp3"
+      },
+      {
+        "id": "b1l3g4-01",
+        "chinese": " 我是美國人,他也是美國人。",
+        "pinyin": "Wǒ shì Měiguó rén, tā yě shì Měiguó rén.",
+        "english": "I am American, and he is also American.",
+        "audio_file": "b1l3g4-01.mp3"
+      },
+      {
+        "id": "b1l3g4-02",
+        "chinese": " 我姐姐很漂亮,我妹妹也很漂亮。",
+        "pinyin": "Wǒ jiějiě hěn piàoliàng, wǒ mèimei yě hěn piàoliàng.",
+        "english": "My older sister is very beautiful, and my younger sister is also very beautiful.",
+        "audio_file": "b1l3g4-02.mp3"
+      },
+      {
+        "id": "b1l3g4-03",
+        "chinese": " 我和王老師都喜歡他。",
+        "pinyin": "Wǒ hé Wáng lǎoshī dōu xǐhuān tā.",
+        "english": "Teacher Wang and I both like him.",
+        "audio_file": "b1l3g4-03.mp3"
+      },
+      {
+        "id": "b1l3g4-04",
+        "chinese": " 你家人都很好看。",
+        "pinyin": "Nǐ jiārén dōu hěn hǎo kàn.",
+        "english": "Your family members are all good-looking.",
+        "audio_file": "b1l3g4-04.mp3"
+      },
+      {
+        "id": "b1l3g4-05",
+        "chinese": " 我常打網球。",
+        "pinyin": "Wǒ cháng dǎ wǎngqiú.",
+        "english": "I often play tennis.",
+        "audio_file": "b1l3g4-05.mp3"
+      },
+      {
+        "id": "b1l3g4-06",
+        "chinese": " 我是日本人,他們也都 是日本人。",
+        "pinyin": "Wǒ shì Rìběn rén, tāmen yě dōu shì Rìběn rén.",
+        "english": "I am Japanese, and they are also all Japanese.",
+        "audio_file": "b1l3g4-06.mp3"
+      },
+      {
+        "id": "b1l3g4-07",
+        "chinese": " 我家人喜歡照相,他家人也都喜歡照相。",
+        "pinyin": "Wǒ jiārén xǐhuān zhàoxiàng, tā jiārén yě dōu xǐhuān zhàoxiàng.",
+        "english": "My family likes taking photos, and his family also likes taking photos.",
+        "audio_file": "b1l3g4-07.mp3"
+      },
+      {
+        "id": "b1l3g4-08",
+        "chinese": " 你很喜歡吃越南菜，我們也都很喜歡吃越南菜。",
+        "pinyin": "Nǐ hěn xǐhuān chī Yuènán cài, wǒmen yě dōu hěn xǐhuān chī Yuènán cài.",
+        "english": "You really like eating Vietnamese food, and we all really like eating Vietnamese food too.",
+        "audio_file": "b1l3g4-08.mp3"
+      },
+      {
+        "id": "b1l3g4-09",
+        "chinese": " 你常喝咖啡,我也常喝咖啡。",
+        "pinyin": "Nǐ cháng hē kāfēi, wǒ yě cháng hē kāfēi.",
+        "english": "You often drink coffee, and I also often drink coffee.",
+        "audio_file": "b1l3g4-09.mp3"
+      },
+      {
+        "id": "b1l3g4-10",
+        "chinese": " 你常去踢足球，我們也都常去踢足球。",
+        "pinyin": "Nǐ cháng qù tī zúqiú, wǒmen yě dōu cháng qù tī zúqiú.",
+        "english": "You often go play soccer, and we all also often go play soccer.",
+        "audio_file": "b1l3g4-10.mp3"
+      },
+      {
+        "id": "b1l3g4-11",
+        "chinese": "我不是日本人，他也不是日本人。",
+        "pinyin": "Wǒ bú shì Rìběn rén, tā yě bú shì Rìběn rén.",
+        "english": "I am not Japanese, and he is also not Japanese.",
+        "audio_file": "b1l3g4-11.mp3"
+      },
+      {
+        "id": "b1l3g4-12",
+        "chinese": "我沒有弟弟，也沒有妹妹。",
+        "pinyin": "Wǒ méiyǒu dìdì, yě méiyǒu mèimei.",
+        "english": "I don’t have a younger brother or a younger sister either.",
+        "audio_file": "b1l3g4-12.mp3"
+      },
+      {
+        "id": "b1l3g4-13",
+        "chinese": "他不喜歡看電影，我也不喜歡看電影。 ",
+        "pinyin": "Tā bù xǐhuān kàn diànyǐng, wǒ yě bù xǐhuān kàn diànyǐng.",
+        "english": "He doesn’t like watching movies, and I don’t like watching movies either.",
+        "audio_file": "b1l3g4-13.mp3"
+      },
+      {
+        "id": "b1l3g4-14",
+        "chinese": "我不常看電影。",
+        "pinyin": "Wǒ bù cháng kàn diànyǐng.",
+        "english": "I don’t often watch movies.",
+        "audio_file": "b1l3g4-14.mp3"
+      },
+      {
+        "id": "b1l3g4-16",
+        "chinese": "他們不都是美國人。（有美國人，也有日本人）",
+        "pinyin": "Tāmen bú dōu shì Měiguó rén. (Yǒu Měiguó rén, yě yǒu Rìběn rén.)",
+        "english": "Not all of them are Americans. (Some are Americans, some are Japanese.)",
+        "audio_file": "b1l3g4-16.mp3"
+      },
+      {
+        "id": "b1l3g5-01",
+        "chinese": "我們去喝咖啡還是喝茶？我們去喝咖啡吧。",
+        "pinyin": "Wǒmen qù hē kāfēi háishì hē chá? Wǒmen qù hē kāfēi ba.",
+        "english": "Should we go drink coffee or tea? Let’s go drink coffee.",
+        "audio_file": "b1l3g5-01.mp3"
+      },
+      {
+        "id": "b1l3g5-02",
+        "chinese": "今天晚上我們看什麼電影？我們去看臺灣電影吧！",
+        "pinyin": "Jīntiān wǎnshàng wǒmen kàn shénme diànyǐng? Wǒmen qù kàn Táiwān diànyǐng ba!",
+        "english": "What movie are we watching tonight? Let’s go watch a Taiwanese movie!",
+        "audio_file": "b1l3g5-02.mp3"
+      },
+      {
+        "id": "b1l3g5-03",
+        "chinese": "週末我們去打籃球，好不好？我不喜歡打籃球，我們打網球吧！",
+        "pinyin": "Zhōumò wǒmen qù dǎ lánqiú, hǎo bù hǎo? Wǒ bù xǐhuān dǎ lánqiú, wǒmen dǎ wǎngqiú ba!",
+        "english": "Shall we go play basketball on the weekend? I don’t like playing basketball, let’s play tennis instead!",
+        "audio_file": "b1l3g5-03.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 4,
+    "title": "Lesson 4",
+    "sentence_count": 40,
+    "sentences": [
+      {
+        "id": "b1l4g1-01",
+        "chinese": "一杯咖啡",
+        "pinyin": "Yì bēi kāfēi",
+        "english": "One cup of coffee",
+        "audio_file": "b1l4g1-01.mp3"
+      },
+      {
+        "id": "b1l4g1-02",
+        "chinese": "十支手機",
+        "pinyin": "Shí zhī shǒujī",
+        "english": "Ten mobile phones",
+        "audio_file": "b1l4g1-02.mp3"
+      },
+      {
+        "id": "b1l4g1-03",
+        "chinese": "三個弟弟",
+        "pinyin": "Sān ge dìdì",
+        "english": "Three younger brothers",
+        "audio_file": "b1l4g1-03.mp3"
+      },
+      {
+        "id": "b1l4g1-04",
+        "chinese": "這兩杯熱咖啡一共多少錢？",
+        "pinyin": "Zhè liǎng bēi rè kāfēi yígòng duōshǎo qián?",
+        "english": "How much do these two cups of hot coffee cost in total?",
+        "audio_file": "b1l4g1-04.mp3"
+      },
+      {
+        "id": "b1l4g1-05",
+        "chinese": "那三支手機太舊了。",
+        "pinyin": "Nà sān zhī shǒujī tài jiù le.",
+        "english": "Those three mobile phones are too old.",
+        "audio_file": "b1l4g1-05.mp3"
+      },
+      {
+        "id": "b1l4g1-06",
+        "chinese": "哪（一） 種手機不貴？",
+        "pinyin": "Nǎ (yì) zhǒng shǒujī bù guì?",
+        "english": "Which type of mobile phone is not expensive?",
+        "audio_file": "b1l4g1-06.mp3"
+      },
+      {
+        "id": "b1l4g2-01",
+        "chinese": "請幫我微波包子。",
+        "pinyin": "Qǐng bāng wǒ wēibō bāozi.",
+        "english": "Please microwave the buns for me.",
+        "audio_file": "b1l4g2-01.mp3"
+      },
+      {
+        "id": "b1l4g2-02",
+        "chinese": "請幫我買一杯咖啡。 ",
+        "pinyin": "Qǐng bāng wǒ mǎi yì bēi kāfēi.",
+        "english": "Please help me buy a cup of coffee.",
+        "audio_file": "b1l4g2-02.mp3"
+      },
+      {
+        "id": "b1l4g2-03",
+        "chinese": "請幫我照相。  ",
+        "pinyin": "Qǐng bāng wǒ zhàoxiàng.",
+        "english": "Please take a photo for me.",
+        "audio_file": "b1l4g2-03.mp3"
+      },
+      {
+        "id": "b1l4g2-04",
+        "chinese": "他不幫我微波包子。",
+        "pinyin": "Tā bù bāng wǒ wēibō bāozi.",
+        "english": "He doesn’t help me microwave the buns.",
+        "audio_file": "b1l4g2-04.mp3"
+      },
+      {
+        "id": "b1l4g2-05",
+        "chinese": "姐姐不幫弟弟買咖啡。",
+        "pinyin": "Jiějiě bù bāng dìdì mǎi kāfēi.",
+        "english": "The older sister doesn’t help the younger brother buy coffee.",
+        "audio_file": "b1l4g2-05.mp3"
+      },
+      {
+        "id": "b1l4g2-06",
+        "chinese": "王先生不幫我照相。",
+        "pinyin": "Wáng xiānshēng bù bāng wǒ zhàoxiàng.",
+        "english": "Mr. Wang doesn’t help me take a photo.",
+        "audio_file": "b1l4g2-06.mp3"
+      },
+      {
+        "id": "b1l4g2-07",
+        "chinese": "你幫不幫他買手機？",
+        "pinyin": "Nǐ bāng bù bāng tā mǎi shǒujī?",
+        "english": "Will you help him buy a mobile phone?",
+        "audio_file": "b1l4g2-07.mp3"
+      },
+      {
+        "id": "b1l4g2-08",
+        "chinese": "他幫你照相嗎？",
+        "pinyin": "Tā bāng nǐ zhàoxiàng ma?",
+        "english": "Does he take photos for you?",
+        "audio_file": "b1l4g2-08.mp3"
+      },
+      {
+        "id": "b1l4g2-09",
+        "chinese": "誰能幫安同微波包子？",
+        "pinyin": "Shéi néng bāng Āntóng wēibō bāozi?",
+        "english": "Who can help Antong microwave the buns?",
+        "audio_file": "b1l4g2-09.mp3"
+      },
+      {
+        "id": "b1l4g3-01",
+        "chinese": "你要買新手機還是舊手機？我要新的，不要舊的。",
+        "pinyin": "Nǐ yào mǎi xīn shǒujī háishì jiù shǒujī? Wǒ yào xīn de, bú yào jiù de.",
+        "english": "Do you want to buy a new mobile phone or an old one? I want a new one, not an old one.",
+        "audio_file": "b1l4g3-01.mp3"
+      },
+      {
+        "id": "b1l4g3-02",
+        "chinese": "新手機貴不貴？新的很貴。",
+        "pinyin": "Xīn shǒujī guì bú guì? Xīn de hěn guì.",
+        "english": "Are new mobile phones expensive? New ones are very expensive.",
+        "audio_file": "b1l4g3-02.mp3"
+      },
+      {
+        "id": "b1l4g3-03",
+        "chinese": "你的手機不是新的。這杯咖啡不熱，我要熱的。",
+        "pinyin": "Nǐ de shǒujī bú shì xīn de. Zhè bēi kāfēi bú rè, wǒ yào rè de.",
+        "english": "Your mobile phone is not new. This cup of coffee is not hot, I want a hot one.",
+        "audio_file": "b1l4g3-03.mp3"
+      },
+      {
+        "id": "b1l4g3-04",
+        "chinese": "房子很貴，我不買大的。",
+        "pinyin": "Fángzi hěn guì, wǒ bú mǎi dà de.",
+        "english": "Houses are very expensive, I won’t buy a big one.",
+        "audio_file": "b1l4g3-04.mp3"
+      },
+      {
+        "id": "b1l4g3-05",
+        "chinese": "房子，你喜歡新的嗎？",
+        "pinyin": "Fángzi, nǐ xǐhuān xīn de ma?",
+        "english": "Houses, do you like new ones?",
+        "audio_file": "b1l4g3-05.mp3"
+      },
+      {
+        "id": "b1l4g3-06",
+        "chinese": "手機，他買不買舊的？",
+        "pinyin": "Shǒujī, tā mǎi bú mǎi jiù de?",
+        "english": "Mobile phones, does he buy old ones?",
+        "audio_file": "b1l4g3-06.mp3"
+      },
+      {
+        "id": "b1l4g3-07",
+        "chinese": "咖啡，你要熱的嗎？",
+        "pinyin": "Kāfēi, nǐ yào rè de ma?",
+        "english": "Coffee, do you want a hot one?",
+        "audio_file": "b1l4g3-07.mp3"
+      },
+      {
+        "id": "b1l4g4-01",
+        "chinese": "太貴了。",
+        "pinyin": "Tài guì le.",
+        "english": "Too expensive.",
+        "audio_file": "b1l4g4-01.mp3"
+      },
+      {
+        "id": "b1l4g4-02",
+        "chinese": "太大了。",
+        "pinyin": "Tài dà le.",
+        "english": "Too big.",
+        "audio_file": "b1l4g4-02.mp3"
+      },
+      {
+        "id": "b1l4g4-03",
+        "chinese": "太熱了。",
+        "pinyin": "Tài rè le.",
+        "english": "Too hot.",
+        "audio_file": "b1l4g4-03.mp3"
+      },
+      {
+        "id": "b1l4g5-01",
+        "chinese": "新手機能上網。",
+        "pinyin": "Xīn shǒujī néng shàngwǎng.",
+        "english": "New mobile phones can access the internet.",
+        "audio_file": "b1l4g5-01.mp3"
+      },
+      {
+        "id": "b1l4g5-02",
+        "chinese": "那支手機能照相。",
+        "pinyin": "Nà zhī shǒujī néng zhàoxiàng.",
+        "english": "That mobile phone can take photos.",
+        "audio_file": "b1l4g5-02.mp3"
+      },
+      {
+        "id": "b1l4g5-03",
+        "chinese": "我的手機不能上網。     ",
+        "pinyin": "Wǒ de shǒujī bù néng shàngwǎng.",
+        "english": "My mobile phone cannot access the internet.",
+        "audio_file": "b1l4g5-03.mp3"
+      },
+      {
+        "id": "b1l4g5-04",
+        "chinese": "誰的手機不能照相？",
+        "pinyin": "Shéi de shǒujī bù néng zhàoxiàng?",
+        "english": "Whose mobile phone cannot take photos?",
+        "audio_file": "b1l4g5-04.mp3"
+      },
+      {
+        "id": "b1l4g5-05",
+        "chinese": "你的手機能不能照相？",
+        "pinyin": "Nǐ de shǒujī néng bù néng zhàoxiàng?",
+        "english": "Can your mobile phone take photos?",
+        "audio_file": "b1l4g5-05.mp3"
+      },
+      {
+        "id": "b1l4g5-06",
+        "chinese": "舊的能不能上網？",
+        "pinyin": "Jiù de néng bù néng shàngwǎng?",
+        "english": "Can the old one access the internet?",
+        "audio_file": "b1l4g5-06.mp3"
+      },
+      {
+        "id": "b1l4g5-07",
+        "chinese": "那支手機能不能上網？",
+        "pinyin": "Nà zhī shǒujī néng bù néng shàngwǎng?",
+        "english": "Can that mobile phone access the internet?",
+        "audio_file": "b1l4g5-07.mp3"
+      },
+      {
+        "id": "b1l4g6-01",
+        "chinese": "二十多個人",
+        "pinyin": "Èrshí duō ge rén",
+        "english": "More than twenty people",
+        "audio_file": "b1l4g6-01.mp3"
+      },
+      {
+        "id": "b1l4g6-02",
+        "chinese": "五萬多支手機。",
+        "pinyin": "Wǔ wàn duō zhī shǒujī.",
+        "english": "More than fifty thousand mobile phones.",
+        "audio_file": "b1l4g6-02.mp3"
+      },
+      {
+        "id": "b1l4g6-03",
+        "chinese": "二十多個人   ",
+        "pinyin": "Èrshí duō ge rén",
+        "english": "More than twenty people.",
+        "audio_file": "b1l4g6-03.mp3"
+      },
+      {
+        "id": "b1l4g6-04",
+        "chinese": "一千多支手機   ",
+        "pinyin": "Yì qiān duō zhī shǒujī",
+        "english": "More than one thousand mobile phones.",
+        "audio_file": "b1l4g6-04.mp3"
+      },
+      {
+        "id": "b1l4g6-05",
+        "chinese": "五百多個包子 ",
+        "pinyin": "Wǔ bǎi duō ge bāozi",
+        "english": "More than five hundred buns.",
+        "audio_file": "b1l4g6-05.mp3"
+      },
+      {
+        "id": "b1l4g6-06",
+        "chinese": "三萬四千多塊錢",
+        "pinyin": "Sān wàn sì qiān duō kuài qián",
+        "english": "More than thirty-four thousand dollars.",
+        "audio_file": "b1l4g6-06.mp3"
+      },
+      {
+        "id": "b1l4g6-07",
+        "chinese": "五塊多(錢)。",
+        "pinyin": "Wǔ kuài duō (qián).",
+        "english": "A little more than five dollars.",
+        "audio_file": "b1l4g6-07.mp3"
+      },
+      {
+        "id": "b1l4g6-08",
+        "chinese": "一塊多(錢)。",
+        "pinyin": "Yí kuài duō (qián).",
+        "english": "A little more than one dollar.",
+        "audio_file": "b1l4g6-08.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 5,
+    "title": "Lesson 5",
+    "sentence_count": 42,
+    "sentences": [
+      {
+        "id": "b1l5g1-01",
+        "chinese": "這碗牛肉麵有一點辣。",
+        "pinyin": "Zhè wǎn niúròumiàn yǒu yìdiǎn là.",
+        "english": "This bowl of beef noodle soup is a little spicy.",
+        "audio_file": "b1l5g1-01.mp3"
+      },
+      {
+        "id": "b1l5g1-02",
+        "chinese": "那支手機有一點貴。 ",
+        "pinyin": "Nà zhī shǒujī yǒu yìdiǎn guì.",
+        "english": "That mobile phone is a little expensive.",
+        "audio_file": "b1l5g1-02.mp3"
+      },
+      {
+        "id": "b1l5g1-03",
+        "chinese": "他的房子有一點舊。",
+        "pinyin": "Tā de fángzi yǒu yìdiǎn jiù.",
+        "english": "His house is a little old.",
+        "audio_file": "b1l5g1-03.mp3"
+      },
+      {
+        "id": "b1l5g2-01",
+        "chinese": "他學中文學得不錯。",
+        "pinyin": "Tā xué Zhōngwén xué de búcuò.",
+        "english": "He learns Chinese quite well.",
+        "audio_file": "b1l5g2-01.mp3"
+      },
+      {
+        "id": "b1l5g2-02",
+        "chinese": "王伯母做越南菜做得很好。",
+        "pinyin": "Wáng bómǔ zuò Yuènán cài zuò de hěn hǎo.",
+        "english": "Aunt Wang cooks Vietnamese food very well.",
+        "audio_file": "b1l5g2-02.mp3"
+      },
+      {
+        "id": "b1l5g2-03",
+        "chinese": "你做得很好。",
+        "pinyin": "Nǐ zuò de hěn hǎo.",
+        "english": "You did very well.",
+        "audio_file": "b1l5g2-03.mp3"
+      },
+      {
+        "id": "b1l5g2-04",
+        "chinese": "這種手機賣得很好。",
+        "pinyin": "Zhè zhǒng shǒujī mài de hěn hǎo.",
+        "english": "This type of mobile phone sells well.",
+        "audio_file": "b1l5g2-04.mp3"
+      },
+      {
+        "id": "b1l5g2-05",
+        "chinese": "你做飯做得真好吃。",
+        "pinyin": "Nǐ zuò fàn zuò de zhēn hǎochī.",
+        "english": "You cook really delicious food.",
+        "audio_file": "b1l5g2-05.mp3"
+      },
+      {
+        "id": "b1l5g2-06",
+        "chinese": "我的老師教中文教得很好。",
+        "pinyin": "Wǒ de lǎoshī jiāo Zhōngwén jiāo de hěn hǎo.",
+        "english": "My teacher teaches Chinese very well.",
+        "audio_file": "b1l5g2-06.mp3"
+      },
+      {
+        "id": "b1l5g2-07",
+        "chinese": "飯，他做得真好吃。  ",
+        "pinyin": "Fàn, tā zuò de zhēn hǎochī.",
+        "english": "Food, he cooks really delicious.",
+        "audio_file": "b1l5g2-07.mp3"
+      },
+      {
+        "id": "b1l5g2-08",
+        "chinese": "中文，你說得很好。",
+        "pinyin": "Zhōngwén, nǐ shuō de hěn hǎo.",
+        "english": "Chinese, you speak very well.",
+        "audio_file": "b1l5g2-08.mp3"
+      },
+      {
+        "id": "b1l5g2-09",
+        "chinese": "這種甜點，他做得很好吃。",
+        "pinyin": "Zhè zhǒng tiándiǎn, tā zuò de hěn hǎochī.",
+        "english": "This kind of dessert, he makes very delicious.",
+        "audio_file": "b1l5g2-09.mp3"
+      },
+      {
+        "id": "b1l5g2-10",
+        "chinese": "這支手機賣得很便宜。",
+        "pinyin": "Zhè zhī shǒujī mài de hěn piányí.",
+        "english": "This mobile phone is sold very cheaply.",
+        "audio_file": "b1l5g2-10.mp3"
+      },
+      {
+        "id": "b1l5g2-11",
+        "chinese": "他做甜點做得不好。",
+        "pinyin": "Tā zuò tiándiǎn zuò de bù hǎo.",
+        "english": "He does not make desserts well.",
+        "audio_file": "b1l5g2-11.mp3"
+      },
+      {
+        "id": "b1l5g2-12",
+        "chinese": "王先生打網球打得不好。",
+        "pinyin": "Wáng xiānshēng dǎ wǎngqiú dǎ de bù hǎo.",
+        "english": "Mr. Wang doesn’t play tennis well.",
+        "audio_file": "b1l5g2-12.mp3"
+      },
+      {
+        "id": "b1l5g2-13",
+        "chinese": "他的咖啡賣得不好。",
+        "pinyin": "Tā de kāfēi mài de bù hǎo.",
+        "english": "His coffee doesn’t sell well.",
+        "audio_file": "b1l5g2-13.mp3"
+      },
+      {
+        "id": "b1l5g2-14",
+        "chinese": "越南菜，這家店做得不好吃。",
+        "pinyin": "Yuènán cài, zhè jiā diàn zuò de bù hǎochī.",
+        "english": "Vietnamese food, this restaurant doesn’t make it tasty.",
+        "audio_file": "b1l5g2-14.mp3"
+      },
+      {
+        "id": "b1l5g2-15",
+        "chinese": "他做飯做得怎麼樣？     ",
+        "pinyin": "Tā zuò fàn zuò de zěnmeyàng?",
+        "english": "How is his cooking?",
+        "audio_file": "b1l5g2-15.mp3"
+      },
+      {
+        "id": "b1l5g2-16",
+        "chinese": "他打籃球打得好嗎？   ",
+        "pinyin": "Tā dǎ lánqiú dǎ de hǎo ma?",
+        "english": "Does he play basketball well?",
+        "audio_file": "b1l5g2-16.mp3"
+      },
+      {
+        "id": "b1l5g2-17",
+        "chinese": "中文，他說得好不好？",
+        "pinyin": "Zhōngwén, tā shuō de hǎo bù hǎo?",
+        "english": "Chinese, does he speak well or not?",
+        "audio_file": "b1l5g2-17.mp3"
+      },
+      {
+        "id": "b1l5g3-01",
+        "chinese": "陳小姐會做飯。",
+        "pinyin": "Chén xiǎojiě huì zuò fàn.",
+        "english": "Miss Chen can cook.",
+        "audio_file": "b1l5g3-01.mp3"
+      },
+      {
+        "id": "b1l5g3-02",
+        "chinese": "他哥哥會踢足球。",
+        "pinyin": "Tā gēgē huì tī zúqiú.",
+        "english": "His older brother can play soccer.",
+        "audio_file": "b1l5g3-02.mp3"
+      },
+      {
+        "id": "b1l5g3-03",
+        "chinese": "他們兄弟姊妹都會游泳。",
+        "pinyin": "Tāmen xiōngdì jiěmèi dōu huì yóuyǒng.",
+        "english": "His siblings all know how to swim.",
+        "audio_file": "b1l5g3-03.mp3"
+      },
+      {
+        "id": "b1l5g3-04",
+        "chinese": "他的媽媽不會做飯。",
+        "pinyin": "Tā de māma bú huì zuò fàn.",
+        "english": "His mom can’t cook.",
+        "audio_file": "b1l5g3-04.mp3"
+      },
+      {
+        "id": "b1l5g3-05",
+        "chinese": "我媽媽不會做甜點。",
+        "pinyin": "Wǒ māma bú huì zuò tiándiǎn.",
+        "english": "My mom can’t make desserts.",
+        "audio_file": "b1l5g3-05.mp3"
+      },
+      {
+        "id": "b1l5g3-06",
+        "chinese": "我的家人都不會打棒球。",
+        "pinyin": "Wǒ de jiārén dōu bú huì dǎ bàngqiú.",
+        "english": "My family members all can’t play baseball.",
+        "audio_file": "b1l5g3-06.mp3"
+      },
+      {
+        "id": "b1l5g3-07",
+        "chinese": "你會做甜點嗎？",
+        "pinyin": "Nǐ huì zuò tiándiǎn ma?",
+        "english": "Can you make desserts?",
+        "audio_file": "b1l5g3-07.mp3"
+      },
+      {
+        "id": "b1l5g3-08",
+        "chinese": "他弟弟會踢足球嗎？",
+        "pinyin": "Tā dìdì huì tī zúqiú ma?",
+        "english": "Can his younger brother play soccer?",
+        "audio_file": "b1l5g3-08.mp3"
+      },
+      {
+        "id": "b1l5g3-09",
+        "chinese": "你會不會說中文？",
+        "pinyin": "Nǐ huì bú huì shuō Zhōngwén?",
+        "english": "Can you speak Chinese?",
+        "audio_file": "b1l5g3-09.mp3"
+      },
+      {
+        "id": "b1l5g3-10",
+        "chinese": "你的姐姐會不會做飯？",
+        "pinyin": "Nǐ de jiějiě huì bú huì zuò fàn?",
+        "english": "Can your older sister cook?",
+        "audio_file": "b1l5g3-10.mp3"
+      },
+      {
+        "id": "b1l5g4-01",
+        "chinese": "他這個週末到臺灣來。",
+        "pinyin": "Tā zhège zhōumò dào Táiwān lái.",
+        "english": "He is coming to Taiwan this weekend.",
+        "audio_file": "b1l5g4-01.mp3"
+      },
+      {
+        "id": "b1l5g4-02",
+        "chinese": "老師明天到臺北來。我們要和他一起吃晚<br>    飯。",
+        "pinyin": "Lǎoshī míngtiān dào Táiběi lái. Wǒmen yào hé tā yìqǐ chī wǎnfàn.",
+        "english": "The teacher is coming to Taipei tomorrow. We are going to have dinner with him.",
+        "audio_file": "b1l5g4-02.mp3"
+      },
+      {
+        "id": "b1l5g4-03",
+        "chinese": "想吃牛肉麵嗎？明天我們可以到那家店去。",
+        "pinyin": "Xiǎng chī niúròumiàn ma? Míngtiān wǒmen kěyǐ dào nà jiā diàn qù.",
+        "english": "Want to eat beef noodle soup? Tomorrow we can go to that restaurant.",
+        "audio_file": "b1l5g4-03.mp3"
+      },
+      {
+        "id": "b1l5g4-04",
+        "chinese": "我可以教你中文，明天到我家來吧！",
+        "pinyin": "Wǒ kěyǐ jiāo nǐ Zhōngwén, míngtiān dào wǒ jiā lái ba!",
+        "english": "I can teach you Chinese, come to my house tomorrow!",
+        "audio_file": "b1l5g4-04.mp3"
+      },
+      {
+        "id": "b1l5g4-05",
+        "chinese": "王先生明天不到臺北來。",
+        "pinyin": "Wáng xiānshēng míngtiān bú dào Táiběi lái.",
+        "english": "Mr. Wang is not coming to Taipei tomorrow.",
+        "audio_file": "b1l5g4-05.mp3"
+      },
+      {
+        "id": "b1l5g4-06",
+        "chinese": "那家的越南菜不好吃。他們不到那家餐廳去。",
+        "pinyin": "Nà jiā de Yuènán cài bù hǎochī. Tāmen bú dào nà jiā cāntīng qù.",
+        "english": "The Vietnamese food at that restaurant is not tasty. They do not go to that restaurant.",
+        "audio_file": "b1l5g4-06.mp3"
+      },
+      {
+        "id": "b1l5g4-07",
+        "chinese": "他晚上去看電影，不到我家來，你呢？",
+        "pinyin": "Tā wǎnshàng qù kàn diànyǐng, bú dào wǒ jiā lái, nǐ ne?",
+        "english": "He is going to watch a movie at night, not coming to my house. What about you?",
+        "audio_file": "b1l5g4-07.mp3"
+      },
+      {
+        "id": "b1l5g4-08",
+        "chinese": "你妹妹到不到臺灣來？",
+        "pinyin": "Nǐ mèimei dào bú dào Táiwān lái?",
+        "english": "Is your younger sister coming to Taiwan or not?",
+        "audio_file": "b1l5g4-08.mp3"
+      },
+      {
+        "id": "b1l5g4-09",
+        "chinese": "他們到不到我家來？",
+        "pinyin": "Tāmen dào bú dào wǒ jiā lái?",
+        "english": "Are they coming to my house or not?",
+        "audio_file": "b1l5g4-09.mp3"
+      },
+      {
+        "id": "b1l5g4-10",
+        "chinese": "這麼多家餐廳，我們要到哪一家？",
+        "pinyin": "Zhème duō jiā cāntīng, wǒmen yào dào nǎ yì jiā?",
+        "english": "So many restaurants, which one should we go to?",
+        "audio_file": "b1l5g4-10.mp3"
+      },
+      {
+        "id": "b1l5g4-11",
+        "chinese": "他們明天晚上要到王老師家。你想去嗎？",
+        "pinyin": "Tāmen míngtiān wǎnshàng yào dào Wáng lǎoshī jiā. Nǐ xiǎng qù ma?",
+        "english": "They are going to Teacher Wang’s house tomorrow night. Do you want to go?",
+        "audio_file": "b1l5g4-11.mp3"
+      },
+      {
+        "id": "b1l5g4-12",
+        "chinese": "歡迎你到我家。",
+        "pinyin": "Huānyíng nǐ dào wǒ jiā.",
+        "english": "Welcome to my home.",
+        "audio_file": "b1l5g4-12.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 6,
+    "title": "Lesson 6",
+    "sentence_count": 44,
+    "sentences": [
+      {
+        "id": "b1l6g1-01",
+        "chinese": "我在臺灣。",
+        "pinyin": "Wǒ zài Táiwān.",
+        "english": "I am in Taiwan.",
+        "audio_file": "b1l6g1-01.mp3"
+      },
+      {
+        "id": "b1l6g1-02",
+        "chinese": "他們學校在花蓮。",
+        "pinyin": "Tāmen xuéxiào zài Huālián.",
+        "english": "Their school is in Hualien.",
+        "audio_file": "b1l6g1-02.mp3"
+      },
+      {
+        "id": "b1l6g1-03",
+        "chinese": "餐廳在宿舍的一樓。",
+        "pinyin": "Cāntīng zài sùshè de yī lóu.",
+        "english": "The restaurant is on the first floor of the dormitory.",
+        "audio_file": "b1l6g1-03.mp3"
+      },
+      {
+        "id": "b1l6g1-04",
+        "chinese": "我們學校在臺北。",
+        "pinyin": "Wǒmen xuéxiào zài Táiběi.",
+        "english": "Our school is in Taipei.",
+        "audio_file": "b1l6g1-04.mp3"
+      },
+      {
+        "id": "b1l6g1-05",
+        "chinese": "我爸爸早上在學校。",
+        "pinyin": "Wǒ bàba zǎoshàng zài xuéxiào.",
+        "english": "My dad is at school in the morning.",
+        "audio_file": "b1l6g1-05.mp3"
+      },
+      {
+        "id": "b1l6g1-06",
+        "chinese": "他在外面。",
+        "pinyin": "Tā zài wàimiàn.",
+        "english": "He is outside.",
+        "audio_file": "b1l6g1-06.mp3"
+      },
+      {
+        "id": "b1l6g1-07",
+        "chinese": "圖書館在後面。",
+        "pinyin": "Túshūguǎn zài hòumiàn.",
+        "english": "The library is in the back.",
+        "audio_file": "b1l6g1-07.mp3"
+      },
+      {
+        "id": "b1l6g1-08",
+        "chinese": "我在宿舍裡面。",
+        "pinyin": "Wǒ zài sùshè lǐmiàn.",
+        "english": "I am inside the dormitory.",
+        "audio_file": "b1l6g1-08.mp3"
+      },
+      {
+        "id": "b1l6g1-09",
+        "chinese": "那家店在你家附近嗎？",
+        "pinyin": "Nà jiā diàn zài nǐ jiā fùjìn ma?",
+        "english": "Is that store near your house?",
+        "audio_file": "b1l6g1-09.mp3"
+      },
+      {
+        "id": "b1l6g1-10",
+        "chinese": "咖啡店在宿舍的旁邊，不在裡面。",
+        "pinyin": "Kāfēidiàn zài sùshè de pángbiān, bú zài lǐmiàn.",
+        "english": "The café is next to the dormitory, not inside.",
+        "audio_file": "b1l6g1-10.mp3"
+      },
+      {
+        "id": "b1l6g1-11",
+        "chinese": "游泳池在圖書館的後面，不在前面。",
+        "pinyin": "Yóuyǒngchí zài túshūguǎn de hòumiàn, bú zài qiánmiàn.",
+        "english": "The swimming pool is behind the library, not in front.",
+        "audio_file": "b1l6g1-11.mp3"
+      },
+      {
+        "id": "b1l6g1-12",
+        "chinese": "他和朋友在圖書館後面的咖啡店。",
+        "pinyin": "Tā hé péngyǒu zài túshūguǎn hòumiàn de kāfēidiàn.",
+        "english": "He and his friend are at the café behind the library.",
+        "audio_file": "b1l6g1-12.mp3"
+      },
+      {
+        "id": "b1l6g2-01",
+        "chinese": "那棟大樓（的）前面有很多人。",
+        "pinyin": "Nà dòng dàlóu (de) qiánmiàn yǒu hěn duō rén.",
+        "english": "There are many people in front of that building.",
+        "audio_file": "b1l6g2-01.mp3"
+      },
+      {
+        "id": "b1l6g2-02",
+        "chinese": "我家附近有圖書館。",
+        "pinyin": "Wǒ jiā fùjìn yǒu túshūguǎn.",
+        "english": "There is a library near my house.",
+        "audio_file": "b1l6g2-02.mp3"
+      },
+      {
+        "id": "b1l6g2-03",
+        "chinese": "山上有兩家很有名的咖啡店。",
+        "pinyin": "Shānshàng yǒu liǎng jiā hěn yǒumíng de kāfēidiàn.",
+        "english": "There are two famous cafés in the mountains.",
+        "audio_file": "b1l6g2-03.mp3"
+      },
+      {
+        "id": "b1l6g2-04",
+        "chinese": "樓下有一家商店。",
+        "pinyin": "Lóuxià yǒu yì jiā shāngdiàn.",
+        "english": "There is a store downstairs.",
+        "audio_file": "b1l6g2-04.mp3"
+      },
+      {
+        "id": "b1l6g2-05",
+        "chinese": "他家附近沒有游泳池。",
+        "pinyin": "Tā jiā fùjìn méiyǒu yóuyǒngchí.",
+        "english": "There is no swimming pool near his house.",
+        "audio_file": "b1l6g2-05.mp3"
+      },
+      {
+        "id": "b1l6g2-06",
+        "chinese": "教室裡面沒有學生。",
+        "pinyin": "Jiàoshì lǐmiàn méiyǒu xuéshēng.",
+        "english": "There are no students inside the classroom.",
+        "audio_file": "b1l6g2-06.mp3"
+      },
+      {
+        "id": "b1l6g2-07",
+        "chinese": "那棟大樓的後面沒有餐廳。",
+        "pinyin": "Nà dòng dàlóu de hòumiàn méiyǒu cāntīng.",
+        "english": "There is no restaurant behind that building.",
+        "audio_file": "b1l6g2-07.mp3"
+      },
+      {
+        "id": "b1l6g2-08",
+        "chinese": "你家附近有海嗎？",
+        "pinyin": "Nǐ jiā fùjìn yǒu hǎi ma?",
+        "english": "Is there a sea near your house?",
+        "audio_file": "b1l6g2-08.mp3"
+      },
+      {
+        "id": "b1l6g2-09",
+        "chinese": "學校（的）後面有沒有好吃的牛肉麵店？",
+        "pinyin": "Xuéxiào (de) hòumiàn yǒu méiyǒu hǎochī de niúròumiàn diàn?",
+        "english": "Is there a good beef noodle shop behind the school?",
+        "audio_file": "b1l6g2-09.mp3"
+      },
+      {
+        "id": "b1l6g3-01",
+        "chinese": "他們學校很漂亮，我想去看(一)看。",
+        "pinyin": "Tāmen xuéxiào hěn piàoliàng, wǒ xiǎng qù kàn (yí) kàn.",
+        "english": "Their school is very beautiful, I want to go take a look.",
+        "audio_file": "b1l6g3-01.mp3"
+      },
+      {
+        "id": "b1l6g3-02",
+        "chinese": "我想學中文，請教教我。",
+        "pinyin": "Wǒ xiǎng xué Zhōngwén, qǐng jiāo jiāo wǒ.",
+        "english": "I want to learn Chinese, please teach me.",
+        "audio_file": "b1l6g3-02.mp3"
+      },
+      {
+        "id": "b1l6g3-03",
+        "chinese": "我們今天晚上去哪裡吃飯?我想（一）想。",
+        "pinyin": "Wǒmen jīntiān wǎnshàng qù nǎlǐ chīfàn? Wǒ xiǎng (yì) xiǎng.",
+        "english": "Where are we going to eat tonight? Let me think.",
+        "audio_file": "b1l6g3-03.mp3"
+      },
+      {
+        "id": "b1l6g3-04",
+        "chinese": "你週末做什麼?在家看看書、喝喝咖啡、上上網，也<br>去學校打打籃球。",
+        "pinyin": "Nǐ zhōumò zuò shénme? Zài jiā kàn kàn shū, hē hē kāfēi, shàng shàng wǎng, yě qù xuéxiào dǎ dǎ lánqiú.",
+        "english": "What do you do on weekends? Stay home to read a bit, drink some coffee, go online, and also go to school to play basketball.",
+        "audio_file": "b1l6g3-04.mp3"
+      },
+      {
+        "id": "b1l6g3-05",
+        "chinese": "請幫幫我，好不好?",
+        "pinyin": "Qǐng bāng bāng wǒ, hǎo bù hǎo?",
+        "english": "Please help me, okay?",
+        "audio_file": "b1l6g3-05.mp3"
+      },
+      {
+        "id": "b1l6g3-06",
+        "chinese": "請你教教我，可以嗎?",
+        "pinyin": "Qǐng nǐ jiāo jiāo wǒ, kěyǐ ma?",
+        "english": "Can you please teach me?",
+        "audio_file": "b1l6g3-06.mp3"
+      },
+      {
+        "id": "b1l6g3-07",
+        "chinese": "現在外面很熱，你要不要在家看看書?   ",
+        "pinyin": "Xiànzài wàimiàn hěn rè, nǐ yào bú yào zài jiā kàn kàn shū?",
+        "english": "It&#x27;s very hot outside now, do you want to stay home and read?",
+        "audio_file": "b1l6g3-07.mp3"
+      },
+      {
+        "id": "b1l6g3-08",
+        "chinese": "我不會做甜點，你可不可以教教我?",
+        "pinyin": "Wǒ bú huì zuò tiándiǎn, nǐ kě bù kěyǐ jiāo jiāo wǒ?",
+        "english": "I don’t know how to make desserts, can you teach me?",
+        "audio_file": "b1l6g3-08.mp3"
+      },
+      {
+        "id": "b1l6g4-01",
+        "chinese": "明華覺得那支手機很貴。我覺得不是很貴。",
+        "pinyin": "Mínghuá juéde nà zhī shǒujī hěn guì. Wǒ juéde bú shì hěn guì.",
+        "english": "Minghua thinks that mobile phone is very expensive. I think it’s not very expensive.",
+        "audio_file": "b1l6g4-01.mp3"
+      },
+      {
+        "id": "b1l6g4-02",
+        "chinese": "他不是點大碗的牛肉麵。他點小碗的。",
+        "pinyin": "Tā bú shì diǎn dàwǎn de niúròumiàn. Tā diǎn xiǎowǎn de.",
+        "english": "He didn’t order a big bowl of beef noodles. He ordered a small one.",
+        "audio_file": "b1l6g4-02.mp3"
+      },
+      {
+        "id": "b1l6g4-03",
+        "chinese": "餐廳不是在學校裡面。餐廳在學校外面。",
+        "pinyin": "Cāntīng bú shì zài xuéxiào lǐmiàn. Cāntīng zài xuéxiào wàimiàn.",
+        "english": "The restaurant is not inside the school. The restaurant is outside the school.",
+        "audio_file": "b1l6g4-03.mp3"
+      },
+      {
+        "id": "b1l6g4-04",
+        "chinese": "他們不是在樓下喝咖啡。他們在樓下買書。",
+        "pinyin": "Tāmen bú shì zài lóuxià hē kāfēi. Tāmen zài lóuxià mǎi shū.",
+        "english": "They are not drinking coffee downstairs. They are buying books downstairs.",
+        "audio_file": "b1l6g4-04.mp3"
+      },
+      {
+        "id": "b1l6g4-05",
+        "chinese": "我不是不來，我週末來。",
+        "pinyin": "Wǒ bú shì bú lái, wǒ zhōumò lái.",
+        "english": "It’s not that I’m not coming, I’m coming on the weekend.",
+        "audio_file": "b1l6g4-05.mp3"
+      },
+      {
+        "id": "b1l6g4-06",
+        "chinese": "我不是不喜歡吃牛肉麵，可是這家的牛肉麵太辣了。",
+        "pinyin": "Wǒ bú shì bù xǐhuān chī niúròumiàn, kěshì zhè jiā de niúròumiàn tài là le.",
+        "english": "It’s not that I don’t like eating beef noodles, but the beef noodles at this place are too spicy.",
+        "audio_file": "b1l6g4-06.mp3"
+      },
+      {
+        "id": "b1l6g5-01",
+        "chinese": "我爸爸在家做飯。",
+        "pinyin": "Wǒ bàba zài jiā zuò fàn.",
+        "english": "My dad is cooking at home.",
+        "audio_file": "b1l6g5-01.mp3"
+      },
+      {
+        "id": "b1l6g5-02",
+        "chinese": "他和他朋友到七樓的教室上網。",
+        "pinyin": "Tā hé tā péngyǒu dào qī lóu de jiàoshì shàngwǎng.",
+        "english": "He and his friend go to the classroom on the seventh floor to use the internet.",
+        "audio_file": "b1l6g5-02.mp3"
+      },
+      {
+        "id": "b1l6g5-03",
+        "chinese": "我們老師常到學校附近的咖啡店喝咖啡。",
+        "pinyin": "Wǒmen lǎoshī cháng dào xuéxiào fùjìn de kāfēidiàn hē kāfēi.",
+        "english": "Our teacher often goes to the café near the school to drink coffee.",
+        "audio_file": "b1l6g5-03.mp3"
+      },
+      {
+        "id": "b1l6g5-04",
+        "chinese": "我們很喜歡在這家餐廳吃牛肉麵。",
+        "pinyin": "Wǒmen hěn xǐhuān zài zhè jiā cāntīng chī niúròumiàn.",
+        "english": "We really like eating beef noodles at this restaurant.",
+        "audio_file": "b1l6g5-04.mp3"
+      },
+      {
+        "id": "b1l6g5-05",
+        "chinese": "他們今天不在家吃晚飯。",
+        "pinyin": "Tāmen jīntiān bú zài jiā chī wǎnfàn.",
+        "english": "They are not eating dinner at home today.",
+        "audio_file": "b1l6g5-05.mp3"
+      },
+      {
+        "id": "b1l6g5-06",
+        "chinese": "他現在不在宿舍看書。",
+        "pinyin": "Tā xiànzài bú zài sùshè kàn shū.",
+        "english": "He is not reading in the dormitory now.",
+        "audio_file": "b1l6g5-06.mp3"
+      },
+      {
+        "id": "b1l6g5-07",
+        "chinese": "很多學生不在學校裡面的咖啡店買咖啡。",
+        "pinyin": "Hěn duō xuéshēng bú zài xuéxiào lǐmiàn de kāfēidiàn mǎi kāfēi.",
+        "english": "Many students do not buy coffee at the café inside the school.",
+        "audio_file": "b1l6g5-07.mp3"
+      },
+      {
+        "id": "b1l6g5-08",
+        "chinese": "你們在哪裡打籃球？",
+        "pinyin": "Nǐmen zài nǎlǐ dǎ lánqiú?",
+        "english": "Where do you play basketball?",
+        "audio_file": "b1l6g5-08.mp3"
+      },
+      {
+        "id": "b1l6g5-09",
+        "chinese": "你妹妹到這家商店買甜點嗎？",
+        "pinyin": "Nǐ mèimei dào zhè jiā shāngdiàn mǎi tiándiǎn ma?",
+        "english": "Does your younger sister come to this store to buy desserts?",
+        "audio_file": "b1l6g5-09.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 7,
+    "title": "Lesson 7",
+    "sentence_count": 58,
+    "sentences": [
+      {
+        "id": "b1l7g1-01",
+        "chinese": "他和他朋友下午在教室寫書法。",
+        "pinyin": "Tā hé tā péngyǒu xiàwǔ zài jiàoshì xiě shūfǎ.",
+        "english": "He and his friend are writing calligraphy in the classroom in the afternoon.",
+        "audio_file": "b1l7g1-01.mp3"
+      },
+      {
+        "id": "b1l7g1-02",
+        "chinese": "我昨天晚上到我家附近的咖啡店喝咖啡。",
+        "pinyin": "Wǒ zuótiān wǎnshàng dào wǒ jiā fùjìn de kāfēidiàn hē kāfēi.",
+        "english": "I went to a café near my home last night to drink coffee.",
+        "audio_file": "b1l7g1-02.mp3"
+      },
+      {
+        "id": "b1l7g1-03",
+        "chinese": "我們這個週末去圖書館看書。",
+        "pinyin": "Wǒmen zhège zhōumò qù túshūguǎn kàn shū.",
+        "english": "We are going to the library to read this weekend.",
+        "audio_file": "b1l7g1-03.mp3"
+      },
+      {
+        "id": "b1l7g1-04",
+        "chinese": "你們明天早上十一點到我家來吃牛肉麵。",
+        "pinyin": "Nǐmen míngtiān zǎoshàng shíyī diǎn dào wǒ jiā lái chī niúròumiàn.",
+        "english": "Come to my house at 11 AM tomorrow to eat beef noodles.",
+        "audio_file": "b1l7g1-04.mp3"
+      },
+      {
+        "id": "b1l7g1-05",
+        "chinese": "我晚上不在家吃飯。",
+        "pinyin": "Wǒ wǎnshàng bú zài jiā chīfàn.",
+        "english": "I am not eating dinner at home tonight.",
+        "audio_file": "b1l7g1-05.mp3"
+      },
+      {
+        "id": "b1l7g1-06",
+        "chinese": "他和他哥哥最近都不來學校上課。",
+        "pinyin": "Tā hé tā gēge zuìjìn dōu bù lái xuéxiào shàngkè.",
+        "english": "He and his older brother haven&#x27;t been coming to school for classes recently.",
+        "audio_file": "b1l7g1-06.mp3"
+      },
+      {
+        "id": "b1l7g1-07",
+        "chinese": "他們這個週末不去山上看風景。",
+        "pinyin": "Tāmen zhège zhōumò bú qù shānshàng kàn fēngjǐng.",
+        "english": "They are not going to the mountains to see the scenery this weekend.",
+        "audio_file": "b1l7g1-07.mp3"
+      },
+      {
+        "id": "b1l7g1-08",
+        "chinese": "你下午要不要來學校打籃球？",
+        "pinyin": "Nǐ xiàwǔ yào bú yào lái xuéxiào dǎ lánqiú?",
+        "english": "Do you want to come to school to play basketball this afternoon?",
+        "audio_file": "b1l7g1-08.mp3"
+      },
+      {
+        "id": "b1l7g1-09",
+        "chinese": "你們現在在我家附近的商店買手機嗎？",
+        "pinyin": "Nǐmen xiànzài zài wǒ jiā fùjìn de shāngdiàn mǎi shǒujī ma?",
+        "english": "Are you buying a phone at a store near my house now?",
+        "audio_file": "b1l7g1-09.mp3"
+      },
+      {
+        "id": "b1l7g1-10",
+        "chinese": "你朋友晚上幾點去KTV唱歌？",
+        "pinyin": "Nǐ péngyǒu wǎnshàng jǐ diǎn qù KTV chànggē?",
+        "english": "What time is your friend going to KTV to sing tonight?",
+        "audio_file": "b1l7g1-10.mp3"
+      },
+      {
+        "id": "b1l7g1-11",
+        "chinese": "他們什麼時候到花蓮看籃球比賽？",
+        "pinyin": "Tāmen shénme shíhòu dào Huālián kàn lánqiú bǐsài?",
+        "english": "When are they going to Hualien to watch the basketball game?",
+        "audio_file": "b1l7g1-11.mp3"
+      },
+      {
+        "id": "b1l7g1-12",
+        "chinese": "你和你妹妹明天早上要去哪裡看電影？",
+        "pinyin": "Nǐ hé nǐ mèimei míngtiān zǎoshàng yào qù nǎlǐ kàn diànyǐng?",
+        "english": "Where are you and your younger sister going to watch a movie tomorrow morning?",
+        "audio_file": "b1l7g1-12.mp3"
+      },
+      {
+        "id": "b1l7g2-01",
+        "chinese": "我從早上十點二十分到下午一點十分有中文課。",
+        "pinyin": "Wǒ cóng zǎoshàng shí diǎn èrshí fēn dào xiàwǔ yī diǎn shí fēn yǒu Zhōngwén kè.",
+        "english": "I have Chinese class from 10:20 AM to 1:10 PM.",
+        "audio_file": "b1l7g2-01.mp3"
+      },
+      {
+        "id": "b1l7g2-02",
+        "chinese": "我今天從早上到晚上都有空，歡迎你們來我家。",
+        "pinyin": "Wǒ jīntiān cóng zǎoshàng dào wǎnshàng dōu yǒu kòng, huānyíng nǐmen lái wǒ jiā.",
+        "english": "I am free all day today. You’re welcome to come to my house.",
+        "audio_file": "b1l7g2-02.mp3"
+      },
+      {
+        "id": "b1l7g2-03",
+        "chinese": "從我家到那個游泳池有一點遠。",
+        "pinyin": "Cóng wǒ jiā dào nàge yóuyǒngchí yǒu yìdiǎn yuǎn.",
+        "english": "It’s a bit far from my house to that swimming pool.",
+        "audio_file": "b1l7g2-03.mp3"
+      },
+      {
+        "id": "b1l7g2-04",
+        "chinese": "我從我朋友家到這個地方來。",
+        "pinyin": "Wǒ cóng wǒ péngyǒu jiā dào zhège dìfāng lái.",
+        "english": "I came here from my friend’s house.",
+        "audio_file": "b1l7g2-04.mp3"
+      },
+      {
+        "id": "b1l7g2-05",
+        "chinese": "他從圖書館到那家餐廳去吃飯。",
+        "pinyin": "Tā cóng túshūguǎn dào nà jiā cāntīng qù chīfàn.",
+        "english": "He is going from the library to that restaurant to eat.",
+        "audio_file": "b1l7g2-05.mp3"
+      },
+      {
+        "id": "b1l7g2-06",
+        "chinese": "我們的書法課不是從九點到十一點。",
+        "pinyin": "Wǒmen de shūfǎ kè bú shì cóng jiǔ diǎn dào shíyī diǎn.",
+        "english": "Our calligraphy class is not from 9 AM to 11 AM.",
+        "audio_file": "b1l7g2-06.mp3"
+      },
+      {
+        "id": "b1l7g2-07",
+        "chinese": "陳先生的媽媽昨天不是從早上到晚上都很忙。",
+        "pinyin": "Chén xiānshēng de māma zuótiān bú shì cóng zǎoshàng dào wǎnshàng dōu hěn máng.",
+        "english": "Mr. Chen’s mom was not busy all day yesterday.",
+        "audio_file": "b1l7g2-07.mp3"
+      },
+      {
+        "id": "b1l7g2-08",
+        "chinese": "我什麼時候可以去你家？我今天從早上到晚上都沒有空。可是明天可以。",
+        "pinyin": "Wǒ shénme shíhòu kěyǐ qù nǐ jiā? Wǒ jīntiān cóng zǎoshàng dào wǎnshàng dōu méiyǒu kòng, kěshì míngtiān kěyǐ.",
+        "english": "When can I go to your house? I’m not free at all today, but I can tomorrow.",
+        "audio_file": "b1l7g2-08.mp3"
+      },
+      {
+        "id": "b1l7g2-09",
+        "chinese": "從這棟大樓到那家KTV不遠。",
+        "pinyin": "Cóng zhè dòng dàlóu dào nà jiā KTV bù yuǎn.",
+        "english": "It’s not far from this building to that KTV.",
+        "audio_file": "b1l7g2-09.mp3"
+      },
+      {
+        "id": "b1l7g2-10",
+        "chinese": "我不想從學校到那裡去，想從我家去。",
+        "pinyin": "Wǒ bù xiǎng cóng xuéxiào dào nàlǐ qù, xiǎng cóng wǒ jiā qù.",
+        "english": "I don’t want to go there from school; I want to go from my house.",
+        "audio_file": "b1l7g2-10.mp3"
+      },
+      {
+        "id": "b1l7g2-11",
+        "chinese": "你們老師後天從早上到下午都有空嗎？",
+        "pinyin": "Nǐmen lǎoshī hòutiān cóng zǎoshàng dào xiàwǔ dōu yǒu kòng ma?",
+        "english": "Will your teacher be free all day the day after tomorrow?",
+        "audio_file": "b1l7g2-11.mp3"
+      },
+      {
+        "id": "b1l7g2-12",
+        "chinese": "請問從圖書館到你們宿舍遠不遠？",
+        "pinyin": "Qǐngwèn cóng túshūguǎn dào nǐmen sùshè yuǎn bù yuǎn?",
+        "english": "Excuse me, is it far from the library to your dormitory?",
+        "audio_file": "b1l7g2-12.mp3"
+      },
+      {
+        "id": "b1l7g2-13",
+        "chinese": "他們想從宿舍還是圖書館到教室去上課？",
+        "pinyin": "Tāmen xiǎng cóng sùshè háishì túshūguǎn dào jiàoshì qù shàngkè?",
+        "english": "Do they want to go to class from the dormitory or the library?",
+        "audio_file": "b1l7g2-13.mp3"
+      },
+      {
+        "id": "b1l7g3-01",
+        "chinese": "李老師在上課 。",
+        "pinyin": "Lǐ lǎoshī zài shàngkè.",
+        "english": "Teacher Li is teaching a class.",
+        "audio_file": "b1l7g3-01.mp3"
+      },
+      {
+        "id": "b1l7g3-02",
+        "chinese": "你看! 陳先生在唱歌 。",
+        "pinyin": "Nǐ kàn! Chén xiānshēng zài chànggē.",
+        "english": "Look! Mr. Chen is singing.",
+        "audio_file": "b1l7g3-02.mp3"
+      },
+      {
+        "id": "b1l7g3-03",
+        "chinese": "昨天下午五點我在做飯 。",
+        "pinyin": "Zuótiān xiàwǔ wǔ diǎn wǒ zài zuòfàn.",
+        "english": "I was cooking at 5 PM yesterday.",
+        "audio_file": "b1l7g3-03.mp3"
+      },
+      {
+        "id": "b1l7g3-04",
+        "chinese": "他不是在看 書 . 他在看籃球比賽 。",
+        "pinyin": "Tā bú shì zài kàn shū. Tā zài kàn lánqiú bǐsài.",
+        "english": "He is not reading a book. He is watching a basketball game.",
+        "audio_file": "b1l7g3-04.mp3"
+      },
+      {
+        "id": "b1l7g3-05",
+        "chinese": "我不是在 照相 。我的手機不能照相 。",
+        "pinyin": "Wǒ bú shì zài zhàoxiàng. Wǒ de shǒujī bù néng zhàoxiàng.",
+        "english": "I am not taking a photo. My phone cannot take photos.",
+        "audio_file": "b1l7g3-05.mp3"
+      },
+      {
+        "id": "b1l7g3-06",
+        "chinese": "你們在喝 什麼 ?",
+        "pinyin": "Nǐmen zài hē shénme?",
+        "english": "What are you drinking?",
+        "audio_file": "b1l7g3-06.mp3"
+      },
+      {
+        "id": "b1l7g3-07",
+        "chinese": "他們老師在上課嗎 ?",
+        "pinyin": "Tāmen lǎoshī zài shàngkè ma?",
+        "english": "Is their teacher teaching a class?",
+        "audio_file": "b1l7g3-07.mp3"
+      },
+      {
+        "id": "b1l7g3-08",
+        "chinese": "他們在打籃球嗎 ?",
+        "pinyin": "Tāmen zài dǎ lánqiú ma?",
+        "english": "Are they playing basketball?",
+        "audio_file": "b1l7g3-08.mp3"
+      },
+      {
+        "id": "b1l7g4-01",
+        "chinese": "他妹妹每天都 有 空 。",
+        "pinyin": "Tā mèimei měitiān dōu yǒu kòng.",
+        "english": "His younger sister is free every day.",
+        "audio_file": "b1l7g4-01.mp3"
+      },
+      {
+        "id": "b1l7g4-02",
+        "chinese": "他朋 友每個 週末都 去 學校附近的 游泳池潜泳 。",
+        "pinyin": "Tā péngyǒu měi ge zhōumò dōu qù xuéxiào fùjìn de yóuyǒngchí qiányǒng.",
+        "english": "His friend goes diving at the swimming pool near the school every weekend.",
+        "audio_file": "b1l7g4-02.mp3"
+      },
+      {
+        "id": "b1l7g4-03",
+        "chinese": "每一棟大樓都 可 以 上綱 。",
+        "pinyin": "Měi yī dòng dàlóu dōu kěyǐ shàngwǎng.",
+        "english": "Every building has internet access.",
+        "audio_file": "b1l7g4-03.mp3"
+      },
+      {
+        "id": "b1l7g4-04",
+        "chinese": "他 家人 , 每個 人都 會做舜點 。",
+        "pinyin": "Tā jiārén, měi ge rén dōu huì zuò tiándiǎn.",
+        "english": "Everyone in his family can make desserts.",
+        "audio_file": "b1l7g4-04.mp3"
+      },
+      {
+        "id": "b1l7g4-05",
+        "chinese": "他每天都 不 忙 。",
+        "pinyin": "Tā měitiān dōu bù máng.",
+        "english": "He is not busy every day.",
+        "audio_file": "b1l7g4-05.mp3"
+      },
+      {
+        "id": "b1l7g4-06",
+        "chinese": "我媽媽每個 週末都沒空 。",
+        "pinyin": "Wǒ māma měi ge zhōumò dōu méi kòng.",
+        "english": "My mom is not free on weekends.",
+        "audio_file": "b1l7g4-06.mp3"
+      },
+      {
+        "id": "b1l7g4-07",
+        "chinese": "這 家甯 店 , 每支手機都 不 便 宜 。",
+        "pinyin": "Zhè jiā shāngdiàn, měi zhī shǒujī dōu bù piányí.",
+        "english": "In this store, every phone is expensive.",
+        "audio_file": "b1l7g4-07.mp3"
+      },
+      {
+        "id": "b1l7g4-08",
+        "chinese": "他朋 友不 是每天都 去看 電 影 。",
+        "pinyin": "Tā péngyǒu bú shì měitiān dōu qù kàn diànyǐng.",
+        "english": "His friend does not watch movies every day.",
+        "audio_file": "b1l7g4-08.mp3"
+      },
+      {
+        "id": "b1l7g4-09",
+        "chinese": "我 們 不 是每天都 有 書 法課 。",
+        "pinyin": "Wǒmen bú shì měitiān dōu yǒu shūfǎ kè.",
+        "english": "We don’t have calligraphy class every day.",
+        "audio_file": "b1l7g4-09.mp3"
+      },
+      {
+        "id": "b1l7g4-10",
+        "chinese": "他 的 兄弟姐妹不 是每個 人都 喜歡打球 。",
+        "pinyin": "Tā de xiōngdì jiěmèi bú shì měi ge rén dōu xǐhuān dǎqiú.",
+        "english": "Not all of his siblings like playing ball.",
+        "audio_file": "b1l7g4-10.mp3"
+      },
+      {
+        "id": "b1l7g4-11",
+        "chinese": "他每個 週末都 去哪裡運動 ?",
+        "pinyin": "Tā měi ge zhōumò dōu qù nǎlǐ yùndòng?",
+        "english": "Where does he go to exercise every weekend?",
+        "audio_file": "b1l7g4-11.mp3"
+      },
+      {
+        "id": "b1l7g4-12",
+        "chinese": "你 爸爸每天都在 家吃 晚飯嗎 ?",
+        "pinyin": "Nǐ bàba měitiān dōu zài jiā chī wǎnfàn ma?",
+        "english": "Does your dad eat dinner at home every day?",
+        "audio_file": "b1l7g4-12.mp3"
+      },
+      {
+        "id": "b1l7g4-13",
+        "chinese": "他的照片, 每 張都很好看 嗎 ?",
+        "pinyin": "Tā de zhàopiàn, měi zhāng dōu hěn hǎokàn ma?",
+        "english": "Are all of his photos good-looking?",
+        "audio_file": "b1l7g4-13.mp3"
+      },
+      {
+        "id": "b1l7g5-01",
+        "chinese": "我媽媽說，你們可以來我家打籃球。",
+        "pinyin": "Wǒ māma shuō, nǐmen kěyǐ lái wǒ jiā dǎ lánqiú.",
+        "english": "My mom said you can come to my house to play basketball.",
+        "audio_file": "b1l7g5-01.mp3"
+      },
+      {
+        "id": "b1l7g5-02",
+        "chinese": "爸爸說，我可以買這支手機。",
+        "pinyin": "Bàba shuō, wǒ kěyǐ mǎi zhè zhī shǒujī.",
+        "english": "Dad said I can buy this phone.",
+        "audio_file": "b1l7g5-02.mp3"
+      },
+      {
+        "id": "b1l7g5-03",
+        "chinese": "我叫馬安同，你可以叫我小馬。",
+        "pinyin": "Wǒ jiào Mǎ Āntóng, nǐ kěyǐ jiào wǒ Xiǎo Mǎ.",
+        "english": "My name is Ma Antong, you can call me Xiao Ma.",
+        "audio_file": "b1l7g5-03.mp3"
+      },
+      {
+        "id": "b1l7g5-04",
+        "chinese": "媽媽說，我不可以賣這支手機。",
+        "pinyin": "Māma shuō, wǒ bù kěyǐ mài zhè zhī shǒujī.",
+        "english": "Mom said I can&#x27;t sell this phone.",
+        "audio_file": "b1l7g5-04.mp3"
+      },
+      {
+        "id": "b1l7g5-05",
+        "chinese": "你不可以在圖書館裡面吃東西。",
+        "pinyin": "Nǐ bù kěyǐ zài túshūguǎn lǐmiàn chī dōngxi.",
+        "english": "You can&#x27;t eat inside the library.",
+        "audio_file": "b1l7g5-05.mp3"
+      },
+      {
+        "id": "b1l7g5-06",
+        "chinese": "先生，對不起，你不可以在這裡照相。",
+        "pinyin": "Xiānshēng, duìbùqǐ, nǐ bù kěyǐ zài zhèlǐ zhàoxiàng.",
+        "english": "Sir, sorry, you can&#x27;t take photos here.",
+        "audio_file": "b1l7g5-06.mp3"
+      },
+      {
+        "id": "b1l7g5-07",
+        "chinese": "我可以不可以去看你們的籃球比賽？沒問題！",
+        "pinyin": "Wǒ kěyǐ bù kěyǐ qù kàn nǐmen de lánqiú bǐsài? Méi wèntí!",
+        "english": "Can I go watch your basketball game? No problem!",
+        "audio_file": "b1l7g5-07.mp3"
+      },
+      {
+        "id": "b1l7g5-08",
+        "chinese": "我想吃你的包子，可以嗎？可以啊。",
+        "pinyin": "Wǒ xiǎng chī nǐ de bāozi, kěyǐ ma? Kěyǐ a.",
+        "english": "I want to eat your steamed bun, is that okay? Sure!",
+        "audio_file": "b1l7g5-08.mp3"
+      },
+      {
+        "id": "b1l7g5-09",
+        "chinese": "這是你的書嗎？我可以看看嗎？對不起，那不是我的書。",
+        "pinyin": "Zhè shì nǐ de shū ma? Wǒ kěyǐ kànkan ma? Duìbùqǐ, nà bú shì wǒ de shū.",
+        "english": "Is this your book? Can I take a look? Sorry, that&#x27;s not my book.",
+        "audio_file": "b1l7g5-09.mp3"
+      },
+      {
+        "id": "b1l7g5-10",
+        "chinese": "你可不可以明天來？",
+        "pinyin": "Nǐ kě bù kěyǐ míngtiān lái?",
+        "english": "Can you come tomorrow?",
+        "audio_file": "b1l7g5-10.mp3"
+      },
+      {
+        "id": "b1l7g5-11",
+        "chinese": "我可以不可以買一支新手機？",
+        "pinyin": "Wǒ kěyǐ bù kěyǐ mǎi yī zhī xīn shǒujī?",
+        "english": "Can I buy a new phone?",
+        "audio_file": "b1l7g5-11.mp3"
+      },
+      {
+        "id": "b1l7g5-12",
+        "chinese": "媽媽，我可不可以買這支手機？可以。",
+        "pinyin": "Māma, wǒ kě bù kěyǐ mǎi zhè zhī shǒujī? Kěyǐ.",
+        "english": "Mom, can I buy this phone? Yes.",
+        "audio_file": "b1l7g5-12.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 8,
+    "title": "Lesson 8",
+    "sentence_count": 36,
+    "sentences": [
+      {
+        "id": "b1l8g1-01",
+        "chinese": "我常跟哥哥去看棒球比賽。",
+        "pinyin": "Wǒ cháng gēn gēge qù kàn bàngqiú bǐsài.",
+        "english": "I often go to watch baseball games with my older brother.",
+        "audio_file": "b1l8g1-01.mp3"
+      },
+      {
+        "id": "b1l8g1-02",
+        "chinese": "我跟朋友在餐廳吃飯。",
+        "pinyin": "Wǒ gēn péngyǒu zài cāntīng chīfàn.",
+        "english": "I am eating with my friends at the restaurant.",
+        "audio_file": "b1l8g1-02.mp3"
+      },
+      {
+        "id": "b1l8g1-03",
+        "chinese": "我週末要跟同學去參觀故宮。",
+        "pinyin": "Wǒ zhōumò yào gēn tóngxué qù cānguān Gùgōng.",
+        "english": "I am going to visit the National Palace Museum with my classmates this weekend.",
+        "audio_file": "b1l8g1-03.mp3"
+      },
+      {
+        "id": "b1l8g1-04",
+        "chinese": "我今天不跟同學去上書法課。",
+        "pinyin": "Wǒ jīntiān bù gēn tóngxué qù shàng shūfǎ kè.",
+        "english": "I am not going to calligraphy class with my classmates today.",
+        "audio_file": "b1l8g1-04.mp3"
+      },
+      {
+        "id": "b1l8g1-05",
+        "chinese": "他不跟我一起去KTV唱歌。",
+        "pinyin": "Tā bù gēn wǒ yìqǐ qù KTV chànggē.",
+        "english": "He is not going to KTV to sing with me.",
+        "audio_file": "b1l8g1-05.mp3"
+      },
+      {
+        "id": "b1l8g1-06",
+        "chinese": "妹妹不跟我去吃越南菜。",
+        "pinyin": "Mèimei bù gēn wǒ qù chī Yuènán cài.",
+        "english": "My younger sister is not going to eat Vietnamese food with me.",
+        "audio_file": "b1l8g1-06.mp3"
+      },
+      {
+        "id": "b1l8g1-07",
+        "chinese": "你要跟他去日本嗎？",
+        "pinyin": "Nǐ yào gēn tā qù Rìběn ma?",
+        "english": "Are you going to Japan with him?",
+        "audio_file": "b1l8g1-07.mp3"
+      },
+      {
+        "id": "b1l8g1-08",
+        "chinese": "你常跟誰去看電影？",
+        "pinyin": "Nǐ cháng gēn shéi qù kàn diànyǐng?",
+        "english": "Who do you often go to watch movies with?",
+        "audio_file": "b1l8g1-08.mp3"
+      },
+      {
+        "id": "b1l8g1-09",
+        "chinese": "你想跟我去打網球嗎？",
+        "pinyin": "Nǐ xiǎng gēn wǒ qù dǎ wǎngqiú ma?",
+        "english": "Do you want to play tennis with me?",
+        "audio_file": "b1l8g1-09.mp3"
+      },
+      {
+        "id": "b1l8g1-10",
+        "chinese": "你跟不跟我去圖書館看書？",
+        "pinyin": "Nǐ gēn bù gēn wǒ qù túshūguǎn kàn shū?",
+        "english": "Are you going to the library to read with me?",
+        "audio_file": "b1l8g1-10.mp3"
+      },
+      {
+        "id": "b1l8g2-01",
+        "chinese": "你們怎麼去？",
+        "pinyin": "Nǐmen zěnme qù?",
+        "english": "How are you going?",
+        "audio_file": "b1l8g2-01.mp3"
+      },
+      {
+        "id": "b1l8g2-02",
+        "chinese": "這個菜怎麼做？",
+        "pinyin": "Zhège cài zěnme zuò?",
+        "english": "How do you make this dish?",
+        "audio_file": "b1l8g2-02.mp3"
+      },
+      {
+        "id": "b1l8g2-03",
+        "chinese": "這個歌怎麼唱？",
+        "pinyin": "Zhège gē zěnme chàng?",
+        "english": "How do you sing this song?",
+        "audio_file": "b1l8g2-03.mp3"
+      },
+      {
+        "id": "b1l8g2-04",
+        "chinese": "這支新手機怎麼上網？",
+        "pinyin": "Zhè zhī xīn shǒujī zěnme shàngwǎng?",
+        "english": "How do you go online with this new phone?",
+        "audio_file": "b1l8g2-04.mp3"
+      },
+      {
+        "id": "b1l8g3-01",
+        "chinese": "今天比較熱。",
+        "pinyin": "Jīntiān bǐjiào rè.",
+        "english": "It&#x27;s hotter today.",
+        "audio_file": "b1l8g3-01.mp3"
+      },
+      {
+        "id": "b1l8g3-02",
+        "chinese": "越南餐廳很遠。坐捷運比較快。",
+        "pinyin": "Yuènán cāntīng hěn yuǎn. Zuò jiéyùn bǐjiào kuài.",
+        "english": "The Vietnamese restaurant is far. Taking the MRT is faster.",
+        "audio_file": "b1l8g3-02.mp3"
+      },
+      {
+        "id": "b1l8g3-03",
+        "chinese": "我們家，姐姐比較會做飯。",
+        "pinyin": "Wǒmen jiā, jiějie bǐjiào huì zuò fàn.",
+        "english": "In our family, my older sister is better at cooking.",
+        "audio_file": "b1l8g3-03.mp3"
+      },
+      {
+        "id": "b1l8g3-04",
+        "chinese": "昨天比較不熱。",
+        "pinyin": "Zuótiān bǐjiào bú rè.",
+        "english": "Yesterday was not as hot.",
+        "audio_file": "b1l8g3-04.mp3"
+      },
+      {
+        "id": "b1l8g3-05",
+        "chinese": "他比較不喜歡游泳。",
+        "pinyin": "Tā bǐjiào bù xǐhuān yóuyǒng.",
+        "english": "He doesn’t like swimming as much.",
+        "audio_file": "b1l8g3-05.mp3"
+      },
+      {
+        "id": "b1l8g3-06",
+        "chinese": "我最近比較沒有空。",
+        "pinyin": "Wǒ zuìjìn bǐjiào méiyǒu kòng.",
+        "english": "I have been relatively busier recently.",
+        "audio_file": "b1l8g3-06.mp3"
+      },
+      {
+        "id": "b1l8g3-07",
+        "chinese": "咖啡和茶，你比較喜歡喝咖啡嗎？",
+        "pinyin": "Kāfēi hé chá, nǐ bǐjiào xǐhuān hē kāfēi ma?",
+        "english": "Between coffee and tea, do you prefer coffee?",
+        "audio_file": "b1l8g3-07.mp3"
+      },
+      {
+        "id": "b1l8g3-08",
+        "chinese": "你和哥哥，你比較會打棒球嗎？",
+        "pinyin": "Nǐ hé gēge, nǐ bǐjiào huì dǎ bàngqiú ma?",
+        "english": "Between you and your older brother, are you better at playing baseball?",
+        "audio_file": "b1l8g3-08.mp3"
+      },
+      {
+        "id": "b1l8g3-09",
+        "chinese": "他比較想去看美國電影還是日本電影？",
+        "pinyin": "Tā bǐjiào xiǎng qù kàn Měiguó diànyǐng háishì Rìběn diànyǐng?",
+        "english": "Does he prefer to watch American movies or Japanese movies?",
+        "audio_file": "b1l8g3-09.mp3"
+      },
+      {
+        "id": "b1l8g4-01",
+        "chinese": "這家餐廳的菜，又便宜又好吃，所以我們常來吃。",
+        "pinyin": "Zhè jiā cāntīng de cài, yòu piányí yòu hǎochī, suǒyǐ wǒmen cháng lái chī.",
+        "english": "The food at this restaurant is cheap and delicious, so we often come here to eat.",
+        "audio_file": "b1l8g4-01.mp3"
+      },
+      {
+        "id": "b1l8g4-02",
+        "chinese": "坐高鐵又快又舒服，可是有一點貴。",
+        "pinyin": "Zuò gāotiě yòu kuài yòu shūfú, kěshì yǒu yìdiǎn guì.",
+        "english": "Taking the high-speed rail is both fast and comfortable, but it&#x27;s a bit expensive.",
+        "audio_file": "b1l8g4-02.mp3"
+      },
+      {
+        "id": "b1l8g4-03",
+        "chinese": "我又想喝茶又想喝咖啡，但是這裡沒有便利商店。",
+        "pinyin": "Wǒ yòu xiǎng hē chá yòu xiǎng hē kāfēi, dànshì zhèlǐ méiyǒu biànlì shāngdiàn.",
+        "english": "I want to drink both tea and coffee, but there is no convenience store here.",
+        "audio_file": "b1l8g4-03.mp3"
+      },
+      {
+        "id": "b1l8g4-04",
+        "chinese": "老闆今天做的臭豆腐，又不臭又不辣。我 覺得不好吃。",
+        "pinyin": "Lǎobǎn jīntiān zuò de chòudòufu, yòu bú chòu yòu bú là. Wǒ juéde bù hǎochī.",
+        "english": "The stinky tofu the owner made today is neither smelly nor spicy. I think it doesn’t taste good.",
+        "audio_file": "b1l8g4-04.mp3"
+      },
+      {
+        "id": "b1l8g4-05",
+        "chinese": "我的舊手機又不能照相又不能上網。我想買新的。",
+        "pinyin": "Wǒ de jiù shǒujī yòu bù néng zhàoxiàng yòu bù néng shàngwǎng. Wǒ xiǎng mǎi xīn de.",
+        "english": "My old phone can neither take photos nor go online. I want to buy a new one.",
+        "audio_file": "b1l8g4-05.mp3"
+      },
+      {
+        "id": "b1l8g5-01",
+        "chinese": "山上的風景比這裡漂亮。",
+        "pinyin": "Shānshàng de fēngjǐng bǐ zhèlǐ piàoliàng.",
+        "english": "The scenery in the mountains is more beautiful than here.",
+        "audio_file": "b1l8g5-01.mp3"
+      },
+      {
+        "id": "b1l8g5-02",
+        "chinese": "我們學校比他們學校遠。",
+        "pinyin": "Wǒmen xuéxiào bǐ tāmen xuéxiào yuǎn.",
+        "english": "Our school is farther than their school.",
+        "audio_file": "b1l8g5-02.mp3"
+      },
+      {
+        "id": "b1l8g5-03",
+        "chinese": "坐捷運比坐火車快。",
+        "pinyin": "Zuò jiéyùn bǐ zuò huǒchē kuài.",
+        "english": "Taking the MRT is faster than taking the train.",
+        "audio_file": "b1l8g5-03.mp3"
+      },
+      {
+        "id": "b1l8g5-04",
+        "chinese": "在家上網不比在學校快。",
+        "pinyin": "Zài jiā shàngwǎng bù bǐ zài xuéxiào kuài.",
+        "english": "Using the internet at home is not faster than at school.",
+        "audio_file": "b1l8g5-04.mp3"
+      },
+      {
+        "id": "b1l8g5-05",
+        "chinese": "我的車不比他的車貴。",
+        "pinyin": "Wǒ de chē bù bǐ tā de chē guì.",
+        "english": "My car is not more expensive than his.",
+        "audio_file": "b1l8g5-05.mp3"
+      },
+      {
+        "id": "b1l8g5-06",
+        "chinese": "坐公車不是比坐計程車快。",
+        "pinyin": "Zuò gōngchē bú shì bǐ zuò jìchéngchē kuài.",
+        "english": "Taking the bus is not faster than taking a taxi.",
+        "audio_file": "b1l8g5-06.mp3"
+      },
+      {
+        "id": "b1l8g5-07",
+        "chinese": "他們學校比你們學校遠嗎？",
+        "pinyin": "Tāmen xuéxiào bǐ nǐmen xuéxiào yuǎn ma?",
+        "english": "Is their school farther than your school?",
+        "audio_file": "b1l8g5-07.mp3"
+      },
+      {
+        "id": "b1l8g5-08",
+        "chinese": "這種手機比那種貴嗎？",
+        "pinyin": "Zhè zhǒng shǒujī bǐ nà zhǒng guì ma?",
+        "english": "Is this type of phone more expensive than that one?",
+        "audio_file": "b1l8g5-08.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 9,
+    "title": "Lesson 9",
+    "sentence_count": 29,
+    "sentences": [
+      {
+        "id": "b1l9g2-01",
+        "chinese": "我去花蓮玩一個星期。",
+        "pinyin": "Wǒ qù Huālián wán yī ge xīngqí.",
+        "english": "I&#x27;m going to Hualien for a week.",
+        "audio_file": "b1l9g2-01.mp3"
+      },
+      {
+        "id": "b1l9g2-02",
+        "chinese": "這個電影很有意思，可是要看三個鐘頭。",
+        "pinyin": "Zhège diànyǐng hěn yǒuyìsi, kěshì yào kàn sān ge zhōngtóu.",
+        "english": "This movie is interesting, but it takes three hours to watch.",
+        "audio_file": "b1l9g2-02.mp3"
+      },
+      {
+        "id": "b1l9g2-03",
+        "chinese": "中文，我想學一年半。",
+        "pinyin": "Zhōngwén, wǒ xiǎng xué yī nián bàn.",
+        "english": "I want to study Chinese for a year and a half.",
+        "audio_file": "b1l9g2-03.mp3"
+      },
+      {
+        "id": "b1l9g2-04",
+        "chinese": "我去日本旅行一個多星期。",
+        "pinyin": "Wǒ qù Rìběn lǚxíng yī ge duō xīngqí.",
+        "english": "I&#x27;m traveling to Japan for a little over a week.",
+        "audio_file": "b1l9g2-04.mp3"
+      },
+      {
+        "id": "b1l9g2-05",
+        "chinese": "這麼多甜點，我們要吃一個星期。",
+        "pinyin": "Zhème duō tiándiǎn, wǒmen yào chī yī ge xīngqí.",
+        "english": "With so many desserts, we&#x27;ll need a week to finish them.",
+        "audio_file": "b1l9g2-05.mp3"
+      },
+      {
+        "id": "b1l9g2-06",
+        "chinese": "我想坐高鐵去臺南玩兩天。",
+        "pinyin": "Wǒ xiǎng zuò gāotiě qù Táinán wán liǎng tiān.",
+        "english": "I want to take the high-speed rail to Tainan for two days.",
+        "audio_file": "b1l9g2-06.mp3"
+      },
+      {
+        "id": "b1l9g2-07",
+        "chinese": "中文課，我們學校要上四年。",
+        "pinyin": "Zhōngwén kè, wǒmen xuéxiào yào shàng sì nián.",
+        "english": "Our school has four years of Chinese classes.",
+        "audio_file": "b1l9g2-07.mp3"
+      },
+      {
+        "id": "b1l9g2-08",
+        "chinese": "他打算教中文教一年。",
+        "pinyin": "Tā dǎsuàn jiāo Zhōngwén jiāo yī nián.",
+        "english": "He plans to teach Chinese for a year.",
+        "audio_file": "b1l9g2-08.mp3"
+      },
+      {
+        "id": "b1l9g2-09",
+        "chinese": "我每個星期學書法學兩天。",
+        "pinyin": "Wǒ měi ge xīngqí xué shūfǎ xué liǎng tiān.",
+        "english": "I practice calligraphy two days a week.",
+        "audio_file": "b1l9g2-09.mp3"
+      },
+      {
+        "id": "b1l9g2-10",
+        "chinese": "今年我想在臺灣學中文學九個月。",
+        "pinyin": "Jīnnián wǒ xiǎng zài Táiwān xué Zhōngwén xué jiǔ ge yuè.",
+        "english": "This year, I want to study Chinese in Taiwan for nine months.",
+        "audio_file": "b1l9g2-10.mp3"
+      },
+      {
+        "id": "b1l9g2-11",
+        "chinese": "他太忙了，所以他兩天不能來上課。",
+        "pinyin": "Tā tài máng le, suǒyǐ tā liǎng tiān bù néng lái shàngkè.",
+        "english": "He&#x27;s too busy, so he can&#x27;t come to class for two days.",
+        "audio_file": "b1l9g2-11.mp3"
+      },
+      {
+        "id": "b1l9g2-12",
+        "chinese": "這裡沒有網路，所以我兩個星期不能上網。",
+        "pinyin": "Zhèlǐ méiyǒu wǎnglù, suǒyǐ wǒ liǎng ge xīngqí bù néng shàngwǎng.",
+        "english": "There&#x27;s no internet here, so I can&#x27;t go online for two weeks.",
+        "audio_file": "b1l9g2-12.mp3"
+      },
+      {
+        "id": "b1l9g2-13",
+        "chinese": "她要回美國，所以一個月不能上課。",
+        "pinyin": "Tā yào huí Měiguó, suǒyǐ yī ge yuè bù néng shàngkè.",
+        "english": "She has to return to the U.S., so she can&#x27;t attend classes for a month.",
+        "audio_file": "b1l9g2-13.mp3"
+      },
+      {
+        "id": "b1l9g2-14",
+        "chinese": "我每星期上五天的課。",
+        "pinyin": "Wǒ měi xīngqí shàng wǔ tiān de kè.",
+        "english": "I have classes five days a week.",
+        "audio_file": "b1l9g2-14.mp3"
+      },
+      {
+        "id": "b1l9g2-15",
+        "chinese": "學校下個月放三天的假。",
+        "pinyin": "Xuéxiào xià ge yuè fàng sān tiān de jià.",
+        "english": "The school has a three-day holiday next month.",
+        "audio_file": "b1l9g2-15.mp3"
+      },
+      {
+        "id": "b1l9g2-16",
+        "chinese": "我們打算明天去KTV唱三個鐘頭的歌。",
+        "pinyin": "Wǒmen dǎsuàn míngtiān qù KTV chàng sān ge zhōngtóu de gē.",
+        "english": "We plan to sing at KTV for three hours tomorrow.",
+        "audio_file": "b1l9g2-16.mp3"
+      },
+      {
+        "id": "b1l9g2-17",
+        "chinese": "你決定在臺灣學多久的中文？",
+        "pinyin": "Nǐ juédìng zài Táiwān xué duōjiǔ de Zhōngwén?",
+        "english": "How long have you decided to study Chinese in Taiwan?",
+        "audio_file": "b1l9g2-17.mp3"
+      },
+      {
+        "id": "b1l9g3-01",
+        "chinese": "在山上看風景的時候，我覺得很舒服。",
+        "pinyin": "Zài shānshàng kàn fēngjǐng de shíhòu, wǒ juéde hěn shūfú.",
+        "english": "When I look at the scenery in the mountains, I feel very comfortable.",
+        "audio_file": "b1l9g3-01.mp3"
+      },
+      {
+        "id": "b1l9g3-02",
+        "chinese": "放假的時候，我喜歡去逛夜市。",
+        "pinyin": "Fàngjià de shíhòu, wǒ xǐhuān qù guàng yèshì.",
+        "english": "During holidays, I like to go to the night market.",
+        "audio_file": "b1l9g3-02.mp3"
+      },
+      {
+        "id": "b1l9g3-03",
+        "chinese": "你有空的時候，請到我家來玩。",
+        "pinyin": "Nǐ yǒu kòng de shíhòu, qǐng dào wǒ jiā lái wán.",
+        "english": "When you have time, please come to my house.",
+        "audio_file": "b1l9g3-03.mp3"
+      },
+      {
+        "id": "b1l9g4-01",
+        "chinese": "我有時候吃中國菜，有時候吃越南菜。",
+        "pinyin": "Wǒ yǒushíhòu chī Zhōngguó cài, yǒushíhòu chī Yuènán cài.",
+        "english": "Sometimes I eat Chinese food, sometimes I eat Vietnamese food.",
+        "audio_file": "b1l9g4-01.mp3"
+      },
+      {
+        "id": "b1l9g4-02",
+        "chinese": "在圖書館的時候，我有時候看書，有時候上網",
+        "pinyin": "Zài túshūguǎn de shíhòu, wǒ yǒushíhòu kàn shū, yǒushíhòu shàngwǎng.",
+        "english": "When I&#x27;m at the library, sometimes I read books, sometimes I go online.",
+        "audio_file": "b1l9g4-02.mp3"
+      },
+      {
+        "id": "b1l9g4-03",
+        "chinese": "放假的時候，我有時候在家寫功課，有時候出去玩。",
+        "pinyin": "Fàngjià de shíhòu, wǒ yǒushíhòu zài jiā xiě gōngkè, yǒushíhòu chūqù wán.",
+        "english": "During holidays, sometimes I do homework at home, sometimes I go out to play.",
+        "audio_file": "b1l9g4-03.mp3"
+      },
+      {
+        "id": "b1l9g5-01",
+        "chinese": "要是我有錢，我就買大房子。",
+        "pinyin": "Yàoshì wǒ yǒu qián, wǒ jiù mǎi dà fángzi.",
+        "english": "If I have money, I&#x27;ll buy a big house.",
+        "audio_file": "b1l9g5-01.mp3"
+      },
+      {
+        "id": "b1l9g5-02",
+        "chinese": "我要是不回國，我就跟你們一起去玩。",
+        "pinyin": "Wǒ yàoshì bù huí guó, wǒ jiù gēn nǐmen yīqǐ qù wán.",
+        "english": "If I don&#x27;t go back to my country, I&#x27;ll go out with you guys.",
+        "audio_file": "b1l9g5-02.mp3"
+      },
+      {
+        "id": "b1l9g5-03",
+        "chinese": "要是我有空，我就跟朋友一起去KTV唱歌。",
+        "pinyin": "Yàoshì wǒ yǒu kòng, wǒ jiù gēn péngyǒu yīqǐ qù KTV chànggē.",
+        "english": "If I have time, I&#x27;ll go to KTV with my friends.",
+        "audio_file": "b1l9g5-03.mp3"
+      },
+      {
+        "id": "b1l9g5-04",
+        "chinese": "你要是星期日有空，你就跟我去旅行吧!",
+        "pinyin": "Nǐ yàoshì xīngqírì yǒu kòng, nǐ jiù gēn wǒ qù lǚxíng ba!",
+        "english": "If you&#x27;re free on Sunday, come travel with me!",
+        "audio_file": "b1l9g5-04.mp3"
+      },
+      {
+        "id": "b1l9g5-05",
+        "chinese": "要是下個月不忙，她就回國。",
+        "pinyin": "Yàoshì xià ge yuè bù máng, tā jiù huí guó.",
+        "english": "If she&#x27;s not busy next month, she&#x27;ll go back to her country.",
+        "audio_file": "b1l9g5-05.mp3"
+      },
+      {
+        "id": "b1l9g5-06",
+        "chinese": "你要是沒空，我們就不要去逛夜市。",
+        "pinyin": "Nǐ yàoshì méi kòng, wǒmen jiù bù yào qù guàng yèshì.",
+        "english": "If you&#x27;re not free, we won&#x27;t go to the night market.",
+        "audio_file": "b1l9g5-06.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 10,
+    "title": "Lesson 10",
+    "sentence_count": 30,
+    "sentences": [
+      {
+        "id": "b1l10g1-01",
+        "chinese": "這杯咖啡很香，你喝喝看。",
+        "pinyin": "Zhè bēi kāfēi hěn xiāng, nǐ hē hē kàn.",
+        "english": "This cup of coffee smells great. Try drinking it.",
+        "audio_file": "b1l10g1-01.mp3"
+      },
+      {
+        "id": "b1l10g1-02",
+        "chinese": "聽說你唱歌唱得很好，我想聽聽看。",
+        "pinyin": "Tīngshuō nǐ chànggē chàng de hěn hǎo, wǒ xiǎng tīng tīng kàn.",
+        "english": "I heard you sing well. I want to listen.",
+        "audio_file": "b1l10g1-02.mp3"
+      },
+      {
+        "id": "b1l10g1-03",
+        "chinese": "那家餐廳的菜很好吃，我想去吃吃看。",
+        "pinyin": "Nà jiā cāntīng de cài hěn hǎo chī, wǒ xiǎng qù chī chī kàn.",
+        "english": "The food at that restaurant is delicious. I want to try it.",
+        "audio_file": "b1l10g1-03.mp3"
+      },
+      {
+        "id": "b1l10g1-04",
+        "chinese": "臺灣的夜市很有名，這個週末我想去逛逛看。",
+        "pinyin": "Táiwān de yèshì hěn yǒumíng, zhège zhōumò wǒ xiǎng qù guàng guàng kàn.",
+        "english": "Taiwan&#x27;s night markets are famous. I want to check one out this weekend.",
+        "audio_file": "b1l10g1-04.mp3"
+      },
+      {
+        "id": "b1l10g2-01",
+        "chinese": "這碗牛肉湯香香的。",
+        "pinyin": "Zhè wǎn niúròu tāng xiāng xiāng de.",
+        "english": "This bowl of beef soup smells great.",
+        "audio_file": "b1l10g2-01.mp3"
+      },
+      {
+        "id": "b1l10g2-02",
+        "chinese": "熱熱的咖啡，真香。",
+        "pinyin": "Rè rè de kāfēi, zhēn xiāng.",
+        "english": "Hot coffee smells so good.",
+        "audio_file": "b1l10g2-02.mp3"
+      },
+      {
+        "id": "b1l10g2-03",
+        "chinese": "那個地方有很多高高的大樓。",
+        "pinyin": "Nà ge dìfāng yǒu hěn duō gāo gāo de dàlóu.",
+        "english": "There are many tall buildings in that place.",
+        "audio_file": "b1l10g2-03.mp3"
+      },
+      {
+        "id": "b1l10g3-01",
+        "chinese": "你說的水果是西瓜。",
+        "pinyin": "Nǐ shuō de shuǐguǒ shì xīguā.",
+        "english": "The fruit you mentioned is watermelon.",
+        "audio_file": "b1l10g3-01.mp3"
+      },
+      {
+        "id": "b1l10g3-02",
+        "chinese": "他喝的茶是烏龍茶。",
+        "pinyin": "Tā hē de chá shì wūlóng chá.",
+        "english": "The tea he drinks is oolong tea.",
+        "audio_file": "b1l10g3-02.mp3"
+      },
+      {
+        "id": "b1l10g3-03",
+        "chinese": "這些是我拍的照片。",
+        "pinyin": "Zhèxiē shì wǒ pāi de zhàopiàn.",
+        "english": "These are the photos I took.",
+        "audio_file": "b1l10g3-03.mp3"
+      },
+      {
+        "id": "b1l10g3-04",
+        "chinese": "穿黃衣服的這個人是老闆。",
+        "pinyin": "Chuān huáng yīfú de zhège rén shì lǎobǎn.",
+        "english": "The person wearing yellow clothes is the boss.",
+        "audio_file": "b1l10g3-04.mp3"
+      },
+      {
+        "id": "b1l10g3-05",
+        "chinese": "現在去那裡玩的人比較少。",
+        "pinyin": "Xiànzài qù nàlǐ wán de rén bǐjiào shǎo.",
+        "english": "Fewer people are going there to play now.",
+        "audio_file": "b1l10g3-05.mp3"
+      },
+      {
+        "id": "b1l10g3-06",
+        "chinese": "買這種手機的人很多。",
+        "pinyin": "Mǎi zhè zhǒng shǒujī de rén hěn duō.",
+        "english": "Many people buy this type of phone.",
+        "audio_file": "b1l10g3-06.mp3"
+      },
+      {
+        "id": "b1l10g3-07",
+        "chinese": "不能上網的手機很不方便。",
+        "pinyin": "Bù néng shàngwǎng de shǒujī hěn bù fāngbiàn.",
+        "english": "A phone that can&#x27;t go online is very inconvenient.",
+        "audio_file": "b1l10g3-07.mp3"
+      },
+      {
+        "id": "b1l10g3-08",
+        "chinese": "不去逛夜市的人可以去茶館喝茶。",
+        "pinyin": "Bù qù guàng yèshì de rén kěyǐ qù cháguǎn hē chá.",
+        "english": "People who don’t go to the night market can go to a teahouse for tea.",
+        "audio_file": "b1l10g3-08.mp3"
+      },
+      {
+        "id": "b1l10g3-09",
+        "chinese": "不來上課的同學不能去看籃球比賽。",
+        "pinyin": "Bù lái shàngkè de tóngxué bù néng qù kàn lánqiú bǐsài.",
+        "english": "Students who don’t attend class can&#x27;t watch the basketball game.",
+        "audio_file": "b1l10g3-09.mp3"
+      },
+      {
+        "id": "b1l10g4-01",
+        "chinese": "咖啡貴了。",
+        "pinyin": "Kāfēi guì le.",
+        "english": "Coffee has become expensive.",
+        "audio_file": "b1l10g4-01.mp3"
+      },
+      {
+        "id": "b1l10g4-02",
+        "chinese": "我會打網球了。",
+        "pinyin": "Wǒ huì dǎ wǎngqiú le.",
+        "english": "I can play tennis now.",
+        "audio_file": "b1l10g4-02.mp3"
+      },
+      {
+        "id": "b1l10g4-03",
+        "chinese": "現在有手機的人多了。",
+        "pinyin": "Xiànzài yǒu shǒujī de rén duō le.",
+        "english": "More people have mobile phones now.",
+        "audio_file": "b1l10g4-03.mp3"
+      },
+      {
+        "id": "b1l10g4-04",
+        "chinese": "我現在喜歡吃越南麵了。",
+        "pinyin": "Wǒ xiànzài xǐhuān chī Yuènán miàn le.",
+        "english": "I like eating Vietnamese noodles now.",
+        "audio_file": "b1l10g4-04.mp3"
+      },
+      {
+        "id": "b1l10g4-05",
+        "chinese": "我媽媽不喝咖啡了。",
+        "pinyin": "Wǒ māma bù hē kāfēi le.",
+        "english": "My mom doesn&#x27;t drink coffee anymore.",
+        "audio_file": "b1l10g4-05.mp3"
+      },
+      {
+        "id": "b1l10g4-06",
+        "chinese": "他不想買那支手機了。",
+        "pinyin": "Tā bù xiǎng mǎi nà zhī shǒujī le.",
+        "english": "He doesn’t want to buy that phone anymore.",
+        "audio_file": "b1l10g4-06.mp3"
+      },
+      {
+        "id": "b1l10g4-07",
+        "chinese": "我們不要去參觀故宮了。",
+        "pinyin": "Wǒmen bù yào qù cānguān Gùgōng le.",
+        "english": "We don&#x27;t want to visit the National Palace Museum anymore.",
+        "audio_file": "b1l10g4-07.mp3"
+      },
+      {
+        "id": "b1l10g4-08",
+        "chinese": "你想吃午餐了嗎?",
+        "pinyin": "Nǐ xiǎng chī wǔcān le ma?",
+        "english": "Do you want to eat lunch now?",
+        "audio_file": "b1l10g4-08.mp3"
+      },
+      {
+        "id": "b1l10g4-09",
+        "chinese": "現在學中文的學生多了嗎?",
+        "pinyin": "Xiànzài xué Zhōngwén de xuéshēng duō le ma?",
+        "english": "Are there more students learning Chinese now?",
+        "audio_file": "b1l10g4-09.mp3"
+      },
+      {
+        "id": "b1l10g4-10",
+        "chinese": "你們不去臺東了嗎？",
+        "pinyin": "Nǐmen bù qù Táidōng le ma?",
+        "english": "Aren&#x27;t you going to Taitung anymore?",
+        "audio_file": "b1l10g4-10.mp3"
+      },
+      {
+        "id": "b1l10g5-01",
+        "chinese": "因為現在去玩的人比較少，所以旅館不太 <br>  貴。",
+        "pinyin": "Yīnwèi xiànzài qù wán de rén bǐjiào shǎo, suǒyǐ lǚguǎn bù tài guì.",
+        "english": "Since fewer people are traveling now, hotels aren’t too expensive.",
+        "audio_file": "b1l10g5-01.mp3"
+      },
+      {
+        "id": "b1l10g5-02",
+        "chinese": "因為火車太慢了，所以我想坐高鐵。",
+        "pinyin": "Yīnwèi huǒchē tài màn le, suǒyǐ wǒ xiǎng zuò gāotiě.",
+        "english": "Because the train is too slow, I want to take the high-speed rail.",
+        "audio_file": "b1l10g5-02.mp3"
+      },
+      {
+        "id": "b1l10g5-03",
+        "chinese": "因為我不會做飯，所以常去餐廳吃飯。",
+        "pinyin": "Yīnwèi wǒ bù huì zuòfàn, suǒyǐ cháng qù cāntīng chīfàn.",
+        "english": "Since I can&#x27;t cook, I often go to restaurants.",
+        "audio_file": "b1l10g5-03.mp3"
+      },
+      {
+        "id": "b1l10g5-04",
+        "chinese": "因為我不知道在哪裡買票，所以想請你幫 <br>  我買。",
+        "pinyin": "Yīnwèi wǒ bù zhīdào zài nǎlǐ mǎi piào, suǒyǐ xiǎng qǐng nǐ bāng wǒ mǎi.",
+        "english": "Since I don’t know where to buy tickets, I’d like to ask you to help me buy them.",
+        "audio_file": "b1l10g5-04.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 11,
+    "title": "Lesson 11",
+    "sentence_count": 32,
+    "sentences": [
+      {
+        "id": "b1l11g1-01",
+        "chinese": "我來學中文。",
+        "pinyin": "Wǒ lái xué Zhōngwén.",
+        "english": "I come to learn Chinese.",
+        "audio_file": "b1l11g1-01.mp3"
+      },
+      {
+        "id": "b1l11g1-02",
+        "chinese": "他來打籃球。",
+        "pinyin": "Tā lái dǎ lánqiú.",
+        "english": "He comes to play basketball.",
+        "audio_file": "b1l11g1-02.mp3"
+      },
+      {
+        "id": "b1l11g1-03",
+        "chinese": "我和朋友來逛夜市。",
+        "pinyin": "Wǒ hé péngyǒu lái guàng yèshì.",
+        "english": "My friend and I come to visit the night market.",
+        "audio_file": "b1l11g1-03.mp3"
+      },
+      {
+        "id": "b1l11g1-04",
+        "chinese": "我明天有事不來上課。",
+        "pinyin": "Wǒ míngtiān yǒu shì bù lái shàngkè.",
+        "english": "I have something to do tomorrow, so I won’t come to class.",
+        "audio_file": "b1l11g1-04.mp3"
+      },
+      {
+        "id": "b1l11g1-05",
+        "chinese": "她不跟我來看電影。",
+        "pinyin": "Tā bù gēn wǒ lái kàn diànyǐng.",
+        "english": "She won’t come to watch a movie with me.",
+        "audio_file": "b1l11g1-05.mp3"
+      },
+      {
+        "id": "b1l11g1-06",
+        "chinese": "我很忙，不來幫你裝有線電視了。",
+        "pinyin": "Wǒ hěn máng, bù lái bāng nǐ zhuāng yǒuxiàn diànshì le.",
+        "english": "I’m very busy, so I won’t come to help you install cable TV.",
+        "audio_file": "b1l11g1-06.mp3"
+      },
+      {
+        "id": "b1l11g1-07",
+        "chinese": "他不來吃晚飯嗎？",
+        "pinyin": "Tā bù lái chī wǎnfàn ma?",
+        "english": "Isn’t he coming to eat dinner?",
+        "audio_file": "b1l11g1-07.mp3"
+      },
+      {
+        "id": "b1l11g1-08",
+        "chinese": "你們常來游泳嗎？",
+        "pinyin": "Nǐmen cháng lái yóuyǒng ma?",
+        "english": "Do you often come to swim?",
+        "audio_file": "b1l11g1-08.mp3"
+      },
+      {
+        "id": "b1l11g1-09",
+        "chinese": "你要來參觀故宮博物院嗎?",
+        "pinyin": "Nǐ yào lái cānguān Gùgōng Bówùyuàn ma?",
+        "english": "Do you want to visit the National Palace Museum?",
+        "audio_file": "b1l11g1-09.mp3"
+      },
+      {
+        "id": "b1l11g1-10",
+        "chinese": "我星期四來/去上書法課。",
+        "pinyin": "Wǒ xīngqīsì lái/qù shàng shūfǎ kè.",
+        "english": "I come/go to calligraphy class on Thursday.",
+        "audio_file": "b1l11g1-10.mp3"
+      },
+      {
+        "id": "b1l11g1-11",
+        "chinese": "我妹妹不想來/去吃牛肉麵。",
+        "pinyin": "Wǒ mèimei bù xiǎng lái/qù chī niúròu miàn.",
+        "english": "My younger sister doesn’t want to come/go eat beef noodles.",
+        "audio_file": "b1l11g1-11.mp3"
+      },
+      {
+        "id": "b1l11g2-01",
+        "chinese": "學校很近。走路十分鐘就到了。",
+        "pinyin": "Xuéxiào hěn jìn. Zǒulù shí fēnzhōng jiù dào le.",
+        "english": "The school is very close. It only takes ten minutes on foot.",
+        "audio_file": "b1l11g2-01.mp3"
+      },
+      {
+        "id": "b1l11g2-02",
+        "chinese": "那個地方不遠。很快就到了。",
+        "pinyin": "Nàge dìfāng bù yuǎn. Hěn kuài jiù dào le.",
+        "english": "That place isn’t far. It won’t take long to get there.",
+        "audio_file": "b1l11g2-02.mp3"
+      },
+      {
+        "id": "b1l11g2-03",
+        "chinese": "他等一下就來。",
+        "pinyin": "Tā děng yíxià jiù lái.",
+        "english": "He will come in a moment.",
+        "audio_file": "b1l11g2-03.mp3"
+      },
+      {
+        "id": "b1l11g3-01",
+        "chinese": "有人住這裡。",
+        "pinyin": "Yǒu rén zhù zhèlǐ.",
+        "english": "Someone lives here.",
+        "audio_file": "b1l11g3-01.mp3"
+      },
+      {
+        "id": "b1l11g3-02",
+        "chinese": "有兩個學生來找你。",
+        "pinyin": "Yǒu liǎng ge xuéshēng lái zhǎo nǐ.",
+        "english": "Two students came looking for you.",
+        "audio_file": "b1l11g3-02.mp3"
+      },
+      {
+        "id": "b1l11g3-03",
+        "chinese": "早上有一個小姐打電話給你。",
+        "pinyin": "Zǎoshàng yǒu yí ge xiǎojiě dǎ diànhuà gěi nǐ.",
+        "english": "A young lady called you this morning.",
+        "audio_file": "b1l11g3-03.mp3"
+      },
+      {
+        "id": "b1l11g3-04",
+        "chinese": "昨天有一個先生來裝有線電視。",
+        "pinyin": "Zuótiān yǒu yí ge xiānshēng lái zhuāng yǒuxiàn diànshì.",
+        "english": "Yesterday, a gentleman came to install cable TV.",
+        "audio_file": "b1l11g3-04.mp3"
+      },
+      {
+        "id": "b1l11g3-05",
+        "chinese": "有一個人在外面唱歌。",
+        "pinyin": "Yǒu yí ge rén zài wàimiàn chànggē.",
+        "english": "Someone is outside singing.",
+        "audio_file": "b1l11g3-05.mp3"
+      },
+      {
+        "id": "b1l11g3-06",
+        "chinese": "這件沒有人住。",
+        "pinyin": "Zhè jiān méiyǒu rén zhù.",
+        "english": "No one lives in this room.",
+        "audio_file": "b1l11g3-06.mp3"
+      },
+      {
+        "id": "b1l11g3-07",
+        "chinese": "沒有人要跟我去逛夜市。",
+        "pinyin": "Méiyǒu rén yào gēn wǒ qù guàng yèshì.",
+        "english": "No one wants to go to the night market with me.",
+        "audio_file": "b1l11g3-07.mp3"
+      },
+      {
+        "id": "b1l11g3-08",
+        "chinese": "沒有學生要去故宮。",
+        "pinyin": "Méiyǒu xuéshēng yào qù Gùgōng.",
+        "english": "No students want to go to the National Palace Museum.",
+        "audio_file": "b1l11g3-08.mp3"
+      },
+      {
+        "id": "b1l11g3-09",
+        "chinese": "有人在裡面看書嗎?",
+        "pinyin": "Yǒu rén zài lǐmiàn kànshū ma?",
+        "english": "Is someone inside reading?",
+        "audio_file": "b1l11g3-09.mp3"
+      },
+      {
+        "id": "b1l11g3-10",
+        "chinese": "有沒有人想去KTV唱歌?",
+        "pinyin": "Yǒu méiyǒu rén xiǎng qù KTV chànggē?",
+        "english": "Does anyone want to go to KTV to sing?",
+        "audio_file": "b1l11g3-10.mp3"
+      },
+      {
+        "id": "b1l11g3-11",
+        "chinese": "有沒有人要跟我一起去花蓮玩?",
+        "pinyin": "Yǒu méiyǒu rén yào gēn wǒ yìqǐ qù Huālián wán?",
+        "english": "Does anyone want to go to Hualien with me?",
+        "audio_file": "b1l11g3-11.mp3"
+      },
+      {
+        "id": "b1l11g3-12",
+        "chinese": "有沒有人不喜歡吃日本麵？",
+        "pinyin": "Yǒu méiyǒu rén bù xǐhuān chī Rìběn miàn?",
+        "english": "Is there anyone who doesn’t like eating Japanese noodles?",
+        "audio_file": "b1l11g3-12.mp3"
+      },
+      {
+        "id": "b1l11g3-13",
+        "chinese": "地上有一支手機。是誰的？",
+        "pinyin": "Dìshàng yǒu yì zhī shǒujī. Shì shéi de?",
+        "english": "There’s a cellphone on the ground. Whose is it?",
+        "audio_file": "b1l11g3-13.mp3"
+      },
+      {
+        "id": "b1l11g3-14",
+        "chinese": "有一支手機在地上。地上？為什麼在地上？",
+        "pinyin": "Yǒu yì zhī shǒujī zài dìshàng. Dìshàng? Wèishéme zài dìshàng?",
+        "english": "There’s a cellphone on the ground. On the ground? Why is it on the ground?",
+        "audio_file": "b1l11g3-14.mp3"
+      },
+      {
+        "id": "b1l11g4-01",
+        "chinese": "他會做飯。",
+        "pinyin": "Tā huì zuòfàn.",
+        "english": "He can cook.",
+        "audio_file": "b1l11g4-01.mp3"
+      },
+      {
+        "id": "b1l11g4-02",
+        "chinese": "我不會打籃球。",
+        "pinyin": "Wǒ bù huì dǎ lánqiú.",
+        "english": "I can’t play basketball.",
+        "audio_file": "b1l11g4-02.mp3"
+      },
+      {
+        "id": "b1l11g4-03",
+        "chinese": "我明天回去看看她。",
+        "pinyin": "Wǒ míngtiān huíqù kànkan tā.",
+        "english": "I’ll go back to see her tomorrow.",
+        "audio_file": "b1l11g4-03.mp3"
+      },
+      {
+        "id": "b1l11g4-04",
+        "chinese": "他明天不會去上書法課。",
+        "pinyin": "Tā míngtiān bù huì qù shàng shūfǎ kè.",
+        "english": "He won’t go to calligraphy class tomorrow.",
+        "audio_file": "b1l11g4-04.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 12,
+    "title": "Lesson 12",
+    "sentence_count": 48,
+    "sentences": [
+      {
+        "id": "b1l12g1-01",
+        "chinese": "弟弟打算先去旅行再找工作。",
+        "pinyin": "Dìdì dǎsuàn xiān qù lǚxíng zài zhǎo gōngzuò.",
+        "english": "My younger brother plans to travel first before looking for a job.",
+        "audio_file": "b1l12g1-01.mp3"
+      },
+      {
+        "id": "b1l12g1-02",
+        "chinese": "我想先吃晚飯再給媽媽打電話。",
+        "pinyin": "Wǒ xiǎng xiān chī wǎnfàn zài gěi māmā dǎ diànhuà.",
+        "english": "I want to eat dinner first, then call my mom.",
+        "audio_file": "b1l12g1-02.mp3"
+      },
+      {
+        "id": "b1l12g1-03",
+        "chinese": "他計畫在臺灣先學語言再念大學。",
+        "pinyin": "Tā jìhuà zài Táiwān xiān xué yǔyán zài niàn dàxué.",
+        "english": "He plans to learn the language first in Taiwan before going to university.",
+        "audio_file": "b1l12g1-03.mp3"
+      },
+      {
+        "id": "b1l12g1-04",
+        "chinese": "我昨天晚上先寫功課，再看電視。",
+        "pinyin": "Wǒ zuótiān wǎnshàng xiān xiě gōngkè, zài kàn diànshì.",
+        "english": "I did my homework first last night, then watched TV.",
+        "audio_file": "b1l12g1-04.mp3"
+      },
+      {
+        "id": "b1l12g1-05",
+        "chinese": "我明天先去圖書館看書，再去超市買東西。",
+        "pinyin": "Wǒ míngtiān xiān qù túshūguǎn kànshū, zài qù chāoshì mǎi dōngxī.",
+        "english": "I will go to the library to read first tomorrow, then go to the supermarket to buy things.",
+        "audio_file": "b1l12g1-05.mp3"
+      },
+      {
+        "id": "b1l12g2-01",
+        "chinese": "他是昨天晚上到臺灣的。",
+        "pinyin": "Tā shì zuótiān wǎnshàng dào Táiwān de.",
+        "english": "He arrived in Taiwan last night.",
+        "audio_file": "b1l12g2-01.mp3"
+      },
+      {
+        "id": "b1l12g2-02",
+        "chinese": "他是在學校附近吃晚飯的。",
+        "pinyin": "Tā shì zài xuéxiào fùjìn chī wǎnfàn de.",
+        "english": "He had dinner near the school.",
+        "audio_file": "b1l12g2-02.mp3"
+      },
+      {
+        "id": "b1l12g2-03",
+        "chinese": "我是坐捷運來學校的。",
+        "pinyin": "Wǒ shì zuò jiéyùn lái xuéxiào de.",
+        "english": "I came to school by MRT.",
+        "audio_file": "b1l12g2-03.mp3"
+      },
+      {
+        "id": "b1l12g2-04",
+        "chinese": "學費是公司替我付的。",
+        "pinyin": "Xuéfèi shì gōngsī tì wǒ fù de.",
+        "english": "My tuition was paid by the company.",
+        "audio_file": "b1l12g2-04.mp3"
+      },
+      {
+        "id": "b1l12g2-05",
+        "chinese": "這支手機是在夜市買的。",
+        "pinyin": "Zhè zhī shǒujī shì zài yèshì mǎi de.",
+        "english": "This phone was bought at the night market.",
+        "audio_file": "b1l12g2-05.mp3"
+      },
+      {
+        "id": "b1l12g2-06",
+        "chinese": "是我打電話給房東的。",
+        "pinyin": "Shì wǒ dǎ diànhuà gěi fángdōng de.",
+        "english": "I was the one who called the landlord.",
+        "audio_file": "b1l12g2-06.mp3"
+      },
+      {
+        "id": "b1l12g2-07",
+        "chinese": "我是昨天晚上去看電影的。",
+        "pinyin": "Wǒ shì zuótiān wǎnshàng qù kàn diànyǐng de.",
+        "english": "I went to see a movie last night.",
+        "audio_file": "b1l12g2-07.mp3"
+      },
+      {
+        "id": "b1l12g2-08",
+        "chinese": "他是在那家便利商店買咖啡的。",
+        "pinyin": "Tā shì zài nà jiā biànlì shāngdiàn mǎi kāfēi de.",
+        "english": "He bought coffee at that convenience store.",
+        "audio_file": "b1l12g2-08.mp3"
+      },
+      {
+        "id": "b1l12g2-09",
+        "chinese": "我是坐公車來上課的。",
+        "pinyin": "Wǒ shì zuò gōngchē lái shàngkè de.",
+        "english": "I came to class by bus.",
+        "audio_file": "b1l12g2-09.mp3"
+      },
+      {
+        "id": "b1l12g2-10",
+        "chinese": "他不是今天早上去美國的。",
+        "pinyin": "Tā bù shì jīntiān zǎoshàng qù Měiguó de.",
+        "english": "He didn’t go to the U.S. this morning.",
+        "audio_file": "b1l12g2-10.mp3"
+      },
+      {
+        "id": "b1l12g2-11",
+        "chinese": "不是我打電話給房東的。",
+        "pinyin": "Bù shì wǒ dǎ diànhuà gěi fángdōng de.",
+        "english": "I wasn’t the one who called the landlord.",
+        "audio_file": "b1l12g2-11.mp3"
+      },
+      {
+        "id": "b1l12g2-12",
+        "chinese": "我不是在圖書館看書的。",
+        "pinyin": "Wǒ bù shì zài túshūguǎn kànshū de.",
+        "english": "I wasn’t reading at the library.",
+        "audio_file": "b1l12g2-12.mp3"
+      },
+      {
+        "id": "b1l12g2-13",
+        "chinese": "你是一個人來的嗎？",
+        "pinyin": "Nǐ shì yí ge rén lái de ma?",
+        "english": "Did you come alone?",
+        "audio_file": "b1l12g2-13.mp3"
+      },
+      {
+        "id": "b1l12g2-14",
+        "chinese": "他是坐高鐵去臺南的嗎？",
+        "pinyin": "Tā shì zuò gāotiě qù Táinán de ma?",
+        "english": "Did he take the high-speed rail to Tainan?",
+        "audio_file": "b1l12g2-14.mp3"
+      },
+      {
+        "id": "b1l12g2-15",
+        "chinese": "你的房租是自己付的嗎？",
+        "pinyin": "Nǐ de fángzū shì zìjǐ fù de ma?",
+        "english": "Did you pay the rent yourself?",
+        "audio_file": "b1l12g2-15.mp3"
+      },
+      {
+        "id": "b1l12g2-16",
+        "chinese": "我(是)跟朋友一起來的。",
+        "pinyin": "Wǒ (shì) gēn péngyǒu yìqǐ lái de.",
+        "english": "I came with my friend.",
+        "audio_file": "b1l12g2-16.mp3"
+      },
+      {
+        "id": "b1l12g2-17",
+        "chinese": "我(是)坐計程車來的。",
+        "pinyin": "Wǒ (shì) zuò jìchéngchē lái de.",
+        "english": "I came by taxi.",
+        "audio_file": "b1l12g2-17.mp3"
+      },
+      {
+        "id": "b1l12g2-18",
+        "chinese": "是誰打電話給你的？",
+        "pinyin": "Shì shéi dǎ diànhuà gěi nǐ de?",
+        "english": "Who called you?",
+        "audio_file": "b1l12g2-18.mp3"
+      },
+      {
+        "id": "b1l12g2-19",
+        "chinese": "他是什麼時候來學校的？",
+        "pinyin": "Tā shì shénme shíhòu lái xuéxiào de?",
+        "english": "When did he come to school?",
+        "audio_file": "b1l12g2-19.mp3"
+      },
+      {
+        "id": "b1l12g2-20",
+        "chinese": "你是怎麼去的？",
+        "pinyin": "Nǐ shì zěnme qù de?",
+        "english": "How did you go?",
+        "audio_file": "b1l12g2-20.mp3"
+      },
+      {
+        "id": "b1l12g2-21",
+        "chinese": "你是在哪裡吃飯的？",
+        "pinyin": "Nǐ shì zài nǎlǐ chīfàn de?",
+        "english": "Where did you eat?",
+        "audio_file": "b1l12g2-21.mp3"
+      },
+      {
+        "id": "b1l12g3-01",
+        "chinese": "我們以後都得上班。",
+        "pinyin": "Wǒmen yǐhòu dōu děi shàngbān.",
+        "english": "We all have to work in the future.",
+        "audio_file": "b1l12g3-01.mp3"
+      },
+      {
+        "id": "b1l12g3-02",
+        "chinese": "他們以後還要再到台南去。",
+        "pinyin": "Tāmen yǐhòu hái yào zài dào Táinán qù.",
+        "english": "They will go to Tainan again in the future.",
+        "audio_file": "b1l12g3-02.mp3"
+      },
+      {
+        "id": "b1l12g3-03",
+        "chinese": "回國以後，我要找個有機會說中文的工作。",
+        "pinyin": "Huíguó yǐhòu, wǒ yào zhǎo ge yǒu jīhuì shuō Zhōngwén de gōngzuò.",
+        "english": "After returning to my country, I want to find a job where I can speak Chinese.",
+        "audio_file": "b1l12g3-03.mp3"
+      },
+      {
+        "id": "b1l12g3-04",
+        "chinese": "來臺灣以後，我每星期上五天的中文課。",
+        "pinyin": "Lái Táiwān yǐhòu, wǒ měi xīngqī shàng wǔ tiān de Zhōngwén kè.",
+        "english": "Since coming to Taiwan, I have five Chinese classes per week.",
+        "audio_file": "b1l12g3-04.mp3"
+      },
+      {
+        "id": "b1l12g3-05",
+        "chinese": "我下課以後，常在圖書館上網。",
+        "pinyin": "Wǒ xiàkè yǐhòu, cháng zài túshūguǎn shàngwǎng.",
+        "english": "After class, I often use the internet at the library.",
+        "audio_file": "b1l12g3-05.mp3"
+      },
+      {
+        "id": "b1l12g4-01",
+        "chinese": "日本菜好吃也好看。",
+        "pinyin": "Rìběn cài hǎochī yě hǎokàn.",
+        "english": "Japanese food is tasty and looks good.",
+        "audio_file": "b1l12g4-01.mp3"
+      },
+      {
+        "id": "b1l12g4-02",
+        "chinese": "好工作很難找。",
+        "pinyin": "Hǎo gōngzuò hěn nán zhǎo.",
+        "english": "A good job is hard to find.",
+        "audio_file": "b1l12g4-02.mp3"
+      },
+      {
+        "id": "b1l12g4-03",
+        "chinese": "這個歌好聽也好唱。",
+        "pinyin": "Zhège gē hǎotīng yě hǎochàng.",
+        "english": "This song sounds good and is easy to sing.",
+        "audio_file": "b1l12g4-03.mp3"
+      },
+      {
+        "id": "b1l12g4-04",
+        "chinese": "我媽媽做的菜很好吃。",
+        "pinyin": "Wǒ māmā zuò de cài hěn hǎochī.",
+        "english": "My mom’s cooking is delicious.",
+        "audio_file": "b1l12g4-04.mp3"
+      },
+      {
+        "id": "b1l12g4-05",
+        "chinese": "有人覺得中文很難學。",
+        "pinyin": "Yǒu rén juéde Zhōngwén hěn nán xué.",
+        "english": "Some people think Chinese is hard to learn.",
+        "audio_file": "b1l12g4-05.mp3"
+      },
+      {
+        "id": "b1l12g4-06",
+        "chinese": "便宜的咖啡不好喝。",
+        "pinyin": "Piányí de kāfēi bù hǎohē.",
+        "english": "Cheap coffee doesn’t taste good.",
+        "audio_file": "b1l12g4-06.mp3"
+      },
+      {
+        "id": "b1l12g4-07",
+        "chinese": "學校餐廳的菜不難吃。",
+        "pinyin": "Xuéxiào cāntīng de cài bù nán chī.",
+        "english": "The school cafeteria’s food is not bad.",
+        "audio_file": "b1l12g4-07.mp3"
+      },
+      {
+        "id": "b1l12g4-08",
+        "chinese": "這個歌，唱得太慢不好聽。",
+        "pinyin": "Zhège gē, chàng de tài màn bù hǎotīng.",
+        "english": "This song sounds bad when sung too slowly.",
+        "audio_file": "b1l12g4-08.mp3"
+      },
+      {
+        "id": "b1l12g4-09",
+        "chinese": "這家店賣的小籠包不好做。",
+        "pinyin": "Zhè jiā diàn mài de xiǎolóngbāo bù hǎozuò.",
+        "english": "The soup dumplings sold at this shop are hard to make.",
+        "audio_file": "b1l12g4-09.mp3"
+      },
+      {
+        "id": "b1l12g4-10",
+        "chinese": "老師常常說中文不難學。",
+        "pinyin": "Lǎoshī chángcháng shuō Zhōngwén bù nán xué.",
+        "english": "The teacher often says Chinese isn’t hard to learn.",
+        "audio_file": "b1l12g4-10.mp3"
+      },
+      {
+        "id": "b1l12g4-11",
+        "chinese": "學校附近便宜的套房不好找。",
+        "pinyin": "Xuéxiào fùjìn piányí de tàofáng bù hǎo zhǎo.",
+        "english": "Cheap studio apartments near the school are hard to find.",
+        "audio_file": "b1l12g4-11.mp3"
+      },
+      {
+        "id": "b1l12g4-12",
+        "chinese": "旅館老闆買的水果好吃嗎？",
+        "pinyin": "Lǚguǎn lǎobǎn mǎi de shuǐguǒ hǎochī ma?",
+        "english": "Are the fruits bought by the hotel owner tasty?",
+        "audio_file": "b1l12g4-12.mp3"
+      },
+      {
+        "id": "b1l12g4-13",
+        "chinese": "你覺得那個電影好看不好看?",
+        "pinyin": "Nǐ juéde nàge diànyǐng hǎokàn bù hǎokàn?",
+        "english": "Do you think that movie was good or not?",
+        "audio_file": "b1l12g4-13.mp3"
+      },
+      {
+        "id": "b1l12g4-14",
+        "chinese": "點烏龍茶的那個先生唱歌唱得好聽嗎？",
+        "pinyin": "Diǎn wūlóngchá de nàge xiānshēng chànggē chàng de hǎotīng ma?",
+        "english": "Does the gentleman who ordered oolong tea sing well?",
+        "audio_file": "b1l12g4-14.mp3"
+      },
+      {
+        "id": "b1l12g4-15",
+        "chinese": "說中文的工作在你的國家好找嗎?",
+        "pinyin": "Shuō Zhōngwén de gōngzuò zài nǐ de guójiā hǎo zhǎo ma?",
+        "english": "Are jobs requiring Chinese language skills easy to find in your country?",
+        "audio_file": "b1l12g4-15.mp3"
+      },
+      {
+        "id": "b1l12g4-16",
+        "chinese": "又大又貴的房子好不好賣？",
+        "pinyin": "Yòu dà yòu guì de fángzi hǎo bù hǎo mài?",
+        "english": "Are large and expensive houses easy to sell?",
+        "audio_file": "b1l12g4-16.mp3"
+      },
+      {
+        "id": "b1l12g4-17",
+        "chinese": "老師今天教的甜點難不難學？",
+        "pinyin": "Lǎoshī jīntiān jiāo de tiándiǎn nán bù nán xué?",
+        "english": "Is the dessert the teacher taught today difficult to learn?",
+        "audio_file": "b1l12g4-17.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 13,
+    "title": "Lesson 13",
+    "sentence_count": 70,
+    "sentences": [
+      {
+        "id": "b1l13g1-01",
+        "chinese": "我一下課，就回來。",
+        "pinyin": "Wǒ yí xiàkè, jiù huílái.",
+        "english": "As soon as I finish class, I’ll come back.",
+        "audio_file": "b1l13g1-01.mp3"
+      },
+      {
+        "id": "b1l13g1-02",
+        "chinese": "他一回國，就找工作。",
+        "pinyin": "Tā yí huíguó, jiù zhǎo gōngzuò.",
+        "english": "As soon as he returns to his country, he’ll look for a job.",
+        "audio_file": "b1l13g1-02.mp3"
+      },
+      {
+        "id": "b1l13g1-03",
+        "chinese": "我妹妹一回去，就給媽媽打電話。",
+        "pinyin": "Wǒ mèimei yí huíqù, jiù gěi māma dǎ diànhuà.",
+        "english": "As soon as my younger sister goes back, she’ll call Mom.",
+        "audio_file": "b1l13g1-03.mp3"
+      },
+      {
+        "id": "b1l13g1-04",
+        "chinese": "我一下課，就去吃晚飯。",
+        "pinyin": "Wǒ yí xiàkè, jiù qù chī wǎnfàn.",
+        "english": "As soon as I finish class, I’ll go eat dinner.",
+        "audio_file": "b1l13g1-04.mp3"
+      },
+      {
+        "id": "b1l13g1-05",
+        "chinese": "他打算等那裡一沒人，就去拍照。",
+        "pinyin": "Tā dǎsuàn děng nàlǐ yí méirén, jiù qù pāizhào.",
+        "english": "He plans to take pictures as soon as no one is there.",
+        "audio_file": "b1l13g1-05.mp3"
+      },
+      {
+        "id": "b1l13g1-06",
+        "chinese": "老闆今天早上一到公司，就不開心。",
+        "pinyin": "Lǎobǎn jīntiān zǎoshàng yí dào gōngsī, jiù bù kāixīn.",
+        "english": "The boss was unhappy as soon as he arrived at the office this morning.",
+        "audio_file": "b1l13g1-06.mp3"
+      },
+      {
+        "id": "b1l13g1-07",
+        "chinese": "他一下課，就去學校找你嗎?",
+        "pinyin": "Tā yí xiàkè, jiù qù xuéxiào zhǎo nǐ ma?",
+        "english": "Does he go to school to find you as soon as class ends?",
+        "audio_file": "b1l13g1-07.mp3"
+      },
+      {
+        "id": "b1l13g1-08",
+        "chinese": "我們今天是不是比賽一結束，就一起去 <br>   KTV唱歌?",
+        "pinyin": "Wǒmen jīntiān shì bùshì bǐsài yí jiéshù, jiù yìqǐ qù KTV chànggē?",
+        "english": "Are we going to KTV together as soon as the game ends today?",
+        "audio_file": "b1l13g1-08.mp3"
+      },
+      {
+        "id": "b1l13g2-01",
+        "chinese": "我剛在便利商店喝了咖啡。",
+        "pinyin": "Wǒ gāng zài biànlì shāngdiàn hē le kāfēi.",
+        "english": "I just drank coffee at the convenience store.",
+        "audio_file": "b1l13g2-01.mp3"
+      },
+      {
+        "id": "b1l13g2-02",
+        "chinese": "我昨天吃了很多東西。",
+        "pinyin": "Wǒ zuótiān chī le hěn duō dōngxī.",
+        "english": "I ate a lot of food yesterday.",
+        "audio_file": "b1l13g2-02.mp3"
+      },
+      {
+        "id": "b1l13g2-03",
+        "chinese": "今天早上我喝了一杯咖啡。",
+        "pinyin": "Jīntiān zǎoshàng wǒ hē le yì bēi kāfēi.",
+        "english": "I drank a cup of coffee this morning.",
+        "audio_file": "b1l13g2-03.mp3"
+      },
+      {
+        "id": "b1l13g2-04",
+        "chinese": "他租了一個漂亮的房子。",
+        "pinyin": "Tā zū le yí ge piàoliàng de fángzi.",
+        "english": "He rented a beautiful apartment.",
+        "audio_file": "b1l13g2-04.mp3"
+      },
+      {
+        "id": "b1l13g2-05",
+        "chinese": "我今天沒吃午餐。",
+        "pinyin": "Wǒ jīntiān méi chī wǔcān.",
+        "english": "I didn’t eat lunch today.",
+        "audio_file": "b1l13g2-05.mp3"
+      },
+      {
+        "id": "b1l13g2-06",
+        "chinese": "我最近很忙，一星期都沒看電視。",
+        "pinyin": "Wǒ zuìjìn hěn máng, yì xīngqī dōu méi kàn diànshì.",
+        "english": "I’ve been very busy recently and haven’t watched TV all week.",
+        "audio_file": "b1l13g2-06.mp3"
+      },
+      {
+        "id": "b1l13g2-07",
+        "chinese": "昨天跟朋友去過生日，所以我沒寫功課。",
+        "pinyin": "Zuótiān gēn péngyǒu qù guò shēngrì, suǒyǐ wǒ méi xiě gōngkè.",
+        "english": "I celebrated a birthday with friends yesterday, so I didn’t do my homework.",
+        "audio_file": "b1l13g2-07.mp3"
+      },
+      {
+        "id": "b1l13g2-08",
+        "chinese": "弟弟吃了午餐沒有?",
+        "pinyin": "Dìdi chī le wǔcān méiyǒu?",
+        "english": "Has my younger brother eaten lunch?",
+        "audio_file": "b1l13g2-08.mp3"
+      },
+      {
+        "id": "b1l13g2-09",
+        "chinese": "下個月的學費，他付了沒有?",
+        "pinyin": "Xià ge yuè de xuéfèi, tā fù le méiyǒu?",
+        "english": "Has he paid next month’s tuition?",
+        "audio_file": "b1l13g2-09.mp3"
+      },
+      {
+        "id": "b1l13g2-10",
+        "chinese": "今晚的籃球比賽開始了沒有？",
+        "pinyin": "Jīnwǎn de lánqiú bǐsài kāishǐ le méiyǒu?",
+        "english": "Has tonight’s basketball game started?",
+        "audio_file": "b1l13g2-10.mp3"
+      },
+      {
+        "id": "b1l13g2-11",
+        "chinese": "我沒吃晚飯。",
+        "pinyin": "Wǒ méi chī wǎnfàn.",
+        "english": "I didn’t eat dinner.",
+        "audio_file": "b1l13g2-11.mp3"
+      },
+      {
+        "id": "b1l13g3-01",
+        "chinese": "我們星期六不上課。",
+        "pinyin": "Wǒmen xīngqīliù bù shàngkè.",
+        "english": "We don’t have class on Saturdays.",
+        "audio_file": "b1l13g3-01.mp3"
+      },
+      {
+        "id": "b1l13g3-02",
+        "chinese": "學生常不吃早餐。",
+        "pinyin": "Xuéshēng cháng bù chī zǎocān.",
+        "english": "Students often don’t eat breakfast.",
+        "audio_file": "b1l13g3-02.mp3"
+      },
+      {
+        "id": "b1l13g3-03",
+        "chinese": "我不去圖書館。",
+        "pinyin": "Wǒ bù qù túshūguǎn.",
+        "english": "I’m not going to the library.",
+        "audio_file": "b1l13g3-03.mp3"
+      },
+      {
+        "id": "b1l13g3-04",
+        "chinese": "他不找工作。",
+        "pinyin": "Tā bù zhǎo gōngzuò.",
+        "english": "He’s not looking for a job.",
+        "audio_file": "b1l13g3-04.mp3"
+      },
+      {
+        "id": "b1l13g3-05",
+        "chinese": "昨天我沒打電話給他。",
+        "pinyin": "Zuótiān wǒ méi dǎ diànhuà gěi tā.",
+        "english": "I didn’t call him yesterday.",
+        "audio_file": "b1l13g3-05.mp3"
+      },
+      {
+        "id": "b1l13g3-06",
+        "chinese": "上個星期我沒跟同學去KTV。",
+        "pinyin": "Shàng ge xīngqī wǒ méi gēn tóngxué qù KTV.",
+        "english": "I didn’t go to KTV with classmates last week.",
+        "audio_file": "b1l13g3-06.mp3"
+      },
+      {
+        "id": "b1l13g3-07",
+        "chinese": "今天我沒坐捷運來上課。我坐公車。",
+        "pinyin": "Jīntiān wǒ méi zuò jiéyùn lái shàngkè. Wǒ zuò gōngchē.",
+        "english": "I didn’t take the MRT to class today. I took the bus.",
+        "audio_file": "b1l13g3-07.mp3"
+      },
+      {
+        "id": "b1l13g3-08",
+        "chinese": "今天不熱，我想出去逛逛。",
+        "pinyin": "Jīntiān bù rè, wǒ xiǎng chūqù guàngguàng.",
+        "english": "It’s not hot today, so I want to go out for a walk.",
+        "audio_file": "b1l13g3-08.mp3"
+      },
+      {
+        "id": "b1l13g3-09",
+        "chinese": "他說中文不難學，可是中國字不好寫。",
+        "pinyin": "Tā shuō Zhōngwén bù nán xué, kěshì Zhōngguó zì bù hǎo xiě.",
+        "english": "He says learning Chinese isn’t hard, but Chinese characters are difficult to write.",
+        "audio_file": "b1l13g3-09.mp3"
+      },
+      {
+        "id": "b1l13g3-10",
+        "chinese": "我不舒服，今天不想出去。",
+        "pinyin": "Wǒ bù shūfú, jīntiān bù xiǎng chūqù.",
+        "english": "I’m not feeling well and don’t want to go out today.",
+        "audio_file": "b1l13g3-10.mp3"
+      },
+      {
+        "id": "b1l13g3-11",
+        "chinese": "中文課還沒結束，所以我不能回國。",
+        "pinyin": "Zhōngwén kè hái méi jiéshù, suǒyǐ wǒ bù néng huíguó.",
+        "english": "My Chinese class hasn’t ended yet, so I can’t return to my country.",
+        "audio_file": "b1l13g3-11.mp3"
+      },
+      {
+        "id": "b1l13g3-12",
+        "chinese": "我沒忘。你先去學校，我等一下去找你。",
+        "pinyin": "Wǒ méi wàng. Nǐ xiān qù xuéxiào, wǒ děng yíxià qù zhǎo nǐ.",
+        "english": "I didn’t forget. You go to school first, and I’ll find you later.",
+        "audio_file": "b1l13g3-12.mp3"
+      },
+      {
+        "id": "b1l13g3-13",
+        "chinese": "我還沒決定要不要去旅行？",
+        "pinyin": "Wǒ hái méi juédìng yào bú yào qù lǚxíng?",
+        "english": "I haven’t decided yet whether I want to travel or not.",
+        "audio_file": "b1l13g3-13.mp3"
+      },
+      {
+        "id": "b1l13g4-01",
+        "chinese": "誰都喜歡去旅行。",
+        "pinyin": "Shéi dōu xǐhuān qù lǚxíng.",
+        "english": "Everyone likes to travel.",
+        "audio_file": "b1l13g4-01.mp3"
+      },
+      {
+        "id": "b1l13g4-02",
+        "chinese": "哪裡都有好吃的東西。",
+        "pinyin": "Nǎlǐ dōu yǒu hǎochī de dōngxī.",
+        "english": "There’s delicious food everywhere.",
+        "audio_file": "b1l13g4-02.mp3"
+      },
+      {
+        "id": "b1l13g4-03",
+        "chinese": "他什麼都想買。",
+        "pinyin": "Tā shénme dōu xiǎng mǎi.",
+        "english": "He wants to buy everything.",
+        "audio_file": "b1l13g4-03.mp3"
+      },
+      {
+        "id": "b1l13g4-04",
+        "chinese": "弟弟什麼時候都在上網。",
+        "pinyin": "Dìdi shénme shíhòu dōu zài shàngwǎng.",
+        "english": "My younger brother is always online.",
+        "audio_file": "b1l13g4-04.mp3"
+      },
+      {
+        "id": "b1l13g4-05",
+        "chinese": "他們學校很方便，怎麼去都能到。",
+        "pinyin": "Tāmen xuéxiào hěn fāngbiàn, zěnme qù dōu néng dào.",
+        "english": "Their school is very convenient; you can get there any way.",
+        "audio_file": "b1l13g4-05.mp3"
+      },
+      {
+        "id": "b1l13g4-06",
+        "chinese": "誰也不喜歡難看的東西。",
+        "pinyin": "Shéi yě bù xǐhuān nánkàn de dōngxī.",
+        "english": "No one likes ugly things.",
+        "audio_file": "b1l13g4-06.mp3"
+      },
+      {
+        "id": "b1l13g4-07",
+        "chinese": "昨天我哪裡都沒去，在家看電視。",
+        "pinyin": "Zuótiān wǒ nǎlǐ dōu méi qù, zài jiā kàn diànshì.",
+        "english": "I didn’t go anywhere yesterday, just stayed home watching TV.",
+        "audio_file": "b1l13g4-07.mp3"
+      },
+      {
+        "id": "b1l13g4-08",
+        "chinese": "我今天什麼也不想吃。",
+        "pinyin": "Wǒ jīntiān shénme yě bù xiǎng chī.",
+        "english": "I don’t want to eat anything today.",
+        "audio_file": "b1l13g4-08.mp3"
+      },
+      {
+        "id": "b1l13g4-09",
+        "chinese": "下個星期，我什麼時候都不在家，我要去 <br>  旅行。",
+        "pinyin": "Xià ge xīngqī, wǒ shénme shíhòu dōu bú zài jiā, wǒ yào qù lǚxíng.",
+        "english": "Next week, I won’t be home at any time because I’m going traveling.",
+        "audio_file": "b1l13g4-09.mp3"
+      },
+      {
+        "id": "b1l13g4-10",
+        "chinese": "中國菜很難做，我怎麼做都不好吃。",
+        "pinyin": "Zhōngguó cài hěn nán zuò, wǒ zěnme zuò dōu bù hǎochī.",
+        "english": "Chinese food is hard to cook; no matter how I make it, it doesn’t taste good.",
+        "audio_file": "b1l13g4-10.mp3"
+      },
+      {
+        "id": "b1l13g4-11",
+        "chinese": "這家餐廳的東西什麼都好吃嗎？",
+        "pinyin": "Zhè jiā cāntīng de dōngxī shénme dōu hǎochī ma?",
+        "english": "Is everything in this restaurant delicious?",
+        "audio_file": "b1l13g4-11.mp3"
+      },
+      {
+        "id": "b1l13g4-12",
+        "chinese": "你今天什麼時候都在公司嗎?",
+        "pinyin": "Nǐ jīntiān shénme shíhòu dōu zài gōngsī ma?",
+        "english": "Are you at the company all day today?",
+        "audio_file": "b1l13g4-12.mp3"
+      },
+      {
+        "id": "b1l13g5-01",
+        "chinese": "我最近沒錢了，應該少買東西。",
+        "pinyin": "Wǒ zuìjìn méi qián le, yīnggāi shǎo mǎi dōngxī.",
+        "english": "I don’t have much money lately, so I should buy fewer things.",
+        "audio_file": "b1l13g5-01.mp3"
+      },
+      {
+        "id": "b1l13g5-02",
+        "chinese": "我中文不好，應該多看書，少看電視。",
+        "pinyin": "Wǒ Zhōngwén bù hǎo, yīnggāi duō kàn shū, shǎo kàn diànshì.",
+        "english": "My Chinese isn’t good, so I should read more books and watch less TV.",
+        "audio_file": "b1l13g5-02.mp3"
+      },
+      {
+        "id": "b1l13g5-03",
+        "chinese": "我們明天應該多穿衣服嗎?",
+        "pinyin": "Wǒmen míngtiān yīnggāi duō chuān yīfú ma?",
+        "english": "Should we wear more clothes tomorrow?",
+        "audio_file": "b1l13g5-03.mp3"
+      },
+      {
+        "id": "b1l13g5-04",
+        "chinese": "他喜歡臺灣，想多學一點中文。",
+        "pinyin": "Tā xǐhuān Táiwān, xiǎng duō xué yìdiǎn Zhōngwén.",
+        "english": "He likes Taiwan and wants to learn more Chinese.",
+        "audio_file": "b1l13g5-04.mp3"
+      },
+      {
+        "id": "b1l13g5-05",
+        "chinese": "昨天我朋友來我家，我多做了一點菜。",
+        "pinyin": "Zuótiān wǒ péngyǒu lái wǒ jiā, wǒ duō zuò le yìdiǎn cài.",
+        "english": "My friend came to my house yesterday, so I made a little more food.",
+        "audio_file": "b1l13g5-05.mp3"
+      },
+      {
+        "id": "b1l13g5-06",
+        "chinese": "她今天太累了，想少做一點功課。",
+        "pinyin": "Tā jīntiān tài lèi le, xiǎng shǎo zuò yìdiǎn gōngkè.",
+        "english": "She’s too tired today and wants to do a little less homework.",
+        "audio_file": "b1l13g5-06.mp3"
+      },
+      {
+        "id": "b1l13g6-01",
+        "chinese": "你是不是在家等我？",
+        "pinyin": "Nǐ shì bú shì zài jiā děng wǒ?",
+        "english": "Are you waiting for me at home?",
+        "audio_file": "b1l13g6-01.mp3"
+      },
+      {
+        "id": "b1l13g6-02",
+        "chinese": "那家餐廳是不是很有名？",
+        "pinyin": "Nà jiā cāntīng shì bú shì hěn yǒumíng?",
+        "english": "Is that restaurant very famous?",
+        "audio_file": "b1l13g6-02.mp3"
+      },
+      {
+        "id": "b1l13g6-03",
+        "chinese": "你是不是剛旅行回來？",
+        "pinyin": "Nǐ shì bú shì gāng lǚxíng huílái?",
+        "english": "Did you just come back from traveling?",
+        "audio_file": "b1l13g6-03.mp3"
+      },
+      {
+        "id": "b1l13g6-04",
+        "chinese": "你銀行有錢嗎？",
+        "pinyin": "Nǐ yínháng yǒu qián ma?",
+        "english": "Do you have money in your bank?",
+        "audio_file": "b1l13g6-04.mp3"
+      },
+      {
+        "id": "b1l13g6-05",
+        "chinese": "你銀行有沒有錢？",
+        "pinyin": "Nǐ yínháng yǒu méiyǒu qián?",
+        "english": "Do you have money in your bank?",
+        "audio_file": "b1l13g6-05.mp3"
+      },
+      {
+        "id": "b1l13g6-06",
+        "chinese": "你銀行是不是有錢？",
+        "pinyin": "Nǐ yínháng shì bú shì yǒu qián?",
+        "english": "Do you have money in your bank?",
+        "audio_file": "b1l13g6-06.mp3"
+      },
+      {
+        "id": "b1l13g7-01",
+        "chinese": "這支手機跟那支手機一樣。",
+        "pinyin": "Zhè zhī shǒujī gēn nà zhī shǒujī yíyàng.",
+        "english": "This phone is the same as that phone.",
+        "audio_file": "b1l13g7-01.mp3"
+      },
+      {
+        "id": "b1l13g7-02",
+        "chinese": "我的生日跟她的生日一樣，都是八月十七 <br>  日。",
+        "pinyin": "Wǒ de shēngrì gēn tā de shēngrì yíyàng, dōu shì bā yuè shíqī rì.",
+        "english": "My birthday is the same as hers; both are on August 17th.",
+        "audio_file": "b1l13g7-02.mp3"
+      },
+      {
+        "id": "b1l13g7-03",
+        "chinese": "他跟我一樣，都常游泳。",
+        "pinyin": "Tā gēn wǒ yíyàng, dōu cháng yóuyǒng.",
+        "english": "He is the same as me; we both swim often.",
+        "audio_file": "b1l13g7-03.mp3"
+      },
+      {
+        "id": "b1l13g7-04",
+        "chinese": "你點的菜跟我點的一樣。",
+        "pinyin": "Nǐ diǎn de cài gēn wǒ diǎn de yíyàng.",
+        "english": "The dish you ordered is the same as the one I ordered.",
+        "audio_file": "b1l13g7-04.mp3"
+      },
+      {
+        "id": "b1l13g7-05",
+        "chinese": "我跟我妹妹一樣高。",
+        "pinyin": "Wǒ gēn wǒ mèimei yíyàng gāo.",
+        "english": "My younger sister and I are the same height.",
+        "audio_file": "b1l13g7-05.mp3"
+      },
+      {
+        "id": "b1l13g7-06",
+        "chinese": "姐姐租的房子跟我租的一樣貴。",
+        "pinyin": "Jiějie zū de fángzi gēn wǒ zū de yíyàng guì.",
+        "english": "The apartment my older sister rented is as expensive as mine.",
+        "audio_file": "b1l13g7-06.mp3"
+      },
+      {
+        "id": "b1l13g7-07",
+        "chinese": "我跟我朋友一樣喜歡看電視。",
+        "pinyin": "Wǒ gēn wǒ péngyǒu yíyàng xǐhuān kàn diànshì.",
+        "english": "My friend and I both like watching TV.",
+        "audio_file": "b1l13g7-07.mp3"
+      },
+      {
+        "id": "b1l13g7-08",
+        "chinese": "中國茶跟日本茶不一樣。",
+        "pinyin": "Zhōngguó chá gēn Rìběn chá bù yíyàng.",
+        "english": "Chinese tea and Japanese tea are not the same.",
+        "audio_file": "b1l13g7-08.mp3"
+      },
+      {
+        "id": "b1l13g7-09",
+        "chinese": "我跟妹妹不一樣高。",
+        "pinyin": "Wǒ gēn mèimei bù yíyàng gāo.",
+        "english": "My younger sister and I are not the same height.",
+        "audio_file": "b1l13g7-09.mp3"
+      },
+      {
+        "id": "b1l13g7-10",
+        "chinese": "他不跟我一樣高，跟小王一樣高。",
+        "pinyin": "Tā bù gēn wǒ yíyàng gāo, gēn Xiǎo Wáng yíyàng gāo.",
+        "english": "He is not as tall as me; he’s as tall as Xiao Wang.",
+        "audio_file": "b1l13g7-10.mp3"
+      },
+      {
+        "id": "b1l13g7-11",
+        "chinese": "小籠包跟包子一樣不一樣?",
+        "pinyin": "Xiǎolóngbāo gēn bāozi yíyàng bù yíyàng?",
+        "english": "Are soup dumplings and buns the same or different?",
+        "audio_file": "b1l13g7-11.mp3"
+      },
+      {
+        "id": "b1l13g7-12",
+        "chinese": "小籠包跟包子是不是一樣？",
+        "pinyin": "Xiǎolóngbāo gēn bāozi shì bú shì yíyàng?",
+        "english": "Are soup dumplings the same as buns?",
+        "audio_file": "b1l13g7-12.mp3"
+      },
+      {
+        "id": "b1l13g7-13",
+        "chinese": "今年的生意是不是跟去年的一樣好？",
+        "pinyin": "Jīnnián de shēngyì shì bú shì gēn qùnián de yíyàng hǎo?",
+        "english": "Is business this year as good as last year?",
+        "audio_file": "b1l13g7-13.mp3"
+      },
+      {
+        "id": "b1l13g7-14",
+        "chinese": "說中文跟寫中文是不是一樣難？",
+        "pinyin": "Shuō Zhōngwén gēn xiě Zhōngwén shì bú shì yíyàng nán?",
+        "english": "Is speaking Chinese as difficult as writing it?",
+        "audio_file": "b1l13g7-14.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 14,
+    "title": "Lesson 14",
+    "sentence_count": 39,
+    "sentences": [
+      {
+        "id": "b1l14g1-01",
+        "chinese": "媽媽的朋友在臺北玩了三天。",
+        "pinyin": "Māmā de péngyǒu zài Táiběi wán le sān tiān.",
+        "english": "Mom’s friend stayed in Taipei for three days.",
+        "audio_file": "b1l14g1-01.mp3"
+      },
+      {
+        "id": "b1l14g1-02",
+        "chinese": "老師在美國住了一年。",
+        "pinyin": "Lǎoshī zài Měiguó zhù le yì nián.",
+        "english": "The teacher lived in the U.S. for a year.",
+        "audio_file": "b1l14g1-02.mp3"
+      },
+      {
+        "id": "b1l14g1-03",
+        "chinese": "李小姐在語言中心工作了一個月。",
+        "pinyin": "Lǐ xiǎojiě zài yǔyán zhōngxīn gōngzuò le yí ge yuè.",
+        "english": "Miss Li worked at the language center for a month.",
+        "audio_file": "b1l14g1-03.mp3"
+      },
+      {
+        "id": "b1l14g1-04",
+        "chinese": "他租房子租了半年。",
+        "pinyin": "Tā zū fángzi zū le bàn nián.",
+        "english": "He rented an apartment for six months.",
+        "audio_file": "b1l14g1-04.mp3"
+      },
+      {
+        "id": "b1l14g1-05",
+        "chinese": "他住臺北住了三年。",
+        "pinyin": "Tā zhù Táiběi zhù le sān nián.",
+        "english": "He lived in Taipei for three years.",
+        "audio_file": "b1l14g1-05.mp3"
+      },
+      {
+        "id": "b1l14g1-06",
+        "chinese": "房子他只租了半年。",
+        "pinyin": "Fángzi tā zhǐ zū le bàn nián.",
+        "english": "He only rented the apartment for six months.",
+        "audio_file": "b1l14g1-06.mp3"
+      },
+      {
+        "id": "b1l14g1-07",
+        "chinese": "臺北他只住了三年。",
+        "pinyin": "Táiběi tā zhǐ zhù le sān nián.",
+        "english": "He only lived in Taipei for three years.",
+        "audio_file": "b1l14g1-07.mp3"
+      },
+      {
+        "id": "b1l14g1-08",
+        "chinese": "那間房子你租了一年半嗎？",
+        "pinyin": "Nà jiān fángzi nǐ zū le yì nián bàn ma?",
+        "english": "Did you rent that apartment for a year and a half?",
+        "audio_file": "b1l14g1-08.mp3"
+      },
+      {
+        "id": "b1l14g1-09",
+        "chinese": "你是不是在這裡等了一個鐘頭？",
+        "pinyin": "Nǐ shì bú shì zài zhèlǐ děng le yí ge zhōngtóu?",
+        "english": "Have you been waiting here for an hour?",
+        "audio_file": "b1l14g1-09.mp3"
+      },
+      {
+        "id": "b1l14g1-10",
+        "chinese": "陳老闆去年是不是在紐約住了半年？",
+        "pinyin": "Chén lǎobǎn qùnián shì bú shì zài Niǔyuē zhù le bàn nián?",
+        "english": "Did Boss Chen live in New York for six months last year?",
+        "audio_file": "b1l14g1-10.mp3"
+      },
+      {
+        "id": "b1l14g2-01",
+        "chinese": "她已經在臺灣玩了一年了。",
+        "pinyin": "Tā yǐjīng zài Táiwān wán le yì nián le.",
+        "english": "She has already been traveling in Taiwan for a year.",
+        "audio_file": "b1l14g2-01.mp3"
+      },
+      {
+        "id": "b1l14g2-02",
+        "chinese": "陳小姐在美國住了五年了。",
+        "pinyin": "Chén xiǎojiě zài Měiguó zhù le wǔ nián le.",
+        "english": "Miss Chen has been living in the U.S. for five years.",
+        "audio_file": "b1l14g2-02.mp3"
+      },
+      {
+        "id": "b1l14g2-03",
+        "chinese": "我工作了兩個月了。",
+        "pinyin": "Wǒ gōngzuò le liǎng ge yuè le.",
+        "english": "I have been working for two months.",
+        "audio_file": "b1l14g2-03.mp3"
+      },
+      {
+        "id": "b1l14g2-04",
+        "chinese": "這間房子，他已經租了半年了。",
+        "pinyin": "Zhè jiān fángzi, tā yǐjīng zū le bàn nián le.",
+        "english": "He has already rented this apartment for six months.",
+        "audio_file": "b1l14g2-04.mp3"
+      },
+      {
+        "id": "b1l14g2-05",
+        "chinese": "他們學中文學了三個星期了。",
+        "pinyin": "Tāmen xué Zhōngwén xué le sān ge xīngqí le.",
+        "english": "They have been studying Chinese for three weeks.",
+        "audio_file": "b1l14g2-05.mp3"
+      },
+      {
+        "id": "b1l14g3-01",
+        "chinese": "快下雨了。",
+        "pinyin": "Kuài xiàyǔ le.",
+        "english": "It&#x27;s about to rain.",
+        "audio_file": "b1l14g3-01.mp3"
+      },
+      {
+        "id": "b1l14g3-02",
+        "chinese": "電影要結束了。",
+        "pinyin": "Diànyǐng yào jiéshù le.",
+        "english": "The movie is about to end.",
+        "audio_file": "b1l14g3-02.mp3"
+      },
+      {
+        "id": "b1l14g3-03",
+        "chinese": "爸爸快要到家了。",
+        "pinyin": "Bàba kuàiyào dào jiā le.",
+        "english": "Dad is about to arrive home.",
+        "audio_file": "b1l14g3-03.mp3"
+      },
+      {
+        "id": "b1l14g3-04",
+        "chinese": "你媽媽的生日快到了嗎？",
+        "pinyin": "Nǐ māma de shēngrì kuài dào le ma?",
+        "english": "Is your mom’s birthday coming up soon?",
+        "audio_file": "b1l14g3-04.mp3"
+      },
+      {
+        "id": "b1l14g3-05",
+        "chinese": "比賽要開始了嗎？",
+        "pinyin": "Bǐsài yào kāishǐ le ma?",
+        "english": "Is the competition about to start?",
+        "audio_file": "b1l14g3-05.mp3"
+      },
+      {
+        "id": "b1l14g3-06",
+        "chinese": "哥哥的女朋友快要回法國了嗎？",
+        "pinyin": "Gēge de nǚ péngyǒu kuàiyào huí Fǎguó le ma?",
+        "english": "Is my brother’s girlfriend about to return to France?",
+        "audio_file": "b1l14g3-06.mp3"
+      },
+      {
+        "id": "b1l14g4-01",
+        "chinese": "他很高，他哥哥比他更高。",
+        "pinyin": "Tā hěn gāo, tā gēge bǐ tā gèng gāo.",
+        "english": "He is tall, but his older brother is even taller.",
+        "audio_file": "b1l14g4-01.mp3"
+      },
+      {
+        "id": "b1l14g4-02",
+        "chinese": "今年比去年更冷。",
+        "pinyin": "Jīnnián bǐ qùnián gèng lěng.",
+        "english": "This year is colder than last year.",
+        "audio_file": "b1l14g4-02.mp3"
+      },
+      {
+        "id": "b1l14g4-03",
+        "chinese": "我覺得芒果比西瓜更好吃。",
+        "pinyin": "Wǒ juédé mángguǒ bǐ xīguā gèng hǎochī.",
+        "english": "I think mangoes taste better than watermelons.",
+        "audio_file": "b1l14g4-03.mp3"
+      },
+      {
+        "id": "b1l14g4-04",
+        "chinese": "這次的颱風是不是比上次的更大？",
+        "pinyin": "Zhè cì de táifēng shì bú shì bǐ shàngcì de gèng dà?",
+        "english": "Is this typhoon bigger than the last one?",
+        "audio_file": "b1l14g4-04.mp3"
+      },
+      {
+        "id": "b1l14g4-05",
+        "chinese": "在學校上網是不是比在家裡更快？",
+        "pinyin": "Zài xuéxiào shàngwǎng shì bú shì bǐ zài jiālǐ gèng kuài?",
+        "english": "Is using the internet at school faster than at home?",
+        "audio_file": "b1l14g4-05.mp3"
+      },
+      {
+        "id": "b1l14g5-01",
+        "chinese": "哥哥沒有爸爸那麼高。",
+        "pinyin": "Gēge méiyǒu bàba nàme gāo.",
+        "english": "My older brother is not as tall as my dad.",
+        "audio_file": "b1l14g5-01.mp3"
+      },
+      {
+        "id": "b1l14g5-02",
+        "chinese": "火車沒有高鐵那麼快。",
+        "pinyin": "Huǒchē méiyǒu gāotiě nàme kuài.",
+        "english": "The train is not as fast as the high-speed rail.",
+        "audio_file": "b1l14g5-02.mp3"
+      },
+      {
+        "id": "b1l14g5-03",
+        "chinese": "我的中文沒有老師的那麼好。",
+        "pinyin": "Wǒ de Zhōngwén méiyǒu lǎoshī de nàme hǎo.",
+        "english": "My Chinese is not as good as my teacher’s.",
+        "audio_file": "b1l14g5-03.mp3"
+      },
+      {
+        "id": "b1l14g5-04",
+        "chinese": "臭豆腐沒有牛肉麵這麼好吃。",
+        "pinyin": "Chòu dòufu méiyǒu niúròumiàn zhème hǎochī.",
+        "english": "Stinky tofu is not as tasty as beef noodle soup.",
+        "audio_file": "b1l14g5-04.mp3"
+      },
+      {
+        "id": "b1l14g5-05",
+        "chinese": "甜點沒有小籠包那麼好做。",
+        "pinyin": "Tiándiǎn méiyǒu xiǎolóngbāo nàme hǎo zuò.",
+        "english": "Desserts are not as easy to make as soup dumplings.",
+        "audio_file": "b1l14g5-05.mp3"
+      },
+      {
+        "id": "b1l14g5-06",
+        "chinese": "這次的颱風沒有上次的那麼可怕。",
+        "pinyin": "Zhè cì de táifēng méiyǒu shàngcì de nàme kěpà.",
+        "english": "This typhoon is not as scary as the last one.",
+        "audio_file": "b1l14g5-06.mp3"
+      },
+      {
+        "id": "b1l14g5-07",
+        "chinese": "妹妹有沒有姊姊那麼漂亮？",
+        "pinyin": "Mèimei yǒu méiyǒu jiějie nàme piàoliàng?",
+        "english": "Is my younger sister as pretty as my older sister?",
+        "audio_file": "b1l14g5-07.mp3"
+      },
+      {
+        "id": "b1l14g5-08",
+        "chinese": "花蓮的房租有沒有臺北的那麼貴？",
+        "pinyin": "Huālián de fángzū yǒu méiyǒu Táiběi de nàme guì?",
+        "english": "Is rent in Hualien as expensive as in Taipei?",
+        "audio_file": "b1l14g5-08.mp3"
+      },
+      {
+        "id": "b1l14g5-09",
+        "chinese": "日本的工作有沒有美國的那麼難找？",
+        "pinyin": "Rìběn de gōngzuò yǒu méiyǒu Měiguó de nàme nán zhǎo?",
+        "english": "Is it as hard to find a job in Japan as in the U.S.?",
+        "audio_file": "b1l14g5-09.mp3"
+      },
+      {
+        "id": "b1l14g5-10",
+        "chinese": "夏天的天氣有沒有春天的舒服？",
+        "pinyin": "Xiàtiān de tiānqì yǒu méiyǒu chūntiān de shūfú?",
+        "english": "Is summer weather as comfortable as spring weather?",
+        "audio_file": "b1l14g5-10.mp3"
+      },
+      {
+        "id": "b1l14g5-11",
+        "chinese": "今天跟昨天一樣熱。",
+        "pinyin": "Jīntiān gēn zuótiān yíyàng rè.",
+        "english": "Today is as hot as yesterday.",
+        "audio_file": "b1l14g5-11.mp3"
+      },
+      {
+        "id": "b1l14g5-12",
+        "chinese": "今天沒有昨天那麼熱。",
+        "pinyin": "Jīntiān méiyǒu zuótiān nàme rè.",
+        "english": "Today is not as hot as yesterday.",
+        "audio_file": "b1l14g5-12.mp3"
+      },
+      {
+        "id": "b1l14g5-13",
+        "chinese": "今天比昨天熱。",
+        "pinyin": "Jīntiān bǐ zuótiān rè.",
+        "english": "Today is hotter than yesterday.",
+        "audio_file": "b1l14g5-13.mp3"
+      }
+    ]
+  },
+  {
+    "lesson": 15,
+    "title": "Lesson 15",
+    "sentence_count": 68,
+    "sentences": [
+      {
+        "id": "b1l15g1-01",
+        "chinese": "我沒有多少錢。",
+        "pinyin": "Wǒ méiyǒu duōshǎo qián.",
+        "english": "I don’t have much money.",
+        "audio_file": "b1l15g1-01.mp3"
+      },
+      {
+        "id": "b1l15g1-02",
+        "chinese": "她沒有幾個朋友。",
+        "pinyin": "Tā méiyǒu jǐ ge péngyǒu.",
+        "english": "She doesn’t have many friends.",
+        "audio_file": "b1l15g1-02.mp3"
+      },
+      {
+        "id": "b1l15g1-03",
+        "chinese": "你的感冒沒有什麼關係。",
+        "pinyin": "Nǐ de gǎnmào méiyǒu shénme guānxì.",
+        "english": "Your cold is not a big deal.",
+        "audio_file": "b1l15g1-03.mp3"
+      },
+      {
+        "id": "b1l15g1-04",
+        "chinese": "我沒去哪裡。",
+        "pinyin": "Wǒ méi qù nǎlǐ.",
+        "english": "I didn’t go anywhere.",
+        "audio_file": "b1l15g1-04.mp3"
+      },
+      {
+        "id": "b1l15g1-05",
+        "chinese": "他不打算買什麼。",
+        "pinyin": "Tā bù dǎsuàn mǎi shénme.",
+        "english": "He doesn’t plan to buy anything.",
+        "audio_file": "b1l15g1-05.mp3"
+      },
+      {
+        "id": "b1l15g1-06",
+        "chinese": "我昨天沒跟誰去看電影。",
+        "pinyin": "Wǒ zuótiān méi gēn shéi qù kàn diànyǐng.",
+        "english": "I didn’t go to the movies with anyone yesterday.",
+        "audio_file": "b1l15g1-06.mp3"
+      },
+      {
+        "id": "b1l15g2-01",
+        "chinese": "我把牛肉麵吃了",
+        "pinyin": "Wǒ bǎ niúròumiàn chī le.",
+        "english": "I ate the beef noodle soup.",
+        "audio_file": "b1l15g2-01.mp3"
+      },
+      {
+        "id": "b1l15g2-02",
+        "chinese": "他把我的湯喝了。",
+        "pinyin": "Tā bǎ wǒ de tāng hē le.",
+        "english": "He drank my soup.",
+        "audio_file": "b1l15g2-02.mp3"
+      },
+      {
+        "id": "b1l15g2-03",
+        "chinese": "房東把房子賣了。",
+        "pinyin": "Fángdōng bǎ fángzi mài le.",
+        "english": "The landlord sold the house.",
+        "audio_file": "b1l15g2-03.mp3"
+      },
+      {
+        "id": "b1l15g2-04",
+        "chinese": "我沒把豬腳麵線吃了。",
+        "pinyin": "Wǒ méi bǎ zhūjiǎo miànxiàn chī le.",
+        "english": "I didn’t eat the pork trotter noodles.",
+        "audio_file": "b1l15g2-04.mp3"
+      },
+      {
+        "id": "b1l15g2-05",
+        "chinese": "別把我的藥吃了。",
+        "pinyin": "Bié bǎ wǒ de yào chī le.",
+        "english": "Don’t take my medicine.",
+        "audio_file": "b1l15g2-05.mp3"
+      },
+      {
+        "id": "b1l15g2-06",
+        "chinese": "他沒把書賣了。",
+        "pinyin": "Tā méi bǎ shū mài le.",
+        "english": "He didn’t sell the book.",
+        "audio_file": "b1l15g2-06.mp3"
+      },
+      {
+        "id": "b1l15g2-07",
+        "chinese": "你把功課寫了沒有？",
+        "pinyin": "Nǐ bǎ gōngkè xiě le méiyǒu?",
+        "english": "Have you finished your homework?",
+        "audio_file": "b1l15g2-07.mp3"
+      },
+      {
+        "id": "b1l15g2-08",
+        "chinese": "你是不是把機車賣了？",
+        "pinyin": "Nǐ shì bú shì bǎ jīchē mài le?",
+        "english": "Did you sell the scooter?",
+        "audio_file": "b1l15g2-08.mp3"
+      },
+      {
+        "id": "b1l15g2-09",
+        "chinese": "你是不是把他的早飯吃了？",
+        "pinyin": "Nǐ shì bú shì bǎ tā de zǎofàn chī le?",
+        "english": "Did you eat his breakfast?",
+        "audio_file": "b1l15g2-09.mp3"
+      },
+      {
+        "id": "b1l15g2-10",
+        "chinese": "我想把手機賣了。",
+        "pinyin": "Wǒ xiǎng bǎ shǒujī mài le.",
+        "english": "I want to sell my phone.",
+        "audio_file": "b1l15g2-10.mp3"
+      },
+      {
+        "id": "b1l15g2-11",
+        "chinese": "我想把那支手機賣了。",
+        "pinyin": "Wǒ xiǎng bǎ nà zhī shǒujī mài le.",
+        "english": "I want to sell that phone.",
+        "audio_file": "b1l15g2-11.mp3"
+      },
+      {
+        "id": "b1l15g3-01",
+        "chinese": "我放了假就去旅行。",
+        "pinyin": "Wǒ fàng le jià jiù qù lǚxíng.",
+        "english": "As soon as I have a break, I’ll travel.",
+        "audio_file": "b1l15g3-01.mp3"
+      },
+      {
+        "id": "b1l15g3-02",
+        "chinese": "他吃了藥就睡覺。",
+        "pinyin": "Tā chī le yào jiù shuìjiào.",
+        "english": "He took medicine and immediately went to sleep.",
+        "audio_file": "b1l15g3-02.mp3"
+      },
+      {
+        "id": "b1l15g3-03",
+        "chinese": "爸爸回了家就喝了兩杯烏龍茶。",
+        "pinyin": "Bàba huí le jiā jiù hē le liǎng bēi wūlóngchá.",
+        "english": "Dad came home and drank two cups of oolong tea.",
+        "audio_file": "b1l15g3-03.mp3"
+      },
+      {
+        "id": "b1l15g3-04",
+        "chinese": "他到了臺北，就去臺北101看看。",
+        "pinyin": "Tā dào le Táiběi, jiù qù Táiběi 101 kànkan.",
+        "english": "As soon as he arrived in Taipei, he went to see Taipei 101.",
+        "audio_file": "b1l15g3-04.mp3"
+      },
+      {
+        "id": "b1l15g3-05",
+        "chinese": "妹妹喝了一碗熱湯，就不覺得冷了。",
+        "pinyin": "Mèimei hē le yì wǎn rè tāng, jiù bù juédé lěng le.",
+        "english": "My younger sister drank a bowl of hot soup and didn’t feel cold anymore.",
+        "audio_file": "b1l15g3-05.mp3"
+      },
+      {
+        "id": "b1l15g3-06",
+        "chinese": "姐姐吃了臭豆腐，肚子就不舒服。",
+        "pinyin": "Jiějie chī le chòu dòufu, dùzi jiù bù shūfú.",
+        "english": "My older sister ate stinky tofu and her stomach felt uncomfortable.",
+        "audio_file": "b1l15g3-06.mp3"
+      },
+      {
+        "id": "b1l15g3-07",
+        "chinese": "他們見了面，就去喝咖啡嗎？",
+        "pinyin": "Tāmen jiàn le miàn, jiù qù hē kāfēi ma?",
+        "english": "Did they go for coffee as soon as they met?",
+        "audio_file": "b1l15g3-07.mp3"
+      },
+      {
+        "id": "b1l15g3-08",
+        "chinese": "你弟弟是不是下了課，就去KTV唱歌?",
+        "pinyin": "Nǐ dìdi shì bú shì xià le kè, jiù qù KTV chànggē?",
+        "english": "Did your younger brother go to KTV to sing right after class?",
+        "audio_file": "b1l15g3-08.mp3"
+      },
+      {
+        "id": "b1l15g3-09",
+        "chinese": "他是不是去紐約玩了兩個星期，就不想回<br>  來了？",
+        "pinyin": "Tā shì bú shì qù Niǔyuē wán le liǎng ge xīngqí, jiù bù xiǎng huílái le?",
+        "english": "Did he go to New York for two weeks and then not want to come back?",
+        "audio_file": "b1l15g3-09.mp3"
+      },
+      {
+        "id": "b1l15g3-10",
+        "chinese": "她吃了藥以後，就去睡覺。",
+        "pinyin": "Tā chī le yào yǐhòu, jiù qù shuìjiào.",
+        "english": "After taking medicine, she went to sleep.",
+        "audio_file": "b1l15g3-10.mp3"
+      },
+      {
+        "id": "b1l15g4-01",
+        "chinese": "他喝了一點咖啡。",
+        "pinyin": "Tā hē le yì diǎn kāfēi.",
+        "english": "He drank a little coffee.",
+        "audio_file": "b1l15g4-01.mp3"
+      },
+      {
+        "id": "b1l15g4-02",
+        "chinese": "這一點錢太少了。",
+        "pinyin": "Zhè yì diǎn qián tài shǎo le.",
+        "english": "This amount of money is too little.",
+        "audio_file": "b1l15g4-02.mp3"
+      },
+      {
+        "id": "b1l15g4-03",
+        "chinese": "她要吃一點麵線。",
+        "pinyin": "Tā yào chī yì diǎn miànxiàn.",
+        "english": "She wants to eat a little noodles.",
+        "audio_file": "b1l15g4-03.mp3"
+      },
+      {
+        "id": "b1l15g4-04",
+        "chinese": "她在超市買了一點東西。",
+        "pinyin": "Tā zài chāoshì mǎi le yì diǎn dōngxi.",
+        "english": "She bought a few things at the supermarket.",
+        "audio_file": "b1l15g4-04.mp3"
+      },
+      {
+        "id": "b1l15g4-05",
+        "chinese": "我只喝了一點烏龍茶。",
+        "pinyin": "Wǒ zhǐ hē le yì diǎn wūlóngchá.",
+        "english": "I only drank a little oolong tea.",
+        "audio_file": "b1l15g4-05.mp3"
+      },
+      {
+        "id": "b1l15g4-06",
+        "chinese": "昨天下了一點雨。",
+        "pinyin": "Zuótiān xià le yì diǎn yǔ.",
+        "english": "It rained a little yesterday.",
+        "audio_file": "b1l15g4-06.mp3"
+      },
+      {
+        "id": "b1l15g4-07",
+        "chinese": "他比我年輕一點。",
+        "pinyin": "Tā bǐ wǒ niánqīng yì diǎn.",
+        "english": "He is a little younger than me.",
+        "audio_file": "b1l15g4-07.mp3"
+      },
+      {
+        "id": "b1l15g4-08",
+        "chinese": "請你早一點來!",
+        "pinyin": "Qǐng nǐ zǎo yì diǎn lái!",
+        "english": "Please come a little earlier!",
+        "audio_file": "b1l15g4-08.mp3"
+      },
+      {
+        "id": "b1l15g4-09",
+        "chinese": "明天我會晚一點回家。",
+        "pinyin": "Míngtiān wǒ huì wǎn yì diǎn huí jiā.",
+        "english": "Tomorrow, I will go home a little later.",
+        "audio_file": "b1l15g4-09.mp3"
+      },
+      {
+        "id": "b1l15g4-10",
+        "chinese": "牛肉麵有一點辣。",
+        "pinyin": "Niúròumiàn yǒu yì diǎn là.",
+        "english": "The beef noodle soup is a little spicy.",
+        "audio_file": "b1l15g4-10.mp3"
+      },
+      {
+        "id": "b1l15g4-11",
+        "chinese": "這裡，冬天有一點冷。",
+        "pinyin": "Zhèlǐ, dōngtiān yǒu yì diǎn lěng.",
+        "english": "It’s a bit cold here in winter.",
+        "audio_file": "b1l15g4-11.mp3"
+      },
+      {
+        "id": "b1l15g4-12",
+        "chinese": "這支手機有一點貴。",
+        "pinyin": "Zhè zhī shǒujī yǒu yì diǎn guì.",
+        "english": "This phone is a little expensive.",
+        "audio_file": "b1l15g4-12.mp3"
+      },
+      {
+        "id": "b1l15g4-13",
+        "chinese": "他有（一）點想睡。",
+        "pinyin": "Tā yǒu (yì) diǎn xiǎng shuì.",
+        "english": "He is a little sleepy.",
+        "audio_file": "b1l15g4-13.mp3"
+      },
+      {
+        "id": "b1l15g5-01",
+        "chinese": "哥哥吃牛肉麵吃得比弟弟多。",
+        "pinyin": "Gēge chī niúròumiàn chī de bǐ dìdi duō.",
+        "english": "My older brother ate more beef noodles than my younger brother.",
+        "audio_file": "b1l15g5-01.mp3"
+      },
+      {
+        "id": "b1l15g5-02",
+        "chinese": "這種手機賣得比那種好。",
+        "pinyin": "Zhè zhǒng shǒujī mài de bǐ nà zhǒng hǎo.",
+        "english": "This type of phone sells better than that one.",
+        "audio_file": "b1l15g5-02.mp3"
+      },
+      {
+        "id": "b1l15g5-03",
+        "chinese": "他比我做得快。",
+        "pinyin": "Tā bǐ wǒ zuò de kuài.",
+        "english": "He works faster than me.",
+        "audio_file": "b1l15g5-03.mp3"
+      },
+      {
+        "id": "b1l15g5-04",
+        "chinese": "我比他走得快。",
+        "pinyin": "Wǒ bǐ tā zǒu de kuài.",
+        "english": "I walk faster than him.",
+        "audio_file": "b1l15g5-04.mp3"
+      },
+      {
+        "id": "b1l15g5-05",
+        "chinese": "弟弟比哥哥念得好。",
+        "pinyin": "Dìdi bǐ gēge niàn de hǎo.",
+        "english": "My younger brother studies better than my older brother.",
+        "audio_file": "b1l15g5-05.mp3"
+      },
+      {
+        "id": "b1l15g5-06",
+        "chinese": "他做飯做得比我快。",
+        "pinyin": "Tā zuò fàn zuò de bǐ wǒ kuài.",
+        "english": "He cooks faster than me.",
+        "audio_file": "b1l15g5-06.mp3"
+      },
+      {
+        "id": "b1l15g5-07",
+        "chinese": "我走路走得比他快。",
+        "pinyin": "Wǒ zǒulù zǒu de bǐ tā kuài.",
+        "english": "I walk faster than him.",
+        "audio_file": "b1l15g5-07.mp3"
+      },
+      {
+        "id": "b1l15g5-08",
+        "chinese": "弟弟念書念得比哥哥好。",
+        "pinyin": "Dìdi niànshū niàn de bǐ gēge hǎo.",
+        "english": "My younger brother studies better than my older brother.",
+        "audio_file": "b1l15g5-08.mp3"
+      },
+      {
+        "id": "b1l15g5-09",
+        "chinese": "他做飯不比我做得快。",
+        "pinyin": "Tā zuò fàn bù bǐ wǒ zuò de kuài.",
+        "english": "He doesn’t cook faster than me.",
+        "audio_file": "b1l15g5-09.mp3"
+      },
+      {
+        "id": "b1l15g5-10",
+        "chinese": "走路，我不比他走得快。",
+        "pinyin": "Zǒulù, wǒ bù bǐ tā zǒu de kuài.",
+        "english": "When walking, I’m not faster than him.",
+        "audio_file": "b1l15g5-10.mp3"
+      },
+      {
+        "id": "b1l15g5-11",
+        "chinese": "弟弟念書念得不比哥哥好。",
+        "pinyin": "Dìdi niànshū niàn de bù bǐ gēge hǎo.",
+        "english": "My younger brother doesn’t study better than my older brother.",
+        "audio_file": "b1l15g5-11.mp3"
+      },
+      {
+        "id": "b1l15g5-12",
+        "chinese": "你做飯做得比媽媽好嗎？",
+        "pinyin": "Nǐ zuò fàn zuò de bǐ māma hǎo ma?",
+        "english": "Do you cook better than your mom?",
+        "audio_file": "b1l15g5-12.mp3"
+      },
+      {
+        "id": "b1l15g5-13",
+        "chinese": "他是不是走路走得比你快？",
+        "pinyin": "Tā shì bú shì zǒulù zǒu de bǐ nǐ kuài?",
+        "english": "Does he walk faster than you?",
+        "audio_file": "b1l15g5-13.mp3"
+      },
+      {
+        "id": "b1l15g5-14",
+        "chinese": "弟弟打網球打得比哥哥好嗎？",
+        "pinyin": "Dìdi dǎ wǎngqiú dǎ de bǐ gēge hǎo ma?",
+        "english": "Does my younger brother play tennis better than my older brother?",
+        "audio_file": "b1l15g5-14.mp3"
+      },
+      {
+        "id": "b1l15g6-01",
+        "chinese": "他的房間比我的大一點。",
+        "pinyin": "Tā de fángjiān bǐ wǒ de dà yì diǎn.",
+        "english": "His room is a little bigger than mine.",
+        "audio_file": "b1l15g6-01.mp3"
+      },
+      {
+        "id": "b1l15g6-02",
+        "chinese": "捷運站比公車站遠得多。",
+        "pinyin": "Jiéyùnzhàn bǐ gōngchēzhàn yuǎn de duō.",
+        "english": "The MRT station is much farther than the bus stop.",
+        "audio_file": "b1l15g6-02.mp3"
+      },
+      {
+        "id": "b1l15g6-03",
+        "chinese": "我覺得晚上比早上舒服多了。",
+        "pinyin": "Wǒ juédé wǎnshàng bǐ zǎoshàng shūfú duō le.",
+        "english": "I feel that nighttime is much more comfortable than morning.",
+        "audio_file": "b1l15g6-03.mp3"
+      },
+      {
+        "id": "b1l15g6-04",
+        "chinese": "哥哥是不是比弟弟高一點？",
+        "pinyin": "Gēge shì bú shì bǐ dìdi gāo yì diǎn?",
+        "english": "Is my older brother a little taller than my younger brother?",
+        "audio_file": "b1l15g6-04.mp3"
+      },
+      {
+        "id": "b1l15g6-05",
+        "chinese": "房租可以便宜一點嗎？",
+        "pinyin": "Fángzū kěyǐ piányí yì diǎn ma?",
+        "english": "Can the rent be a little cheaper?",
+        "audio_file": "b1l15g6-05.mp3"
+      },
+      {
+        "id": "b1l15g6-06",
+        "chinese": "春天去旅行是不是比夏天舒服得多?",
+        "pinyin": "Chūntiān qù lǚxíng shì bú shì bǐ xiàtiān shūfú de duō?",
+        "english": "Is traveling in spring much more comfortable than in summer?",
+        "audio_file": "b1l15g6-06.mp3"
+      },
+      {
+        "id": "b1l15g6-07",
+        "chinese": "高鐵票比火車票貴多了嗎？",
+        "pinyin": "Gāotiě piào bǐ huǒchē piào guì duō le ma?",
+        "english": "Are high-speed rail tickets much more expensive than train tickets?",
+        "audio_file": "b1l15g6-07.mp3"
+      },
+      {
+        "id": "b1l15g7-01",
+        "chinese": "他回了家以後，就開始工作。",
+        "pinyin": "Tā huí le jiā yǐhòu, jiù kāishǐ gōngzuò.",
+        "english": "After he got home, he started working.",
+        "audio_file": "b1l15g7-01.mp3"
+      },
+      {
+        "id": "b1l15g7-02",
+        "chinese": "我昨天下了課就跟朋友去看電影。",
+        "pinyin": "Wǒ zuótiān xià le kè jiù gēn péngyǒu qù kàn diànyǐng.",
+        "english": "Yesterday, after class, I went to the movies with my friends.",
+        "audio_file": "b1l15g7-02.mp3"
+      },
+      {
+        "id": "b1l15g7-03",
+        "chinese": "我想見你一面。",
+        "pinyin": "Wǒ xiǎng jiàn nǐ yí miàn.",
+        "english": "I want to meet you once.",
+        "audio_file": "b1l15g7-03.mp3"
+      },
+      {
+        "id": "b1l15g7-04",
+        "chinese": "他照了你一張相。",
+        "pinyin": "Tā zhào le nǐ yì zhāng xiàng.",
+        "english": "He took a picture of you.",
+        "audio_file": "b1l15g7-04.mp3"
+      },
+      {
+        "id": "b1l15g7-05",
+        "chinese": "我們每天上八個鐘頭的班。",
+        "pinyin": "Wǒmen měitiān shàng bā ge zhōngtóu de bān.",
+        "english": "We work eight hours a day.",
+        "audio_file": "b1l15g7-05.mp3"
+      },
+      {
+        "id": "b1l15g7-06",
+        "chinese": "你們新年的時候，放幾天的假？",
+        "pinyin": "Nǐmen xīnnián de shíhòu, fàng jǐ tiān de jià?",
+        "english": "How many days off do you have for New Year?",
+        "audio_file": "b1l15g7-06.mp3"
+      },
+      {
+        "id": "b1l15g7-07",
+        "chinese": "他唱了三小時的歌，有一點累。",
+        "pinyin": "Tā chàng le sān xiǎoshí de gē, yǒu yì diǎn lèi.",
+        "english": "He sang for three hours and was a little tired.",
+        "audio_file": "b1l15g7-07.mp3"
+      }
+    ]
+  }
+]
