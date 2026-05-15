@@ -223,7 +223,23 @@ body.focus-mode .tab-text { display: none; }
 .tgl-btn { padding: 8px 12px; border-radius: 8px; border: 1.5px solid var(--border2); background: var(--white); cursor: pointer; font-family: var(--sans); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
 .tgl-btn.active { border-color: var(--red); color: var(--red); background: var(--red-lt); }
 
-@media (max-width: 600px) { #top-nav .logo span { display: none; } #lesson-select { min-width: 120px; font-size: 13px; } .tab-btn { padding: 0 14px; font-size: 13px; } }
+/* ─── STUDY TOGGLES ────────────────────────────────────────── */
+.study-toggles { display: flex; gap: 10px; margin-left: auto; }
+.tgl-small { display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: var(--ink3); text-transform: uppercase; cursor: pointer; background: var(--bg2); padding: 6px 10px; border-radius: 8px; border: 1.5px solid var(--border2); transition: all 0.15s; }
+.tgl-small:has(input:checked) { border-color: var(--red); color: var(--red); background: var(--red-lt); }
+.tgl-small input { display: none; }
+
+.hidden-study { filter: blur(4px); opacity: 0.3; transition: filter 0.2s; cursor: pointer; }
+.hidden-study:hover { filter: blur(0); opacity: 1; }
+
+.sent-exercise { margin-top: 12px; display: flex; gap: 8px; }
+.sent-input { flex: 1; padding: 10px 14px; border: 2px solid var(--border2); border-radius: 10px; font-family: var(--sans); font-size: 14px; transition: all 0.2s; }
+.sent-input:focus { border-color: var(--red); outline: none; box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1); }
+.sent-input.correct { border-color: #27ae60; background: #f0fdf4; }
+.sent-input.wrong { border-color: #e74c3c; background: #fef2f2; }
+.sent-check { padding: 0 16px; border-radius: 10px; border: none; background: var(--ink); color: white; font-weight: 600; cursor: pointer; }
+
+@media (max-width: 600px) { #top-nav .logo span { display: none; } #lesson-select { min-width: 120px; font-size: 13px; } .tab-btn { padding: 0 14px; font-size: 13px; } .study-toggles { width: 100%; order: 3; margin-top: 10px; justify-content: space-between; } }
 </style>
 </head>
 <body>
@@ -322,6 +338,10 @@ body.focus-mode .tab-text { display: none; }
           <option value="all">All Lessons</option>
         </select>
         <input type="text" class="vocab-search" id="vocab-search" placeholder="Search characters, pinyin, or meaning..." oninput="filterVocab()">
+        <div class="study-toggles">
+          <label class="tgl-small"><input type="checkbox" id="v-hide-pinyin" onchange="renderVocabList()"><span>🙈 Pinyin</span></label>
+          <label class="tgl-small"><input type="checkbox" id="v-hide-english" onchange="renderVocabList()"><span>🙈 English</span></label>
+        </div>
       </div>
       <div class="vocab-list" id="vocab-list"></div>
     </div>
@@ -332,6 +352,11 @@ body.focus-mode .tab-text { display: none; }
           <option value="all">All Lessons</option>
         </select>
         <input type="text" class="sent-search" id="sent-search" placeholder="Search sentences, pinyin, or translation..." oninput="filterSentences()">
+        <div class="study-toggles">
+          <label class="tgl-small"><input type="checkbox" id="s-hide-pinyin" onchange="filterSentences()"><span>🙈 Pinyin</span></label>
+          <label class="tgl-small"><input type="checkbox" id="s-hide-english" onchange="filterSentences()"><span>🙈 English</span></label>
+          <label class="tgl-small"><input type="checkbox" id="s-hide-chinese" onchange="filterSentences()"><span>🙈 Chinese</span></label>
+        </div>
       </div>
       <div class="sent-list" id="sent-list">
         <div style="padding:40px; text-align:center; color:var(--ink3);">
@@ -796,13 +821,16 @@ function filterVocab() {
 
 function renderVocabList() {
   const container = document.getElementById('vocab-list');
+  const hidePinyin = document.getElementById('v-hide-pinyin').checked;
+  const hideEnglish = document.getElementById('v-hide-english').checked;
+
   container.innerHTML = vocabFiltered.map(v => `
     <div class="vocab-item">
       <div class="vocab-top">
         <div class="vocab-chars">${v.trad}</div>
-        <div class="vocab-pinyin">${v.pinyin}</div>
+        <div class="vocab-pinyin ${hidePinyin ? 'hidden-study' : ''}">${v.pinyin}</div>
       </div>
-      <div class="vocab-meaning">${v.meaning}</div>
+      <div class="vocab-meaning ${hideEnglish ? 'hidden-study' : ''}">${v.meaning}</div>
       <div class="vocab-meta">
         <span>Lesson ${v.lesson}</span>
         <span>${v.pos}</span>
@@ -813,6 +841,76 @@ function renderVocabList() {
       </div>
     </div>
   `).join('');
+}
+
+function filterSentences() {
+  const lesson = document.getElementById('sent-lesson-select').value;
+  const search = document.getElementById('sent-search').value.toLowerCase();
+  const container = document.getElementById('sent-list');
+  const hidePinyin = document.getElementById('s-hide-pinyin').checked;
+  const hideEnglish = document.getElementById('s-hide-english').checked;
+  const hideChinese = document.getElementById('s-hide-chinese').checked;
+
+  let html = '';
+  sentencesData.forEach(lessonObj => {
+    if (lesson !== 'all' && lessonObj.lesson !== parseInt(lesson)) return;
+
+    const filtered = lessonObj.sentences.filter(s => 
+      !search || 
+      s.chinese.includes(search) || 
+      s.pinyin.toLowerCase().includes(search) || 
+      s.english.toLowerCase().includes(search)
+    );
+
+    if (filtered.length === 0) return;
+
+    html += `<div class="sent-group">
+      <div class="sent-group-title">Lesson ${lessonObj.lesson}: ${lessonObj.title}</div>`;
+    
+    let currentGrammarPart = '';
+    filtered.forEach(s => {
+      const match = s.id.match(/g(\d+)/);
+      const grammarPart = match ? 'Section ' + match[1] : '';
+      
+      if (grammarPart !== currentGrammarPart && !search) {
+        currentGrammarPart = grammarPart;
+        html += `<div style="font-size:11px; font-weight:800; color:var(--red); text-transform:uppercase; margin: 15px 0 5px 5px; letter-spacing:1px;">${grammarPart}</div>`;
+      }
+
+      html += `
+        <div class="sent-item" onclick="if(event.target.tagName !== 'INPUT') playSentenceAudio('${s.audio_file}')">
+          <div class="sent-top">
+            <div class="sent-chinese ${hideChinese ? 'hidden-study' : ''}">${s.chinese}</div>
+            <button class="sent-play">▶</button>
+          </div>
+          <div class="sent-pinyin ${hidePinyin ? 'hidden-study' : ''}">${s.pinyin}</div>
+          <div class="sent-english ${hideEnglish ? 'hidden-study' : ''}">${s.english}</div>
+          
+          <div class="sent-exercise">
+            <input type="text" class="sent-input" placeholder="Type using pinyin / Chinese..." 
+              onkeydown="if(event.key==='Enter') checkSent(this, '${s.chinese}')"
+              oninput="this.classList.remove('correct','wrong')">
+            <button class="sent-check" onclick="checkSent(this.previousElementSibling, '${s.chinese}')">Check</button>
+          </div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  });
+
+  container.innerHTML = html || '<div style="padding:40px; text-align:center; color:var(--ink3);">No sentences found matching your search.</div>';
+}
+
+function checkSent(input, target) {
+  const val = input.value.trim();
+  if (!val) return;
+  const cleanTarget = target.replace(/[？。！， ,]/g, '');
+  if (val === cleanTarget) {
+    input.classList.add('correct');
+    showToast('Correct! ✨', 'success');
+  } else {
+    input.classList.add('wrong');
+  }
 }
 
 function playVocabAudio(filename) {
@@ -842,55 +940,6 @@ async function initSentences() {
     console.error('Error loading sentences:', e);
     document.getElementById('sent-list').innerHTML = '<div style="padding:20px; color:var(--red);">Failed to load sentences.</div>';
   }
-}
-
-function filterSentences() {
-  const lesson = document.getElementById('sent-lesson-select').value;
-  const search = document.getElementById('sent-search').value.toLowerCase();
-  const container = document.getElementById('sent-list');
-
-  let html = '';
-  sentencesData.forEach(lessonObj => {
-    if (lesson !== 'all' && lessonObj.lesson !== parseInt(lesson)) return;
-
-    const filtered = lessonObj.sentences.filter(s => 
-      !search || 
-      s.chinese.includes(search) || 
-      s.pinyin.toLowerCase().includes(search) || 
-      s.english.toLowerCase().includes(search)
-    );
-
-    if (filtered.length === 0) return;
-
-    html += `<div class="sent-group">
-      <div class="sent-group-title">Lesson ${lessonObj.lesson}: ${lessonObj.title}</div>`;
-    
-    let currentGrammarPart = '';
-    filtered.forEach(s => {
-      // Extract grammar part e.g. "g1" from "b1l1g1-1-01"
-      const match = s.id.match(/g(\d+)/);
-      const grammarPart = match ? 'Section ' + match[1] : '';
-      
-      if (grammarPart !== currentGrammarPart && !search) {
-        currentGrammarPart = grammarPart;
-        html += `<div style="font-size:11px; font-weight:800; color:var(--red); text-transform:uppercase; margin: 15px 0 5px 5px; letter-spacing:1px;">${grammarPart}</div>`;
-      }
-
-      html += `
-        <div class="sent-item" onclick="playSentenceAudio('${s.audio_file}')">
-          <div class="sent-top">
-            <div class="sent-chinese">${s.chinese}</div>
-            <button class="sent-play">▶</button>
-          </div>
-          <div class="sent-pinyin">${s.pinyin}</div>
-          <div class="sent-english">${s.english}</div>
-        </div>
-      `;
-    });
-    html += `</div>`;
-  });
-
-  container.innerHTML = html || '<div style="padding:40px; text-align:center; color:var(--ink3);">No sentences found matching your search.</div>';
 }
 
 function playSentenceAudio(filename) {
@@ -972,8 +1021,12 @@ function selectPracticeChar(char, btn) {
   document.getElementById('practice-hanzi-writer').innerHTML = '';
   practiceWriter = HanziWriter.create('practice-hanzi-writer', char, {
     width: 280, height: 280, padding: 20,
-    showOutline: true, strokeAnimationSpeed: 1, delayBetweenStrokes: 200,
-    trad: true
+    showOutline: true, 
+    strokeAnimationSpeed: 1, 
+    delayBetweenStrokes: 200,
+    trad: true,
+    outlineColor: '#eeeeee', // Keep it very faint
+    strokeColor: '#1a1a1a'
   });
   
   if (document.getElementById('tgl-guided').checked) practiceWriter.showOutline();
